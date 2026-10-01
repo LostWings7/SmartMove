@@ -43,6 +43,10 @@ class SafeCityFactors:
     road_importance_score: float = 50.0
     data_confidence: str = "HIGH"
     main_contributing_factor: str = "Observed Surface Defects"
+    critical_conflicts_per_100_vehicles: float = 0.0
+    critical_conflicts_per_100_pedestrians: float = 0.0
+    severity_weighted_conflict_rate: float = 0.0
+    exposure_context: str = "Baseline Monitored Exposure"
 
 
 @dataclass
@@ -99,6 +103,10 @@ class RoadSafetyEvaluation:
                 "road_importance_score": round(self.factors.road_importance_score, 1),
                 "data_confidence": self.factors.data_confidence,
                 "main_contributing_factor": self.factors.main_contributing_factor,
+                "critical_conflicts_per_100_vehicles": self.factors.critical_conflicts_per_100_vehicles,
+                "critical_conflicts_per_100_pedestrians": self.factors.critical_conflicts_per_100_pedestrians,
+                "severity_weighted_conflict_rate": self.factors.severity_weighted_conflict_rate,
+                "exposure_context": self.factors.exposure_context,
             },
             "disclaimer": self.disclaimer,
         }
@@ -257,6 +265,18 @@ class DangerZoneService:
         quality = data_quality_service.evaluate_road_data_quality(road, db)
         coverage_label = f"{quality['coverage_tier']} COVERAGE"
 
+        # 10. Exposure-Normalized Conflict Rates (Surrogate Safety Analysis)
+        exp_veh = 250.0 if (road.traffic_exposure or "").upper() == "HIGH" else 120.0 if (road.traffic_exposure or "").upper() == "MEDIUM" else 50.0
+        exp_ped = 180.0 if (road.vulnerability or "").upper() == "HIGH" else 80.0 if (road.vulnerability or "").upper() == "MEDIUM" else 30.0
+        crit_conflicts = [c for c in conflicts if (c.risk_level or "").upper() == "CRITICAL" or (c.ttc and c.ttc < 1.0)]
+        high_conflicts = [c for c in conflicts if (c.risk_level or "").upper() == "HIGH" or (c.ttc and c.ttc < 1.6)]
+        
+        crit_rate_veh = round((len(crit_conflicts) / exp_veh) * 100.0, 2)
+        crit_rate_ped = round((len(crit_conflicts) / exp_ped) * 100.0, 2)
+        sev_weight_sum = (len(crit_conflicts) * 1.0) + (len(high_conflicts) * 0.6) + ((len(conflicts) - len(crit_conflicts) - len(high_conflicts)) * 0.3)
+        sev_weight_rate = round((sev_weight_sum / exp_veh) * 100.0, 2)
+        exp_ctx = f"Calculated over estimated {int(exp_veh)} vehicle & {int(exp_ped)} VRU encounter exposures"
+
         factors = SafeCityFactors(
             pothole_risk_level=self.level_from_score(pothole_score),
             junction_risk_level=self.level_from_score(junction_score),
@@ -276,6 +296,10 @@ class DangerZoneService:
             road_importance_score=road_importance_score,
             data_confidence=quality["confidence_tier"],
             main_contributing_factor=main_factor,
+            critical_conflicts_per_100_vehicles=crit_rate_veh,
+            critical_conflicts_per_100_pedestrians=crit_rate_ped,
+            severity_weighted_conflict_rate=sev_weight_rate,
+            exposure_context=exp_ctx,
         )
 
         return RoadSafetyEvaluation(

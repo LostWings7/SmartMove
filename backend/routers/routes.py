@@ -53,6 +53,7 @@ def compare_routes_get(
                 hazards_count=r.hazards_count,
                 conflict_hotspots_count=r.conflict_hotspots_count,
                 explanation=r.explanation,
+                maneuvers=r.maneuvers,
                 waypoints=[
                     RouteWaypointOut(
                         latitude=w.latitude,

@@ -1,0 +1,35 @@
+{
+  "model_name": "SafeCity YOLO26s Water Segmentation",
+  "model_version": "1.0.0",
+  "architecture": "Ultralytics YOLO26s-seg",
+  "task": "segment",
+  "date_trained": "2026-09-30 17:53:55 UTC",
+  "training_time_sec": 1162.87,
+  "base_model": "yolo26s-seg.pt",
+  "dataset_config": "C:\\Users\\dvasa\\Projects\\SmartMove\\ml\\water\\configs\\water_data.yaml",
+  "epochs_requested": 3,
+  "batch_size": 16,
+  "image_size": 320,
+  "patience": 8,
+  "seed": 42,
+  "device": "cpu",
+  "software_versions": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.0",
+    "torch_version": "2.14.0+cpu",
+    "ultralytics_version": "8.4.166",
+    "git_commit": "334beaaf7f27eec8c8dc05dc7a83e709b8100334"
+  },
+  "metrics_summary": {
+    "metrics/precision(B)": 0.84771,
+    "metrics/recall(B)": 0.63219,
+    "metrics/mAP50(B)": 0.73042,
+    "metrics/mAP50-95(B)": 0.46637,
+    "metrics/precision(M)": 0.8162,
+    "metrics/recall(M)": 0.58829,
+    "metrics/mAP50(M)": 0.68723,
+    "metrics/mAP50-95(M)": 0.41363,
+    "fitness": 0.88
+  },
+  "weights_path": "C:\\Users\\dvasa\\Projects\\SmartMove\\models\\water_yolo26s_seg_v1.pt"
+}

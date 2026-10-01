@@ -1,0 +1,16 @@
+track_id,object_type,sample_count,first_frame,last_frame,duration_sec,net_displacement_px,mean_velocity_kmh,direction
+1365,car,53,,,,,14.4,Westbound
+91,car,51,,,,,0.1,Southbound
+786,car,50,,,,,32.4,Westbound
+901,car,47,,,,,61.6,Westbound
+124,pedestrian,47,,,,,3.5,Southbound
+1390,car,46,,,,,9.5,Westbound
+881,car,45,,,,,22.0,Westbound
+929,car,42,,,,,56.6,Westbound
+81,car,42,,,,,13.0,Southbound
+1038,pedestrian,42,,,,,6.1,Westbound
+261,pedestrian,40,,,,,11.2,Westbound
+295,car,38,,,,,14.0,Westbound
+1092,pedestrian,37,,,,,17.4,Westbound
+833,car,36,,,,,81.1,Westbound
+476,car,34,,,,,28.7,Westbound

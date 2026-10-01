@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import Layout from '@/components/layout/Layout'
 import DemoDataBanner from '@/components/ui/DemoDataBanner'
 import MapProvider from '@/components/map/MapProvider'
 import RiskBadge from '@/components/ui/RiskBadge'
 import StatusBadge from '@/components/ui/StatusBadge'
 import { useHazards, useRoads, useDangerZones, useEvidence } from '@/hooks/useApi'
+import { voiceActionDispatcher } from '@/services/voiceActionDispatcher'
 import type { Hazard, Road, RoadSafetyEvaluation } from '@/types'
 
 const HAZARD_TYPES = ['all', 'pothole', 'near-miss', 'dangerous-junction', 'road-work']
@@ -17,11 +19,14 @@ function scoreColor(score: number): string {
 }
 
 export default function SafeCityMap() {
+  const [searchParams] = useSearchParams()
   const [filter, setFilter] = useState('all')
   const [selectedRoadId, setSelectedRoadId] = useState<number | null>(1) // Default to School Road
   const [selectedHazard, setSelectedHazard] = useState<Hazard | null>(null)
   const [showRoads, setShowRoads] = useState(true)
   const [showHazards, setShowHazards] = useState(true)
+  const [mapCenter, setMapCenter] = useState<[number, number]>([51.5074, -0.1278])
+  const [mapZoom, setMapZoom] = useState<number>(14)
 
   const { data: hazards = [] } = useHazards()
   const { data: roads = [] } = useRoads()
@@ -66,6 +71,90 @@ export default function SafeCityMap() {
       setSelectedRoadId(hazard.road_id)
     }
   }
+
+  // Handle URL query parameters (e.g. ?lat=...&lng=... or ?hazard=...)
+  useEffect(() => {
+    const latParam = searchParams.get('lat')
+    const lngParam = searchParams.get('lng')
+    const zoomParam = searchParams.get('zoom')
+    if (latParam && lngParam) {
+      const lat = parseFloat(latParam)
+      const lng = parseFloat(lngParam)
+      const zoom = zoomParam ? parseInt(zoomParam, 10) : 15
+      if (!isNaN(lat) && !isNaN(lng)) {
+        setMapCenter([lat, lng])
+        setMapZoom(zoom)
+      }
+    }
+
+    const hazardParam = searchParams.get('hazard') || searchParams.get('highlight')
+    if (hazardParam && hazards.length > 0) {
+      const hId = parseInt(hazardParam, 10)
+      const target = hazards.find((h) => h.id === hId)
+      if (target) {
+        setSelectedHazard(target)
+        if (target.road_id) setSelectedRoadId(target.road_id)
+        if (target.latitude && target.longitude) {
+          setMapCenter([target.latitude, target.longitude])
+          setMapZoom(16)
+        }
+      }
+    }
+  }, [searchParams, hazards])
+
+  // Subscribe to live FRIDAY voice actions
+  useEffect(() => {
+    const unsubFocus = voiceActionDispatcher.subscribe('focus_map', (payload) => {
+      const lat = Number(payload.lat)
+      const lng = Number(payload.lng)
+      const zoom = payload.zoom ? Number(payload.zoom) : 15
+      if (!isNaN(lat) && !isNaN(lng)) {
+        setMapCenter([lat, lng])
+        setMapZoom(zoom)
+        return true
+      }
+      return false
+    })
+
+    const unsubHighlightHazard = voiceActionDispatcher.subscribe('highlight_hazard', (payload) => {
+      const hId = Number(payload.id)
+      const target = hazards.find((h) => h.id === hId)
+      if (target) {
+        setSelectedHazard(target)
+        if (target.road_id) setSelectedRoadId(target.road_id)
+        if (target.latitude && target.longitude) {
+          setMapCenter([target.latitude, target.longitude])
+          setMapZoom(16)
+        }
+        return true
+      }
+      return false
+    })
+
+    const unsubHighlightMapEntity = voiceActionDispatcher.subscribe('highlight_map_entity', (payload) => {
+      const hId = Number(payload.id)
+      const target = hazards.find((h) => h.id === hId)
+      if (target) {
+        setSelectedHazard(target)
+        if (target.road_id) setSelectedRoadId(target.road_id)
+        return true
+      }
+      return false
+    })
+
+    const unsubDanger = voiceActionDispatcher.subscribe('show_danger_zones', () => {
+      setShowRoads(true)
+      setShowHazards(true)
+      return true
+    })
+
+    return () => {
+      unsubFocus()
+      unsubHighlightHazard()
+      unsubHighlightMapEntity()
+      unsubDanger()
+    }
+  }, [hazards])
 
   return (
     <Layout title="SafeCity Risk Map" subtitle="Interactive multi-factor road risk, visual defect mapping, and coverage telemetry">
@@ -125,8 +214,8 @@ export default function SafeCityMap() {
               showHazards={showHazards}
               onRoadClick={handleSelectRoad}
               onMarkerClick={handleMarkerClick}
-              center={[51.5074, -0.1278]}
-              zoom={14}
+              center={mapCenter}
+              zoom={mapZoom}
               className="h-full w-full"
             />
           </div>

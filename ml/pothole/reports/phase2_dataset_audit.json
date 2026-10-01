@@ -1,0 +1,52 @@
+{
+  "train": {
+    "total_images": 1213,
+    "positive_images": 1053,
+    "negative_images": 160,
+    "negative_ratio_pct": 13.19,
+    "total_instances": 1612,
+    "instances_per_pos_image": 1.53,
+    "tiny_boxes_lt_002": 51,
+    "huge_boxes_gt_040": 89,
+    "multi_box_images": 289,
+    "sources": {
+      "RDD2022_India": 713,
+      "Secondary_Roboflow": 500
+    }
+  },
+  "val": {
+    "total_images": 287,
+    "positive_images": 261,
+    "negative_images": 26,
+    "negative_ratio_pct": 9.06,
+    "total_instances": 398,
+    "instances_per_pos_image": 1.52,
+    "tiny_boxes_lt_002": 19,
+    "huge_boxes_gt_040": 13,
+    "multi_box_images": 64,
+    "sources": {
+      "RDD2022_India": 191,
+      "Secondary_Roboflow": 96
+    }
+  },
+  "test": {
+    "total_images": 215,
+    "positive_images": 200,
+    "negative_images": 15,
+    "negative_ratio_pct": 6.98,
+    "total_instances": 322,
+    "instances_per_pos_image": 1.61,
+    "tiny_boxes_lt_002": 5,
+    "huge_boxes_gt_040": 11,
+    "multi_box_images": 64,
+    "sources": {
+      "RDD2022_India": 96,
+      "Secondary_Roboflow": 119
+    }
+  },
+  "cross_split_duplicates": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  }
+}

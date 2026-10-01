@@ -1,0 +1,35 @@
+{
+  "model_name": "SafeCity Traffic YOLO26s v2",
+  "base_model": "models/traffic_yolo26s_v1.pt",
+  "trained_weights": "models\\traffic_yolo26s_v2.pt",
+  "epochs_requested": 10,
+  "batch_size": 8,
+  "image_size": 512,
+  "device": "cpu",
+  "duration_seconds": 4900.97,
+  "duration_minutes": 81.68,
+  "timestamp": "2026-09-30 19:59:16",
+  "hardware": {
+    "cpu": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.14.0",
+    "torch": "2.14.0+cpu",
+    "cuda_available": false,
+    "xpu_available": false,
+    "selected_device": "cpu",
+    "openvino_devices": [
+      "CPU",
+      "GPU",
+      "NPU"
+    ]
+  },
+  "classes": [
+    "pedestrian",
+    "rider",
+    "car",
+    "truck",
+    "bus",
+    "motorcycle",
+    "bicycle"
+  ]
+}

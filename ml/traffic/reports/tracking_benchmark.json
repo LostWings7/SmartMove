@@ -1,0 +1,36 @@
+{
+  "evaluation_timestamp": "2026-09-30 17:00:57",
+  "video_sequence": "ml/traffic/dataset/sequences\\seq_b4a8ec73.mp4",
+  "model_used": "models/traffic_yolo26s_v1.pt",
+  "selected_default_tracker": "ByteTrack",
+  "comparison": {
+    "bytetrack": {
+      "tracker": "ByteTrack",
+      "tracker_config": "bytetrack.yaml",
+      "total_frames": 7,
+      "total_tracks": 28,
+      "total_detections": 42,
+      "id_switches": 7,
+      "fragmentation_events": 7,
+      "mean_track_length_frames": 1.5,
+      "mean_latency_ms": 514.04,
+      "fps": 1.9,
+      "surrogate_mota": 0.5,
+      "surrogate_idf1": 0.57
+    },
+    "botsort": {
+      "tracker": "BoT-SORT",
+      "tracker_config": "botsort.yaml",
+      "total_frames": 7,
+      "total_tracks": 28,
+      "total_detections": 37,
+      "id_switches": 9,
+      "fragmentation_events": 9,
+      "mean_track_length_frames": 1.3,
+      "mean_latency_ms": 156.89,
+      "fps": 6.4,
+      "surrogate_mota": 0.2703,
+      "surrogate_idf1": 0.49
+    }
+  }
+}

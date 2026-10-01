@@ -1,0 +1,44 @@
+{
+  "source_pytorch_model": "models/pothole_yolo26s.pt",
+  "openvino_model_path": "models\\pothole_yolo26s_openvino_model\\",
+  "benchmarks_by_device": {
+    "CPU": {
+      "available": true,
+      "supported": true,
+      "device_name": "Intel(R) Core(TM) Ultra 5 225H",
+      "mean_latency_ms": 100.65,
+      "p50_latency_ms": 97.62,
+      "p95_latency_ms": 149.25,
+      "fps": 9.9,
+      "runs_tested": 30
+    },
+    "GPU": {
+      "available": true,
+      "supported": true,
+      "device_name": "Intel(R) Graphics (iGPU)",
+      "mean_latency_ms": 23.9,
+      "p50_latency_ms": 24.02,
+      "p95_latency_ms": 26.13,
+      "fps": 41.8,
+      "runs_tested": 30
+    },
+    "NPU": {
+      "available": true,
+      "supported": true,
+      "device_name": "Intel(R) AI Boost",
+      "mean_latency_ms": 18.94,
+      "p50_latency_ms": 18.7,
+      "p95_latency_ms": 21.87,
+      "fps": 52.8,
+      "runs_tested": 30
+    }
+  },
+  "accuracy_parity": {
+    "images_evaluated": 50,
+    "pytorch_detections": 20,
+    "openvino_detections": 20,
+    "mean_bounding_box_iou": 0.9933,
+    "mean_confidence_difference": 0.0009,
+    "parity_passed": true
+  }
+}

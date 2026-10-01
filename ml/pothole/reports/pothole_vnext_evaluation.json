@@ -1,0 +1,328 @@
+{
+  "training_time_sec": 489.08,
+  "vnext_weights": "C:\\Users\\dvasa\\Projects\\SmartMove\\models\\pothole_yolo26s_vNEXT.pt",
+  "nms_analysis": {
+    "regression_005_boxes_standard_nms_0_45": 3,
+    "regression_005_boxes_containment_nms_0_75": 3,
+    "selected_iou_threshold": 0.45,
+    "selected_iomin_containment_threshold": 0.75
+  },
+  "threshold_sweep_baseline_v2": {
+    "0.20": {
+      "threshold": 0.2,
+      "precision": 0.6503,
+      "recall": 0.6317,
+      "f1": 0.6409,
+      "tp": 199,
+      "fp": 107,
+      "fn": 116
+    },
+    "0.25": {
+      "threshold": 0.25,
+      "precision": 0.6903,
+      "recall": 0.5873,
+      "f1": 0.6346,
+      "tp": 185,
+      "fp": 83,
+      "fn": 130
+    },
+    "0.30": {
+      "threshold": 0.3,
+      "precision": 0.7177,
+      "recall": 0.5651,
+      "f1": 0.6323,
+      "tp": 178,
+      "fp": 70,
+      "fn": 137
+    },
+    "0.35": {
+      "threshold": 0.35,
+      "precision": 0.7389,
+      "recall": 0.5302,
+      "f1": 0.6174,
+      "tp": 167,
+      "fp": 59,
+      "fn": 148
+    },
+    "0.40": {
+      "threshold": 0.4,
+      "precision": 0.7756,
+      "recall": 0.5048,
+      "f1": 0.6115,
+      "tp": 159,
+      "fp": 46,
+      "fn": 156
+    },
+    "0.45": {
+      "threshold": 0.45,
+      "precision": 0.7754,
+      "recall": 0.4603,
+      "f1": 0.5777,
+      "tp": 145,
+      "fp": 42,
+      "fn": 170
+    },
+    "0.50": {
+      "threshold": 0.5,
+      "precision": 0.7744,
+      "recall": 0.4032,
+      "f1": 0.5303,
+      "tp": 127,
+      "fp": 37,
+      "fn": 188
+    },
+    "0.55": {
+      "threshold": 0.55,
+      "precision": 0.7986,
+      "recall": 0.3524,
+      "f1": 0.489,
+      "tp": 111,
+      "fp": 28,
+      "fn": 204
+    },
+    "0.60": {
+      "threshold": 0.6,
+      "precision": 0.8151,
+      "recall": 0.3079,
+      "f1": 0.447,
+      "tp": 97,
+      "fp": 22,
+      "fn": 218
+    },
+    "0.70": {
+      "threshold": 0.7,
+      "precision": 0.8,
+      "recall": 0.1651,
+      "f1": 0.2737,
+      "tp": 52,
+      "fp": 13,
+      "fn": 263
+    },
+    "0.80": {
+      "threshold": 0.8,
+      "precision": 0.875,
+      "recall": 0.0222,
+      "f1": 0.0433,
+      "tp": 7,
+      "fp": 1,
+      "fn": 308
+    }
+  },
+  "threshold_sweep_vnext_with_road_context": {
+    "0.20": {
+      "threshold": 0.2,
+      "precision": 0.6923,
+      "recall": 0.4286,
+      "f1": 0.5294,
+      "tp": 135,
+      "fp": 60,
+      "fn": 180
+    },
+    "0.25": {
+      "threshold": 0.25,
+      "precision": 0.7394,
+      "recall": 0.3873,
+      "f1": 0.5083,
+      "tp": 122,
+      "fp": 43,
+      "fn": 193
+    },
+    "0.30": {
+      "threshold": 0.3,
+      "precision": 0.7626,
+      "recall": 0.3365,
+      "f1": 0.467,
+      "tp": 106,
+      "fp": 33,
+      "fn": 209
+    },
+    "0.35": {
+      "threshold": 0.35,
+      "precision": 0.8053,
+      "recall": 0.2889,
+      "f1": 0.4252,
+      "tp": 91,
+      "fp": 22,
+      "fn": 224
+    },
+    "0.40": {
+      "threshold": 0.4,
+      "precision": 0.8454,
+      "recall": 0.2603,
+      "f1": 0.3981,
+      "tp": 82,
+      "fp": 15,
+      "fn": 233
+    },
+    "0.45": {
+      "threshold": 0.45,
+      "precision": 0.875,
+      "recall": 0.2222,
+      "f1": 0.3544,
+      "tp": 70,
+      "fp": 10,
+      "fn": 245
+    },
+    "0.50": {
+      "threshold": 0.5,
+      "precision": 0.9016,
+      "recall": 0.1746,
+      "f1": 0.2926,
+      "tp": 55,
+      "fp": 6,
+      "fn": 260
+    },
+    "0.55": {
+      "threshold": 0.55,
+      "precision": 0.9167,
+      "recall": 0.1397,
+      "f1": 0.2424,
+      "tp": 44,
+      "fp": 4,
+      "fn": 271
+    },
+    "0.60": {
+      "threshold": 0.6,
+      "precision": 1.0,
+      "recall": 0.0921,
+      "f1": 0.1686,
+      "tp": 29,
+      "fp": 0,
+      "fn": 286
+    },
+    "0.70": {
+      "threshold": 0.7,
+      "precision": 1.0,
+      "recall": 0.0095,
+      "f1": 0.0189,
+      "tp": 3,
+      "fp": 0,
+      "fn": 312
+    },
+    "0.80": {
+      "threshold": 0.8,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 315
+    }
+  },
+  "stress_test_baseline_v2_conf_0_20": {
+    "non_road": {
+      "images": 38,
+      "fp_images": 3,
+      "fp_boxes": 4,
+      "fp_per_100_images": 10.53,
+      "false_positive_rate_pct": 7.89
+    },
+    "cracks": {
+      "images": 42,
+      "fp_images": 11,
+      "fp_boxes": 13,
+      "fp_per_100_images": 30.95,
+      "false_positive_rate_pct": 26.19
+    },
+    "shadows": {
+      "images": 35,
+      "fp_images": 6,
+      "fp_boxes": 6,
+      "fp_per_100_images": 17.14,
+      "false_positive_rate_pct": 17.14
+    },
+    "manholes": {
+      "images": 26,
+      "fp_images": 4,
+      "fp_boxes": 4,
+      "fp_per_100_images": 15.38,
+      "false_positive_rate_pct": 15.38
+    },
+    "road_patches": {
+      "images": 65,
+      "fp_images": 12,
+      "fp_boxes": 13,
+      "fp_per_100_images": 20.0,
+      "false_positive_rate_pct": 18.46
+    },
+    "wet_roads": {
+      "images": 35,
+      "fp_images": 20,
+      "fp_boxes": 43,
+      "fp_per_100_images": 122.86,
+      "false_positive_rate_pct": 57.14
+    },
+    "normal_roads": {
+      "images": 35,
+      "fp_images": 3,
+      "fp_boxes": 3,
+      "fp_per_100_images": 8.57,
+      "false_positive_rate_pct": 8.57
+    },
+    "overall": {
+      "images": 276,
+      "fp_images": 59,
+      "fp_boxes": 86,
+      "fp_per_100_images": 31.16,
+      "false_positive_rate_pct": 21.38
+    }
+  },
+  "stress_test_vnext_conf_0_30_with_context": {
+    "non_road": {
+      "images": 38,
+      "fp_images": 2,
+      "fp_boxes": 2,
+      "fp_per_100_images": 5.26,
+      "false_positive_rate_pct": 5.26
+    },
+    "cracks": {
+      "images": 42,
+      "fp_images": 4,
+      "fp_boxes": 4,
+      "fp_per_100_images": 9.52,
+      "false_positive_rate_pct": 9.52
+    },
+    "shadows": {
+      "images": 35,
+      "fp_images": 2,
+      "fp_boxes": 2,
+      "fp_per_100_images": 5.71,
+      "false_positive_rate_pct": 5.71
+    },
+    "manholes": {
+      "images": 26,
+      "fp_images": 3,
+      "fp_boxes": 3,
+      "fp_per_100_images": 11.54,
+      "false_positive_rate_pct": 11.54
+    },
+    "road_patches": {
+      "images": 65,
+      "fp_images": 8,
+      "fp_boxes": 8,
+      "fp_per_100_images": 12.31,
+      "false_positive_rate_pct": 12.31
+    },
+    "wet_roads": {
+      "images": 35,
+      "fp_images": 14,
+      "fp_boxes": 17,
+      "fp_per_100_images": 48.57,
+      "false_positive_rate_pct": 40.0
+    },
+    "normal_roads": {
+      "images": 35,
+      "fp_images": 2,
+      "fp_boxes": 2,
+      "fp_per_100_images": 5.71,
+      "false_positive_rate_pct": 5.71
+    },
+    "overall": {
+      "images": 276,
+      "fp_images": 35,
+      "fp_boxes": 38,
+      "fp_per_100_images": 13.77,
+      "false_positive_rate_pct": 12.68
+    }
+  }
+}

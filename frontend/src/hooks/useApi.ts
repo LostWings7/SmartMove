@@ -6,6 +6,7 @@ import type {
   RoadSafetyEvaluation, PrioritizedRepairItem, MunicipalRepairStatus,
   RouteComparisonResult, SmartJunctionDisplayState,
   RoadSegmentDossier, EvidenceFile, AuditLog, NearMiss, DecisionAuditRecord,
+  RoadConditionAnalysisResult,
 } from '@/types'
 
 // ── Dashboard ─────────────────────────────────────────────────────────────────
@@ -244,6 +245,40 @@ export function useAnalyzeTraffic() {
       queryKeyRefetch(queryClient, 'junctions')
       queryKeyRefetch(queryClient, 'conflicts')
       queryKeyRefetch(queryClient, 'conflict-hotspots')
+      queryKeyRefetch(queryClient, 'ai-events')
+      queryKeyRefetch(queryClient, 'danger-zones')
+      queryKeyRefetch(queryClient, 'road-intelligence')
+      queryKeyRefetch(queryClient, 'evidence')
+      queryKeyRefetch(queryClient, 'audit-logs')
+    },
+  })
+}
+
+export function useAnalyzeRoadCondition() {
+  const queryClient = useQueryClient()
+  return useMutation<RoadConditionAnalysisResult, Error, { file: File; road_id?: number; latitude?: number; longitude?: number }>({
+    mutationFn: async ({ file, road_id, latitude, longitude }) => {
+      const formData = new FormData()
+      formData.append('file', file)
+      if (road_id !== undefined && road_id !== null) {
+        formData.append('road_id', road_id.toString())
+      }
+      if (latitude !== undefined && latitude !== null) {
+        formData.append('latitude', latitude.toString())
+      }
+      if (longitude !== undefined && longitude !== null) {
+        formData.append('longitude', longitude.toString())
+      }
+      const response = await api.post('/api/road-condition/analyze', formData, {
+        headers: { 'Content-Type': undefined },
+        timeout: 120_000,
+      })
+      return response.data
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['dashboard'] })
+      queryKeyRefetch(queryClient, 'hazards')
+      queryKeyRefetch(queryClient, 'roads')
       queryKeyRefetch(queryClient, 'ai-events')
       queryKeyRefetch(queryClient, 'danger-zones')
       queryKeyRefetch(queryClient, 'road-intelligence')

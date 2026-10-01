@@ -8,9 +8,12 @@ from datetime import datetime, timedelta
 from sqlalchemy.orm import Session
 from backend.models import (
     Road, Hazard, NearMiss, Junction, Repair, Intervention,
-    CitizenReport, RiskSnapshot, EvidenceFile, AuditLog
+    CitizenReport, RiskSnapshot, EvidenceFile, AuditLog,
+    User, UserRole, ComplaintCategory, Complaint, ComplaintStatus,
+    ComplaintPriority, ComplaintStatusHistory, ComplaintEvidence, Notification
 )
 from backend.database import Base, engine, SessionLocal
+from backend.auth import hash_password
 
 
 def seed_all(db: Session, force_reseed: bool = False) -> None:
@@ -19,6 +22,9 @@ def seed_all(db: Session, force_reseed: bool = False) -> None:
     Zero random generation — completely deterministic on every run.
     """
     if not force_reseed and db.query(Road).count() > 0:
+        seed_categories(db)
+        seed_demo_users(db)
+        seed_demo_complaints(db)
         return
 
     print("[SEED] Seeding DETERMINISTIC SafeCity Loop V2 Demo Data...")
@@ -551,6 +557,323 @@ def seed_all(db: Session, force_reseed: bool = False) -> None:
     print(f"[SEED] Successfully seeded: {len(roads_seed)} roads, {len(junctions_seed)} junctions, "
           f"{len(hazards_seed)} hazards, {len(conflicts_seed)} conflicts, {len(repairs_seed)} repairs, "
           f"{len(evidence_seed)} evidence files, and {len(audit_seed)} audit logs.")
+
+    seed_categories(db)
+    seed_demo_users(db)
+    seed_demo_complaints(db)
+
+
+def seed_categories(db: Session) -> None:
+    if db.query(ComplaintCategory).count() > 0:
+        return
+    categories = [
+        {"name": "Pothole", "code": "POTHOLE", "description": "Road surface cavity, pit, or deep depression posing tire and suspension danger.", "is_ai_supported": True},
+        {"name": "Waterlogging", "code": "WATERLOGGING", "description": "Standing water accumulation, ponding, or clogged drainage channels on roadway.", "is_ai_supported": True},
+        {"name": "Road Crack", "code": "ROAD_CRACK", "description": "Longitudinal, transverse, or alligator pattern asphalt structural cracking.", "is_ai_supported": True},
+        {"name": "Road Surface Damage", "code": "ROAD_SURFACE_DAMAGE", "description": "Severe raveling, rutting, potholes, or widespread pavement disintegration.", "is_ai_supported": False},
+        {"name": "Traffic Conflict", "code": "TRAFFIC_CONFLICT", "description": "Recurring surrogate near-miss events, unsafe crossing conflicts, or abrupt braking.", "is_ai_supported": True},
+        {"name": "Dangerous Intersection", "code": "DANGEROUS_INTERSECTION", "description": "Uncontrolled junction, poor sightline, blind turns, or pedestrian hazard zone.", "is_ai_supported": True},
+        {"name": "Blocked Road", "code": "BLOCKED_ROAD", "description": "Vehicle breakdown, unauthorized road closure, or impassable obstacle.", "is_ai_supported": False},
+        {"name": "Damaged Road Infrastructure", "code": "DAMAGED_INFRASTRUCTURE", "description": "Broken guardrails, bent signage, damaged median barriers, or signal heads.", "is_ai_supported": False},
+        {"name": "Street/Traffic Obstruction", "code": "STREET_OBSTRUCTION", "description": "Encroaching construction debris, fallen trees, or sightline impediments.", "is_ai_supported": False},
+        {"name": "Other", "code": "OTHER", "description": "Other civic highway or urban mobility hazard.", "is_ai_supported": False},
+    ]
+    for cat in categories:
+        db.add(ComplaintCategory(**cat))
+    db.commit()
+    print(f"[SEED] Seeded {len(categories)} authoritative complaint categories.")
+
+
+def seed_demo_users(db: Session) -> None:
+    if db.query(User).count() > 0:
+        return
+    users = [
+        {
+            "full_name": "Priya Sharma [DEMO CITIZEN]",
+            "email": "citizen_demo@safecity.gov",
+            "phone_number": "+91 98450 12345",
+            "password_hash": hash_password("CitizenPass123!"),
+            "role": UserRole.CITIZEN,
+            "is_active": True,
+            "is_verified": True,
+        },
+        {
+            "full_name": "Marcus Chen [DEMO INSPECTOR]",
+            "email": "inspector_demo@safecity.gov",
+            "phone_number": "+91 98450 23456",
+            "password_hash": hash_password("InspectorPass123!"),
+            "role": UserRole.INSPECTOR,
+            "is_active": True,
+            "is_verified": True,
+        },
+        {
+            "full_name": "Elena Rostova [DEMO ENGINEER]",
+            "email": "engineer_demo@safecity.gov",
+            "phone_number": "+91 98450 34567",
+            "password_hash": hash_password("EngineerPass123!"),
+            "role": UserRole.ENGINEER,
+            "is_active": True,
+            "is_verified": True,
+        },
+        {
+            "full_name": "David Vance [DEMO ADMIN]",
+            "email": "admin_demo@safecity.gov",
+            "phone_number": "+91 98450 45678",
+            "password_hash": hash_password("AdminPass123!"),
+            "role": UserRole.ADMIN,
+            "is_active": True,
+            "is_verified": True,
+        },
+        {
+            "full_name": "Chief Commissioner Rao [DEMO SUPERUSER]",
+            "email": "superuser_demo@safecity.gov",
+            "phone_number": "+91 98450 56789",
+            "password_hash": hash_password("SuperPass123!"),
+            "role": UserRole.SUPERUSER,
+            "is_active": True,
+            "is_verified": True,
+        },
+    ]
+    for u in users:
+        db.add(User(**u))
+    db.commit()
+    print(f"[SEED] Seeded {len(users)} RBAC demo accounts (Citizen, Inspector, Engineer, Admin, Superuser).")
+
+
+def seed_demo_complaints(db: Session) -> None:
+    if db.query(Complaint).count() > 0:
+        return
+
+    citizen = db.query(User).filter(User.role == UserRole.CITIZEN).first()
+    inspector = db.query(User).filter(User.role == UserRole.INSPECTOR).first()
+    engineer = db.query(User).filter(User.role == UserRole.ENGINEER).first()
+    admin = db.query(User).filter(User.role == UserRole.ADMIN).first()
+
+    if not citizen:
+        return
+
+    pothole_cat = db.query(ComplaintCategory).filter(ComplaintCategory.code == "POTHOLE").first()
+    water_cat = db.query(ComplaintCategory).filter(ComplaintCategory.code == "WATERLOGGING").first()
+    crack_cat = db.query(ComplaintCategory).filter(ComplaintCategory.code == "ROAD_CRACK").first()
+
+    school_road = db.query(Road).filter(Road.id == 1).first()
+    market_junc = db.query(Road).filter(Road.id == 2).first()
+    hospital_road = db.query(Road).filter(Road.id == 3).first()
+
+    now = datetime(2026, 9, 23, 14, 0, 0)
+
+    # 1. Active pothole complaint
+    c1 = Complaint(
+        public_reference="SC-2026-000184",
+        citizen_id=citizen.id,
+        category_id=pothole_cat.id if pothole_cat else 1,
+        title="Severe Pothole Cluster near Primary School Crossing",
+        description="Multiple deep potholes formed right outside the school main gate. Vehicles swerving sharply into oncoming pedestrian path.",
+        status=ComplaintStatus.UNDER_REVIEW,
+        priority=ComplaintPriority.HIGH,
+        location_lat=51.5074,
+        location_lng=-0.1278,
+        location_address="School Road Corridor, East Gate Section",
+        road_segment_id=school_road.id if school_road else 1,
+        assigned_to=inspector.id if inspector else None,
+        assigned_department="Municipal Road Engineering",
+        source="CITIZEN",
+        ai_linked=True,
+        ai_confidence=0.88,
+        hazard_id=1,
+        created_at=now - timedelta(hours=6),
+        updated_at=now - timedelta(hours=2),
+    )
+    db.add(c1)
+    db.flush()
+
+    db.add(ComplaintStatusHistory(
+        complaint_id=c1.id,
+        old_status=None,
+        new_status=ComplaintStatus.SUBMITTED,
+        changed_by_id=citizen.id,
+        changed_by_name=citizen.full_name,
+        changed_by_role=citizen.role,
+        comment="Complaint submitted with photographic evidence.",
+        timestamp=now - timedelta(hours=6),
+    ))
+    db.add(ComplaintStatusHistory(
+        complaint_id=c1.id,
+        old_status=ComplaintStatus.SUBMITTED,
+        new_status=ComplaintStatus.ACKNOWLEDGED,
+        changed_by_id=admin.id if admin else citizen.id,
+        changed_by_name=admin.full_name if admin else "System",
+        changed_by_role=UserRole.ADMIN,
+        comment="Complaint received and queued for field inspection.",
+        timestamp=now - timedelta(hours=4),
+    ))
+    db.add(ComplaintStatusHistory(
+        complaint_id=c1.id,
+        old_status=ComplaintStatus.ACKNOWLEDGED,
+        new_status=ComplaintStatus.UNDER_REVIEW,
+        changed_by_id=inspector.id if inspector else citizen.id,
+        changed_by_name=inspector.full_name if inspector else "Inspector",
+        changed_by_role=UserRole.INSPECTOR,
+        comment="AI Vision cross-reference identified candidate pothole observation #1. Verifying coordinates.",
+        timestamp=now - timedelta(hours=2),
+    ))
+
+    # Evidence for c1
+    db.add(ComplaintEvidence(
+        complaint_id=c1.id,
+        uploader_id=citizen.id,
+        file_type="image",
+        file_url="/uploads/potholes/demo_pothole_1.jpg",
+        filename="school_road_pothole_cluster.jpg",
+        mime_type="image/jpeg",
+        file_size=245800,
+        uploaded_at=now - timedelta(hours=6),
+        privacy_status="processed",
+        notes="Citizen upload: deep surface cavity right in front of school bus pickup lane.",
+    ))
+
+    # 2. Resolved waterlogging complaint with citizen confirmation pending
+    c2 = Complaint(
+        public_reference="SC-2026-000171",
+        citizen_id=citizen.id,
+        category_id=water_cat.id if water_cat else 2,
+        title="Monsoon Waterlogging & Submerged Zebra Crosswalk",
+        description="Drain inlet blocked by construction debris. 15cm deep standing water submerges pedestrian crossing.",
+        status=ComplaintStatus.RESOLVED,
+        priority=ComplaintPriority.HIGH,
+        location_lat=51.5120,
+        location_lng=-0.1190,
+        location_address="Market Junction West Approach",
+        road_segment_id=market_junc.id if market_junc else 2,
+        assigned_to=engineer.id if engineer else None,
+        assigned_department="Water & Drainage Division",
+        source="CITIZEN",
+        created_at=now - timedelta(days=2),
+        updated_at=now - timedelta(hours=3),
+        resolved_at=now - timedelta(hours=3),
+        public_response="Rapid Drainage Crew deployed to flush blocked stormwater catch basin. Standing water cleared and flow re-established.",
+        resolution_summary="Storm catch basin cleared. Resurfacing of damaged shoulder completed.",
+    )
+    db.add(c2)
+    db.flush()
+
+    db.add(ComplaintStatusHistory(
+        complaint_id=c2.id,
+        old_status=None,
+        new_status=ComplaintStatus.SUBMITTED,
+        changed_by_id=citizen.id,
+        changed_by_name=citizen.full_name,
+        changed_by_role=citizen.role,
+        comment="Citizen report submitted.",
+        timestamp=now - timedelta(days=2),
+    ))
+    db.add(ComplaintStatusHistory(
+        complaint_id=c2.id,
+        old_status=ComplaintStatus.SUBMITTED,
+        new_status=ComplaintStatus.VERIFIED,
+        changed_by_id=inspector.id if inspector else citizen.id,
+        changed_by_name=inspector.full_name if inspector else "Inspector",
+        changed_by_role=UserRole.INSPECTOR,
+        comment="Verified 15cm flooding. Priority set to HIGH.",
+        timestamp=now - timedelta(days=1, hours=18),
+    ))
+    db.add(ComplaintStatusHistory(
+        complaint_id=c2.id,
+        old_status=ComplaintStatus.VERIFIED,
+        new_status=ComplaintStatus.IN_PROGRESS,
+        changed_by_id=engineer.id if engineer else citizen.id,
+        changed_by_name=engineer.full_name if engineer else "Engineer",
+        changed_by_role=UserRole.ENGINEER,
+        comment="Drain cleaning jetting vehicle dispatched.",
+        timestamp=now - timedelta(hours=8),
+    ))
+    db.add(ComplaintStatusHistory(
+        complaint_id=c2.id,
+        old_status=ComplaintStatus.IN_PROGRESS,
+        new_status=ComplaintStatus.RESOLVED,
+        changed_by_id=engineer.id if engineer else citizen.id,
+        changed_by_name=engineer.full_name if engineer else "Engineer",
+        changed_by_role=UserRole.ENGINEER,
+        comment="Catch basin flushed and clear water flow verified. Awaiting citizen confirmation.",
+        timestamp=now - timedelta(hours=3),
+    ))
+
+    # 3. In-progress road crack
+    c3 = Complaint(
+        public_reference="SC-2026-000165",
+        citizen_id=citizen.id,
+        category_id=crack_cat.id if crack_cat else 3,
+        title="Longitudinal Surface Crack Widening along Transit Lane",
+        description="Fissure extending over 12 meters near hospital ambulance turn-in. Motorcycles slipping during rain.",
+        status=ComplaintStatus.IN_PROGRESS,
+        priority=ComplaintPriority.MEDIUM,
+        location_lat=51.5030,
+        location_lng=-0.1350,
+        location_address="Hospital Road Northbound Corridor",
+        road_segment_id=hospital_road.id if hospital_road else 3,
+        assigned_to=engineer.id if engineer else None,
+        assigned_department="Municipal Public Works",
+        source="CITIZEN",
+        created_at=now - timedelta(days=3),
+        updated_at=now - timedelta(hours=5),
+        public_response="Cracking sealed with bituminous hot-pour filler. Final curing in progress.",
+    )
+    db.add(c3)
+    db.flush()
+
+    db.add(ComplaintStatusHistory(
+        complaint_id=c3.id,
+        old_status=None,
+        new_status=ComplaintStatus.SUBMITTED,
+        changed_by_id=citizen.id,
+        changed_by_name=citizen.full_name,
+        changed_by_role=citizen.role,
+        comment="Submitted by citizen.",
+        timestamp=now - timedelta(days=3),
+    ))
+    db.add(ComplaintStatusHistory(
+        complaint_id=c3.id,
+        old_status=ComplaintStatus.SUBMITTED,
+        new_status=ComplaintStatus.ASSIGNED,
+        changed_by_id=admin.id if admin else citizen.id,
+        changed_by_name=admin.full_name if admin else "Admin",
+        changed_by_role=UserRole.ADMIN,
+        comment="Assigned to Elena Rostova (Engineer).",
+        timestamp=now - timedelta(days=2),
+    ))
+    db.add(ComplaintStatusHistory(
+        complaint_id=c3.id,
+        old_status=ComplaintStatus.ASSIGNED,
+        new_status=ComplaintStatus.IN_PROGRESS,
+        changed_by_id=engineer.id if engineer else citizen.id,
+        changed_by_name=engineer.full_name if engineer else "Engineer",
+        changed_by_role=UserRole.ENGINEER,
+        comment="Hot-pour bitumen crack sealing started.",
+        timestamp=now - timedelta(hours=5),
+    ))
+
+    # Notifications for citizen
+    db.add(Notification(
+        user_id=citizen.id,
+        type="municipal_response",
+        title="Municipal Response on SC-2026-000171",
+        message="Your waterlogging complaint has been marked RESOLVED. Please inspect and confirm resolution.",
+        related_complaint_id=c2.id,
+        is_read=False,
+        created_at=now - timedelta(hours=3),
+    ))
+    db.add(Notification(
+        user_id=citizen.id,
+        type="status_update",
+        title="Status Update on SC-2026-000184",
+        message="Your pothole complaint is now UNDER REVIEW by Inspector Marcus Chen.",
+        related_complaint_id=c1.id,
+        is_read=True,
+        created_at=now - timedelta(hours=2),
+    ))
+
+    db.commit()
+    print("[SEED] Seeded 3 comprehensive demo complaints with status histories, evidence, and citizen notifications.")
 
 
 if __name__ == "__main__":

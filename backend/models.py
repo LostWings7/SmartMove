@@ -38,6 +38,7 @@ class Road(Base):
     repairs = relationship("Repair", back_populates="road", cascade="all, delete-orphan")
     snapshots = relationship("RiskSnapshot", back_populates="road", cascade="all, delete-orphan")
     evidence_files = relationship("EvidenceFile", back_populates="road", cascade="all, delete-orphan")
+    complaints = relationship("Complaint", back_populates="road")
 
 
 # Alias for explicit domain naming
@@ -69,6 +70,7 @@ class Hazard(Base):
     direction = Column(String(50), nullable=True)                  # e.g. "Northbound Lane 1"
 
     road = relationship("Road", back_populates="hazards")
+    complaints = relationship("Complaint", back_populates="hazard")
 
 
 # Alias for explicit domain naming
@@ -154,6 +156,7 @@ class Repair(Base):
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     road = relationship("Road", back_populates="repairs")
+    complaints = relationship("Complaint", back_populates="repair")
 
     @property
     def before_risk(self) -> Optional[float]:
@@ -281,4 +284,197 @@ class VideoAnalysis(Base):
     video_url = Column(String(500), nullable=True)
     processed_video_url = Column(String(500), nullable=True)
     summary_json = Column(JSON, default=dict)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SAFE CITY LOOP V2 — CITIZEN PORTAL & COMPLAINT WORKFLOW MODELS
+# ══════════════════════════════════════════════════════════════════════════════
+
+class UserRole:
+    CITIZEN = "CITIZEN"
+    INSPECTOR = "INSPECTOR"
+    ENGINEER = "ENGINEER"
+    ADMIN = "ADMIN"
+    SUPERUSER = "SUPERUSER"
+    ALL = [CITIZEN, INSPECTOR, ENGINEER, ADMIN, SUPERUSER]
+    STAFF = [INSPECTOR, ENGINEER, ADMIN, SUPERUSER]
+
+
+class ComplaintStatus:
+    SUBMITTED = "SUBMITTED"
+    ACKNOWLEDGED = "ACKNOWLEDGED"
+    UNDER_REVIEW = "UNDER_REVIEW"
+    VERIFIED = "VERIFIED"
+    ASSIGNED = "ASSIGNED"
+    IN_PROGRESS = "IN_PROGRESS"
+    RESOLVED = "RESOLVED"
+    CITIZEN_CONFIRMATION = "CITIZEN_CONFIRMATION"
+    CLOSED = "CLOSED"
+    REJECTED = "REJECTED"
+    DUPLICATE = "DUPLICATE"
+    REOPENED = "REOPENED"
+    ALL = [
+        SUBMITTED, ACKNOWLEDGED, UNDER_REVIEW, VERIFIED, ASSIGNED,
+        IN_PROGRESS, RESOLVED, CITIZEN_CONFIRMATION, CLOSED, REJECTED,
+        DUPLICATE, REOPENED
+    ]
+
+
+class ComplaintPriority:
+    LOW = "LOW"
+    MEDIUM = "MEDIUM"
+    HIGH = "HIGH"
+    CRITICAL = "CRITICAL"
+
+
+class ComplaintSource:
+    CITIZEN = "CITIZEN"
+    AI_DETECTION = "AI_DETECTION"
+    ADMIN = "ADMIN"
+    INSPECTOR = "INSPECTOR"
+    SYSTEM = "SYSTEM"
+
+
+class User(Base):
+    """Authoritative user account supporting RBAC (Citizen, Inspector, Engineer, Admin, Superuser)."""
+    __tablename__ = "users"
+
+    id = Column(Integer, primary_key=True, index=True)
+    full_name = Column(String(200), nullable=False)
+    email = Column(String(255), unique=True, index=True, nullable=False)
+    phone_number = Column(String(50), nullable=True)
+    password_hash = Column(String(255), nullable=False)
+    role = Column(String(50), default=UserRole.CITIZEN, index=True, nullable=False)
+    is_active = Column(Boolean, default=True, nullable=False)
+    is_verified = Column(Boolean, default=True, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    last_login = Column(DateTime, nullable=True)
+    profile_photo = Column(String(500), nullable=True)
+    preferred_language = Column(String(20), default="en")
+    notification_preferences = Column(JSON, default=lambda: {"email": True, "in_app": True})
+
+    complaints = relationship("Complaint", back_populates="citizen", foreign_keys="Complaint.citizen_id", cascade="all, delete-orphan")
+    assigned_complaints = relationship("Complaint", back_populates="assignee", foreign_keys="Complaint.assigned_to")
+    notifications = relationship("Notification", back_populates="user", cascade="all, delete-orphan")
+    evidence_uploads = relationship("ComplaintEvidence", back_populates="uploader")
+
+
+class ComplaintCategory(Base):
+    """Configurable municipal complaint category with AI detection capability flag."""
+    __tablename__ = "complaint_categories"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String(100), unique=True, nullable=False)
+    code = Column(String(50), unique=True, nullable=False)
+    description = Column(Text, nullable=True)
+    is_ai_supported = Column(Boolean, default=False)
+    is_active = Column(Boolean, default=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    complaints = relationship("Complaint", back_populates="category")
+
+
+class Complaint(Base):
+    """Normalized database-authoritative citizen and municipal complaint record."""
+    __tablename__ = "complaints"
+
+    id = Column(Integer, primary_key=True, index=True)
+    public_reference = Column(String(50), unique=True, index=True, nullable=False)  # e.g. "SC-2026-000184"
+    citizen_id = Column(Integer, ForeignKey("users.id"), index=True, nullable=False)
+    category_id = Column(Integer, ForeignKey("complaint_categories.id"), index=True, nullable=False)
+    title = Column(String(255), nullable=False)
+    description = Column(Text, nullable=False)
+    status = Column(String(50), default=ComplaintStatus.SUBMITTED, index=True, nullable=False)
+    priority = Column(String(20), default=ComplaintPriority.MEDIUM, index=True, nullable=False)
+    location_lat = Column(Float, nullable=False)
+    location_lng = Column(Float, nullable=False)
+    location_address = Column(String(500), nullable=True)
+    road_segment_id = Column(Integer, ForeignKey("roads.id"), index=True, nullable=True)
+    assigned_to = Column(Integer, ForeignKey("users.id"), index=True, nullable=True)
+    assigned_department = Column(String(100), default="Public Works", nullable=True)
+    source = Column(String(50), default=ComplaintSource.CITIZEN)
+
+    # Timestamps
+    created_at = Column(DateTime, default=datetime.utcnow, index=True, nullable=False)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, index=True)
+    resolved_at = Column(DateTime, nullable=True)
+    closed_at = Column(DateTime, nullable=True)
+    citizen_confirmed_at = Column(DateTime, nullable=True)
+
+    # Resolution & Municipal interaction
+    resolution_summary = Column(Text, nullable=True)
+    public_response = Column(Text, nullable=True)     # Visible to citizen
+    internal_notes = Column(Text, nullable=True)      # Staff/admin only
+
+    # SafeCity Loop Ecosystem Integration
+    ai_linked = Column(Boolean, default=False)
+    ai_confidence = Column(Float, nullable=True)
+    hazard_id = Column(Integer, ForeignKey("hazards.id"), nullable=True)
+    repair_id = Column(Integer, ForeignKey("repairs.id"), nullable=True)
+
+    # Relationships
+    citizen = relationship("User", foreign_keys=[citizen_id], back_populates="complaints")
+    assignee = relationship("User", foreign_keys=[assigned_to], back_populates="assigned_complaints")
+    category = relationship("ComplaintCategory", back_populates="complaints")
+    road = relationship("Road", back_populates="complaints")
+    hazard = relationship("Hazard", back_populates="complaints")
+    repair = relationship("Repair", back_populates="complaints")
+    evidence_items = relationship("ComplaintEvidence", back_populates="complaint", cascade="all, delete-orphan", order_by="ComplaintEvidence.uploaded_at.asc()")
+    status_history = relationship("ComplaintStatusHistory", back_populates="complaint", cascade="all, delete-orphan", order_by="ComplaintStatusHistory.timestamp.asc()")
+
+
+class ComplaintStatusHistory(Base):
+    """Full chronological audit trail of all complaint status transitions."""
+    __tablename__ = "complaint_status_histories"
+
+    id = Column(Integer, primary_key=True, index=True)
+    complaint_id = Column(Integer, ForeignKey("complaints.id"), index=True, nullable=False)
+    old_status = Column(String(50), nullable=True)
+    new_status = Column(String(50), nullable=False)
+    changed_by_id = Column(Integer, ForeignKey("users.id"), nullable=True)
+    changed_by_name = Column(String(200), nullable=False)
+    changed_by_role = Column(String(50), nullable=False)
+    comment = Column(Text, nullable=True)
+    timestamp = Column(DateTime, default=datetime.utcnow, index=True, nullable=False)
+
+    complaint = relationship("Complaint", back_populates="status_history")
+    changed_by = relationship("User")
+
+
+class ComplaintEvidence(Base):
+    """Validated evidence media uploaded for a complaint."""
+    __tablename__ = "complaint_evidences"
+
+    id = Column(Integer, primary_key=True, index=True)
+    complaint_id = Column(Integer, ForeignKey("complaints.id"), index=True, nullable=False)
+    uploader_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    file_type = Column(String(50), nullable=False)      # image, video, document
+    file_url = Column(String(500), nullable=False)
+    filename = Column(String(255), nullable=False)
+    mime_type = Column(String(100), nullable=False)
+    file_size = Column(Integer, nullable=False)
+    uploaded_at = Column(DateTime, default=datetime.utcnow, index=True, nullable=False)
+    privacy_status = Column(String(50), default="processed")
+    notes = Column(Text, nullable=True)
+
+    complaint = relationship("Complaint", back_populates="evidence_items")
+    uploader = relationship("User", back_populates="evidence_uploads")
+
+
+class Notification(Base):
+    """In-app notifications for citizens and municipal staff."""
+    __tablename__ = "notifications"
+
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), index=True, nullable=False)
+    type = Column(String(50), nullable=False)  # status_update, assignment, municipal_response, system
+    title = Column(String(200), nullable=False)
+    message = Column(Text, nullable=False)
+    related_complaint_id = Column(Integer, ForeignKey("complaints.id"), nullable=True)
+    is_read = Column(Boolean, default=False, index=True, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow, index=True, nullable=False)
+
+    user = relationship("User", back_populates="notifications")
+    complaint = relationship("Complaint")
 

@@ -1,0 +1,90 @@
+{
+  "dataset_name": "BDD100K Expanded Driving Video Dataset (SafeCity V2)",
+  "source": "Berkeley DeepDrive (BSD 3-Clause)",
+  "total_images": 2271,
+  "corrupted_images": 0,
+  "total_sequences": 958,
+  "classes": {
+    "pedestrian": 5931,
+    "rider": 658,
+    "car": 22888,
+    "truck": 1166,
+    "bus": 512,
+    "motorcycle": 460,
+    "bicycle": 1039
+  },
+  "splits": {
+    "train": {
+      "images": 1593,
+      "objects": 23069,
+      "sequences": 670,
+      "classes": {
+        "car": 16113,
+        "truck": 843,
+        "pedestrian": 4213,
+        "bicycle": 730,
+        "bus": 366,
+        "rider": 485,
+        "motorcycle": 319
+      }
+    },
+    "val": {
+      "images": 306,
+      "objects": 4502,
+      "sequences": 142,
+      "classes": {
+        "pedestrian": 758,
+        "rider": 98,
+        "car": 3184,
+        "truck": 157,
+        "bicycle": 173,
+        "motorcycle": 64,
+        "bus": 68
+      }
+    },
+    "test": {
+      "images": 372,
+      "objects": 5083,
+      "sequences": 146,
+      "classes": {
+        "car": 3591,
+        "pedestrian": 960,
+        "motorcycle": 77,
+        "bicycle": 136,
+        "rider": 75,
+        "truck": 166,
+        "bus": 78
+      }
+    }
+  },
+  "size_distribution": {
+    "small": 13467,
+    "medium": 13361,
+    "large": 5826
+  },
+  "weather": {
+    "rainy": 139,
+    "partly cloudy": 187,
+    "clear": 1098,
+    "overcast": 304,
+    "undefined": 389,
+    "snowy": 153,
+    "foggy": 1
+  },
+  "timeofday": {
+    "daytime": 1436,
+    "dawn/dusk": 183,
+    "night": 649,
+    "undefined": 3
+  },
+  "scene": {
+    "city street": 1639,
+    "highway": 354,
+    "residential": 264,
+    "undefined": 5,
+    "parking lot": 5,
+    "gas stations": 2,
+    "tunnel": 2
+  },
+  "manifest_sequences": 291
+}

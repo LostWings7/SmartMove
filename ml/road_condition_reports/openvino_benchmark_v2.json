@@ -1,0 +1,157 @@
+{
+  "hardware": {
+    "CPU": "Intel(R) Core(TM) Ultra 5 225H",
+    "GPU": "Intel(R) Graphics (iGPU)",
+    "NPU": "Intel(R) AI Boost"
+  },
+  "available_devices": [
+    "CPU",
+    "GPU",
+    "NPU"
+  ],
+  "models": {
+    "pothole_yolo26s_v2": {
+      "CPU": {
+        "status": "SUPPORTED",
+        "device": "CPU",
+        "mean_latency_ms": 26.77,
+        "p95_latency_ms": 30.39,
+        "fps": 37.4,
+        "memory_rss_mb": 412.3,
+        "memory_delta_mb": 132.5
+      },
+      "GPU": {
+        "status": "SUPPORTED",
+        "device": "GPU",
+        "mean_latency_ms": 5.51,
+        "p95_latency_ms": 6.06,
+        "fps": 181.5,
+        "memory_rss_mb": 505.0,
+        "memory_delta_mb": 178.1
+      },
+      "NPU": {
+        "status": "SUPPORTED",
+        "device": "NPU",
+        "mean_latency_ms": 10.85,
+        "p95_latency_ms": 14.7,
+        "fps": 92.2,
+        "memory_rss_mb": 559.2,
+        "memory_delta_mb": 83.6
+      }
+    },
+    "pothole_yolo26s_vNEXT": {
+      "CPU": {
+        "status": "SUPPORTED",
+        "device": "CPU",
+        "mean_latency_ms": 26.65,
+        "p95_latency_ms": 29.48,
+        "fps": 37.5,
+        "memory_rss_mb": 591.2,
+        "memory_delta_mb": 103.5
+      },
+      "GPU": {
+        "status": "SUPPORTED",
+        "device": "GPU",
+        "mean_latency_ms": 5.66,
+        "p95_latency_ms": 6.91,
+        "fps": 176.7,
+        "memory_rss_mb": 516.9,
+        "memory_delta_mb": 30.6
+      },
+      "NPU": {
+        "status": "SUPPORTED",
+        "device": "NPU",
+        "mean_latency_ms": 10.82,
+        "p95_latency_ms": 14.38,
+        "fps": 92.4,
+        "memory_rss_mb": 584.6,
+        "memory_delta_mb": 91.6
+      }
+    },
+    "water_yolo26s_seg_v1": {
+      "CPU": {
+        "status": "SUPPORTED",
+        "device": "CPU",
+        "mean_latency_ms": 41.18,
+        "p95_latency_ms": 45.8,
+        "fps": 24.3,
+        "memory_rss_mb": 608.3,
+        "memory_delta_mb": 113.4
+      },
+      "GPU": {
+        "status": "SUPPORTED",
+        "device": "GPU",
+        "mean_latency_ms": 8.09,
+        "p95_latency_ms": 8.52,
+        "fps": 123.6,
+        "memory_rss_mb": 536.7,
+        "memory_delta_mb": 48.2
+      },
+      "NPU": {
+        "status": "SUPPORTED",
+        "device": "NPU",
+        "mean_latency_ms": 14.8,
+        "p95_latency_ms": 18.14,
+        "fps": 67.6,
+        "memory_rss_mb": 623.6,
+        "memory_delta_mb": 112.7
+      }
+    },
+    "road_crack_yolo26s_v2": {
+      "CPU": {
+        "status": "SUPPORTED",
+        "device": "CPU",
+        "mean_latency_ms": 26.17,
+        "p95_latency_ms": 27.32,
+        "fps": 38.2,
+        "memory_rss_mb": 609.4,
+        "memory_delta_mb": 97.3
+      },
+      "GPU": {
+        "status": "SUPPORTED",
+        "device": "GPU",
+        "mean_latency_ms": 5.31,
+        "p95_latency_ms": 5.96,
+        "fps": 188.3,
+        "memory_rss_mb": 531.6,
+        "memory_delta_mb": 29.2
+      },
+      "NPU": {
+        "status": "SUPPORTED",
+        "device": "NPU",
+        "mean_latency_ms": 8.14,
+        "p95_latency_ms": 8.63,
+        "fps": 122.9,
+        "memory_rss_mb": 600.0,
+        "memory_delta_mb": 91.9
+      }
+    }
+  },
+  "combined_pipeline": {
+    "CPU": {
+      "pothole_ms": 26.65,
+      "water_ms": 41.18,
+      "crack_tiled_ms": 57.57,
+      "road_context_and_fusion_ms": 8.5,
+      "total_pipeline_ms": 133.9,
+      "pipeline_fps": 7.47
+    },
+    "GPU": {
+      "pothole_ms": 5.66,
+      "water_ms": 8.09,
+      "crack_tiled_ms": 11.68,
+      "road_context_and_fusion_ms": 8.5,
+      "total_pipeline_ms": 33.93,
+      "pipeline_fps": 29.47
+    },
+    "NPU": {
+      "pothole_ms": 10.82,
+      "water_ms": 14.8,
+      "crack_tiled_ms": 17.91,
+      "road_context_and_fusion_ms": 8.5,
+      "total_pipeline_ms": 52.03,
+      "pipeline_fps": 19.22
+    },
+    "e2e_service_measured_ms": 1318.88
+  }
+}

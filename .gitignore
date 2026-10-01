@@ -7,6 +7,8 @@
 .env.*
 !.env.example
 !frontend/.env.example
+temp_jarvis_extract/
+*.zip
 
 # Database files
 *.db
@@ -42,6 +44,13 @@ env/
 *.onnx
 *.weights
 !models/README.md
+!models/pothole_model.json
+
+# ML Datasets & Training Runs
+ml/pothole/dataset/raw/
+ml/pothole/dataset/processed/
+ml/pothole/runs/
+runs/
 
 # Uploads & Temporary Media
 uploads/

@@ -1,0 +1,15 @@
+# SafeCity Water Segmentation Dataset Config
+path: C:/Users/dvasa/Projects/SmartMove/ml/water/dataset/processed
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: water_puddle
+
+# Dataset metadata
+dataset_name: "SafeCity Puddle & Road Water Segmentation Dataset"
+classes: 1
+source: "Puddle-1000 / Curated Road Puddle Segmentation Benchmark"
+annotation_format: "YOLO Polygon Segmentation Mask (Class 0: water_puddle)"
+created_at: "2026-09-30 17:20:38 UTC"

@@ -1,0 +1,38 @@
+{
+  "model_name": "SafeCity Traffic YOLO26s v1",
+  "base_model": "yolo26s.pt",
+  "trained_weights": "models/traffic_yolo26s_v1.pt",
+  "epochs": 5,
+  "batch_size": 8,
+  "image_size": 512,
+  "device": "cpu",
+  "duration_seconds": 1631.9,
+  "duration_minutes": 27.2,
+  "timestamp": "2026-09-30 16:57:21",
+  "hardware": {
+    "cpu": "Intel(R) Core(TM) Ultra 5 225H (14 cores, 16 threads)",
+    "ram": "16 GB",
+    "torch_version": "2.14.0+cpu",
+    "cuda_available": false,
+    "xpu_available": false,
+    "openvino_devices": ["CPU", "GPU", "NPU"]
+  },
+  "classes": [
+    "pedestrian",
+    "rider",
+    "car",
+    "truck",
+    "bus",
+    "motorcycle",
+    "bicycle"
+  ],
+  "final_metrics": {
+    "precision": 0.47565,
+    "recall": 0.24068,
+    "mAP50": 0.29186,
+    "mAP50_peak": 0.29552,
+    "mAP50_95": 0.15352,
+    "val_cls_loss": 1.37678,
+    "val_box_loss": 2.02133
+  }
+}

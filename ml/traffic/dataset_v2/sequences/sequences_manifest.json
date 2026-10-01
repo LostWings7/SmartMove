@@ -1,0 +1,3388 @@
+{
+  "b27098c3": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b27098c3.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c2f25682": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c2f25682.mp4",
+    "frame_count": 3,
+    "split": "test",
+    "classes_present": [
+      "pedestrian",
+      "motorcycle",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c9240f77": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c9240f77.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle"
+    ]
+  },
+  "b701e0ad": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b701e0ad.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "bc692855": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bc692855.mp4",
+    "frame_count": 5,
+    "split": "val",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian",
+      "truck"
+    ]
+  },
+  "bda1cdfa": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bda1cdfa.mp4",
+    "frame_count": 3,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bd6ca291": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bd6ca291.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "b6241b17": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b6241b17.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "bab692c9": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bab692c9.mp4",
+    "frame_count": 8,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c45d3e0a": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c45d3e0a.mp4",
+    "frame_count": 3,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c33251a6": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c33251a6.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "motorcycle",
+      "bus",
+      "car",
+      "rider"
+    ]
+  },
+  "bb5cc516": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bb5cc516.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle"
+    ]
+  },
+  "bf0e0d24": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bf0e0d24.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c96e0b6a": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c96e0b6a.mp4",
+    "frame_count": 3,
+    "split": "val",
+    "classes_present": [
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b398327e": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b398327e.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "motorcycle",
+      "bus"
+    ]
+  },
+  "be651ed5": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_be651ed5.mp4",
+    "frame_count": 14,
+    "split": "train",
+    "classes_present": [
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c330c787": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c330c787.mp4",
+    "frame_count": 9,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car"
+    ]
+  },
+  "b246c8e8": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b246c8e8.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "car",
+      "motorcycle",
+      "bus"
+    ]
+  },
+  "c0f5b0d0": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c0f5b0d0.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c38cd3f6": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c38cd3f6.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b533db8e": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b533db8e.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian",
+      "bus"
+    ]
+  },
+  "c3968de8": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c3968de8.mp4",
+    "frame_count": 5,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "rider"
+    ]
+  },
+  "bcaf73c1": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bcaf73c1.mp4",
+    "frame_count": 20,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c1ed2bc1": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c1ed2bc1.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian",
+      "truck"
+    ]
+  },
+  "b68e35b5": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b68e35b5.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b6db6674": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b6db6674.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b44a7e5f": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b44a7e5f.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "rider"
+    ]
+  },
+  "c036f281": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c036f281.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian"
+    ]
+  },
+  "bc140c47": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bc140c47.mp4",
+    "frame_count": 3,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "motorcycle",
+      "bus",
+      "car",
+      "rider"
+    ]
+  },
+  "bc197c3b": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bc197c3b.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c447f74e": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c447f74e.mp4",
+    "frame_count": 4,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c50b63be": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c50b63be.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "c4353b9c": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c4353b9c.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b8a135c9": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b8a135c9.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "car",
+      "pedestrian",
+      "motorcycle",
+      "bus"
+    ]
+  },
+  "c0677163": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c0677163.mp4",
+    "frame_count": 13,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c38bdba6": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c38bdba6.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "car",
+      "rider"
+    ]
+  },
+  "c1ba5ee6": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c1ba5ee6.mp4",
+    "frame_count": 8,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b266db29": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b266db29.mp4",
+    "frame_count": 6,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c7d8260d": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c7d8260d.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "fe1d9184": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_fe1d9184.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "car",
+      "motorcycle",
+      "bus"
+    ]
+  },
+  "b9429f07": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b9429f07.mp4",
+    "frame_count": 3,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "bf482378": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bf482378.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "bicycle",
+      "car"
+    ]
+  },
+  "b89aded3": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b89aded3.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "truck",
+      "car",
+      "motorcycle"
+    ]
+  },
+  "bdaeda37": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bdaeda37.mp4",
+    "frame_count": 4,
+    "split": "val",
+    "classes_present": [
+      "rider",
+      "car",
+      "pedestrian"
+    ]
+  },
+  "c6406d76": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c6406d76.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "c5b2506d": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c5b2506d.mp4",
+    "frame_count": 10,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bb9071ac": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bb9071ac.mp4",
+    "frame_count": 8,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bd355fcc": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bd355fcc.mp4",
+    "frame_count": 13,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c776d10b": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c776d10b.mp4",
+    "frame_count": 8,
+    "split": "train",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian",
+      "bus"
+    ]
+  },
+  "b9597719": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b9597719.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b5296e2a": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b5296e2a.mp4",
+    "frame_count": 3,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "rider"
+    ]
+  },
+  "b7bfad97": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b7bfad97.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "bea64506": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bea64506.mp4",
+    "frame_count": 4,
+    "split": "val",
+    "classes_present": [
+      "rider",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "c7aa5575": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c7aa5575.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "c92046a2": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c92046a2.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c9c778b5": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c9c778b5.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b3599e04": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b3599e04.mp4",
+    "frame_count": 3,
+    "split": "test",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian"
+    ]
+  },
+  "bc24f222": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bc24f222.mp4",
+    "frame_count": 6,
+    "split": "test",
+    "classes_present": [
+      "rider",
+      "car",
+      "motorcycle",
+      "truck"
+    ]
+  },
+  "c897cc2b": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c897cc2b.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c4e96efa": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c4e96efa.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bb6264e8": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bb6264e8.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b6579e76": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b6579e76.mp4",
+    "frame_count": 7,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c1bbc01a": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c1bbc01a.mp4",
+    "frame_count": 3,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bc621584": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bc621584.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b74f9c57": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b74f9c57.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "car",
+      "pedestrian",
+      "motorcycle",
+      "bus"
+    ]
+  },
+  "bca36352": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bca36352.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bec7b5c0": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bec7b5c0.mp4",
+    "frame_count": 12,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c9df3b7e": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c9df3b7e.mp4",
+    "frame_count": 6,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c89ee093": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c89ee093.mp4",
+    "frame_count": 5,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bd656105": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bd656105.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c3b31662": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c3b31662.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "rider"
+    ]
+  },
+  "c51ec845": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c51ec845.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car"
+    ]
+  },
+  "c96ab7ea": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c96ab7ea.mp4",
+    "frame_count": 7,
+    "split": "train",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "bus"
+    ]
+  },
+  "b8b15e54": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b8b15e54.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c24e7c72": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c24e7c72.mp4",
+    "frame_count": 6,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle"
+    ]
+  },
+  "b7fc572c": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b7fc572c.mp4",
+    "frame_count": 4,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b726c429": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b726c429.mp4",
+    "frame_count": 7,
+    "split": "train",
+    "classes_present": [
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c5e32cf6": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c5e32cf6.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c4eb5462": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c4eb5462.mp4",
+    "frame_count": 6,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle"
+    ]
+  },
+  "c2ccdd66": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c2ccdd66.mp4",
+    "frame_count": 6,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "b8ee7220": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b8ee7220.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "truck",
+      "car",
+      "motorcycle"
+    ]
+  },
+  "b36de7af": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b36de7af.mp4",
+    "frame_count": 3,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "rider"
+    ]
+  },
+  "c2a6b1c9": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c2a6b1c9.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c4436054": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c4436054.mp4",
+    "frame_count": 4,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "rider"
+    ]
+  },
+  "c5eb7f02": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c5eb7f02.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c43df889": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c43df889.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "car",
+      "motorcycle"
+    ]
+  },
+  "b7a8e795": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b7a8e795.mp4",
+    "frame_count": 8,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "c1d9b74d": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c1d9b74d.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bbfe3b4f": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bbfe3b4f.mp4",
+    "frame_count": 3,
+    "split": "val",
+    "classes_present": [
+      "rider",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "b8086e12": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b8086e12.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "c07733d0": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c07733d0.mp4",
+    "frame_count": 7,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "truck",
+      "car"
+    ]
+  },
+  "c65d48bf": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c65d48bf.mp4",
+    "frame_count": 9,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "truck",
+      "car",
+      "motorcycle"
+    ]
+  },
+  "c74fff46": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c74fff46.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "c4742900": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c4742900.mp4",
+    "frame_count": 14,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c1a07cae": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c1a07cae.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "rider"
+    ]
+  },
+  "c1f8d9b3": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c1f8d9b3.mp4",
+    "frame_count": 12,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "bc7a7a1f": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bc7a7a1f.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "rider"
+    ]
+  },
+  "b5d6e647": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b5d6e647.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "rider"
+    ]
+  },
+  "b35dac08": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b35dac08.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car"
+    ]
+  },
+  "c143af06": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c143af06.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "c9aa50be": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c9aa50be.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bf1af616": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bf1af616.mp4",
+    "frame_count": 3,
+    "split": "val",
+    "classes_present": [
+      "rider",
+      "car",
+      "motorcycle"
+    ]
+  },
+  "b59413ff": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b59413ff.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle"
+    ]
+  },
+  "b20b69d2": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b20b69d2.mp4",
+    "frame_count": 8,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c25f97e6": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c25f97e6.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle"
+    ]
+  },
+  "c0e6d0ec": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c0e6d0ec.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b6f4b139": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b6f4b139.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "c49c8353": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c49c8353.mp4",
+    "frame_count": 12,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "rider"
+    ]
+  },
+  "b5046f1e": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b5046f1e.mp4",
+    "frame_count": 7,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b71d7574": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b71d7574.mp4",
+    "frame_count": 5,
+    "split": "val",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian",
+      "bus"
+    ]
+  },
+  "b5a09604": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b5a09604.mp4",
+    "frame_count": 13,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c993615f": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c993615f.mp4",
+    "frame_count": 13,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "c9403737": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c9403737.mp4",
+    "frame_count": 7,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "c197a2a7": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c197a2a7.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "b769f2fa": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b769f2fa.mp4",
+    "frame_count": 9,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b7446774": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b7446774.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "rider"
+    ]
+  },
+  "c396e833": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c396e833.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b2a60634": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b2a60634.mp4",
+    "frame_count": 4,
+    "split": "test",
+    "classes_present": [
+      "bicycle",
+      "car"
+    ]
+  },
+  "b8f0315c": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b8f0315c.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "c1fdd182": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c1fdd182.mp4",
+    "frame_count": 6,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bd026bc5": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bd026bc5.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian",
+      "truck"
+    ]
+  },
+  "bfe587eb": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bfe587eb.mp4",
+    "frame_count": 4,
+    "split": "test",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian"
+    ]
+  },
+  "bc2a1273": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bc2a1273.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle"
+    ]
+  },
+  "bfaca2bb": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bfaca2bb.mp4",
+    "frame_count": 5,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c76fbaa1": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c76fbaa1.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle"
+    ]
+  },
+  "bfbe2ad2": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bfbe2ad2.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "b7d277b3": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b7d277b3.mp4",
+    "frame_count": 3,
+    "split": "val",
+    "classes_present": [
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "c87a634a": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c87a634a.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "b43eb946": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b43eb946.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "c146d100": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c146d100.mp4",
+    "frame_count": 6,
+    "split": "train",
+    "classes_present": [
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b2f48fc3": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b2f48fc3.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c8eeb9c9": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c8eeb9c9.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b7ad4512": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b7ad4512.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "car",
+      "truck",
+      "bicycle"
+    ]
+  },
+  "c2c5fee5": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c2c5fee5.mp4",
+    "frame_count": 3,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle"
+    ]
+  },
+  "b368ee71": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b368ee71.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bc31a829": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bc31a829.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "bicycle",
+      "car"
+    ]
+  },
+  "bf1e5669": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bf1e5669.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c3f50821": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c3f50821.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "bd1b8b79": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bd1b8b79.mp4",
+    "frame_count": 8,
+    "split": "train",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian"
+    ]
+  },
+  "b1d0a191": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b1d0a191.mp4",
+    "frame_count": 7,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c605bc6e": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c605bc6e.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "c417a291": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c417a291.mp4",
+    "frame_count": 4,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c15c29a5": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c15c29a5.mp4",
+    "frame_count": 10,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b5a72f23": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b5a72f23.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "car",
+      "motorcycle"
+    ]
+  },
+  "c620ac7c": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c620ac7c.mp4",
+    "frame_count": 3,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c239f9d5": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c239f9d5.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "pedestrian",
+      "motorcycle",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "ba2e8260": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_ba2e8260.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "b5b02b31": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b5b02b31.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c11f4171": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c11f4171.mp4",
+    "frame_count": 3,
+    "split": "test",
+    "classes_present": [
+      "rider",
+      "bicycle",
+      "car",
+      "pedestrian"
+    ]
+  },
+  "b33ea6cb": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b33ea6cb.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c83c10de": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c83c10de.mp4",
+    "frame_count": 5,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bb289fdb": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bb289fdb.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "truck",
+      "car",
+      "bicycle"
+    ]
+  },
+  "c12ea027": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c12ea027.mp4",
+    "frame_count": 3,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c5bc3aa9": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c5bc3aa9.mp4",
+    "frame_count": 3,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle"
+    ]
+  },
+  "b3e0345b": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b3e0345b.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c5ca1272": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c5ca1272.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b312dcb5": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b312dcb5.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "pedestrian",
+      "motorcycle",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b75da19e": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b75da19e.mp4",
+    "frame_count": 6,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b2bdb7b6": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b2bdb7b6.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c6dca574": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c6dca574.mp4",
+    "frame_count": 3,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car"
+    ]
+  },
+  "b9fb5382": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b9fb5382.mp4",
+    "frame_count": 7,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "b306fb3f": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b306fb3f.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "c59500f0": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c59500f0.mp4",
+    "frame_count": 7,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle"
+    ]
+  },
+  "c155d65b": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c155d65b.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "truck",
+      "car",
+      "bicycle"
+    ]
+  },
+  "c8c97803": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c8c97803.mp4",
+    "frame_count": 9,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bea02fed": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bea02fed.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "rider"
+    ]
+  },
+  "c75e23fe": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c75e23fe.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "b61212a0": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b61212a0.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "car",
+      "bicycle"
+    ]
+  },
+  "b6c938b0": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b6c938b0.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian"
+    ]
+  },
+  "bdb95837": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bdb95837.mp4",
+    "frame_count": 6,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "b61f19ba": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b61f19ba.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian",
+      "truck"
+    ]
+  },
+  "c433e2aa": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c433e2aa.mp4",
+    "frame_count": 3,
+    "split": "test",
+    "classes_present": [
+      "bicycle",
+      "car"
+    ]
+  },
+  "b4aabd48": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b4aabd48.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "c030d423": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c030d423.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle"
+    ]
+  },
+  "c48ba79f": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c48ba79f.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian"
+    ]
+  },
+  "c4dbd719": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c4dbd719.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "car",
+      "rider"
+    ]
+  },
+  "c6716c49": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c6716c49.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "b5f84825": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b5f84825.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian",
+      "truck"
+    ]
+  },
+  "c6adfd20": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c6adfd20.mp4",
+    "frame_count": 6,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "car",
+      "rider"
+    ]
+  },
+  "b75f355e": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b75f355e.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car"
+    ]
+  },
+  "b4a99fcc": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b4a99fcc.mp4",
+    "frame_count": 6,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "rider"
+    ]
+  },
+  "b6d0b9d1": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b6d0b9d1.mp4",
+    "frame_count": 7,
+    "split": "test",
+    "classes_present": [
+      "rider",
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "bd989210": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bd989210.mp4",
+    "frame_count": 6,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b487a2fa": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b487a2fa.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b555790d": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b555790d.mp4",
+    "frame_count": 7,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "rider"
+    ]
+  },
+  "bfc62f16": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bfc62f16.mp4",
+    "frame_count": 6,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bdb56045": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bdb56045.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "car",
+      "rider"
+    ]
+  },
+  "b2e54795": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b2e54795.mp4",
+    "frame_count": 8,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c07e5e33": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c07e5e33.mp4",
+    "frame_count": 5,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c7955e20": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c7955e20.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "car",
+      "bicycle"
+    ]
+  },
+  "c569c251": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c569c251.mp4",
+    "frame_count": 11,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bd3bd3ab": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bd3bd3ab.mp4",
+    "frame_count": 7,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c752e922": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c752e922.mp4",
+    "frame_count": 7,
+    "split": "train",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian"
+    ]
+  },
+  "c95c7aac": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c95c7aac.mp4",
+    "frame_count": 6,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b42df626": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b42df626.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bd92c756": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bd92c756.mp4",
+    "frame_count": 3,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bffe8c14": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bffe8c14.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b4a8ec73": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b4a8ec73.mp4",
+    "frame_count": 7,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c0945c0c": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c0945c0c.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c4a19ba6": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c4a19ba6.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car"
+    ]
+  },
+  "b4253085": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b4253085.mp4",
+    "frame_count": 6,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bb8dba97": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bb8dba97.mp4",
+    "frame_count": 10,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c698371e": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c698371e.mp4",
+    "frame_count": 6,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle"
+    ]
+  },
+  "c690ecdd": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c690ecdd.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle"
+    ]
+  },
+  "b6219281": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b6219281.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c48bcc55": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c48bcc55.mp4",
+    "frame_count": 3,
+    "split": "test",
+    "classes_present": [
+      "car",
+      "pedestrian",
+      "motorcycle",
+      "bus"
+    ]
+  },
+  "c4a6774c": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c4a6774c.mp4",
+    "frame_count": 3,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c60b2910": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c60b2910.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian",
+      "truck"
+    ]
+  },
+  "c685aea9": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c685aea9.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b5b17442": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b5b17442.mp4",
+    "frame_count": 4,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b4c0a877": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b4c0a877.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b5e6efc0": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b5e6efc0.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "bf214d1e": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bf214d1e.mp4",
+    "frame_count": 3,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b6a8503c": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b6a8503c.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "bus"
+    ]
+  },
+  "c1b3582d": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c1b3582d.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b728b79a": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b728b79a.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "motorcycle"
+    ]
+  },
+  "bd4518ef": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bd4518ef.mp4",
+    "frame_count": 4,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b48c7b5f": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b48c7b5f.mp4",
+    "frame_count": 7,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c69e5864": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c69e5864.mp4",
+    "frame_count": 4,
+    "split": "test",
+    "classes_present": [
+      "rider",
+      "bicycle",
+      "car",
+      "pedestrian"
+    ]
+  },
+  "b291cfd6": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b291cfd6.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle"
+    ]
+  },
+  "c66c630d": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c66c630d.mp4",
+    "frame_count": 6,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle"
+    ]
+  },
+  "c664605e": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c664605e.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "motorcycle"
+    ]
+  },
+  "b8fe9f2b": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b8fe9f2b.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "b953a340": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b953a340.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b674bc13": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b674bc13.mp4",
+    "frame_count": 8,
+    "split": "test",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian",
+      "bus"
+    ]
+  },
+  "b979217b": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b979217b.mp4",
+    "frame_count": 4,
+    "split": "val",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian"
+    ]
+  },
+  "b803d91d": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b803d91d.mp4",
+    "frame_count": 7,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c24838fd": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c24838fd.mp4",
+    "frame_count": 6,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "car",
+      "bicycle"
+    ]
+  },
+  "c6921a51": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c6921a51.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bd0380e5": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bd0380e5.mp4",
+    "frame_count": 4,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c614250f": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c614250f.mp4",
+    "frame_count": 3,
+    "split": "test",
+    "classes_present": [
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "c155b6d9": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c155b6d9.mp4",
+    "frame_count": 4,
+    "split": "val",
+    "classes_present": [
+      "car",
+      "pedestrian",
+      "motorcycle",
+      "bus"
+    ]
+  },
+  "b4607812": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b4607812.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b39fe3cd": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b39fe3cd.mp4",
+    "frame_count": 15,
+    "split": "test",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian",
+      "truck"
+    ]
+  },
+  "c66cd6fa": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c66cd6fa.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car"
+    ]
+  },
+  "c2e3cd3c": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c2e3cd3c.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "pedestrian",
+      "motorcycle",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b6c771db": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b6c771db.mp4",
+    "frame_count": 3,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b36a5c73": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b36a5c73.mp4",
+    "frame_count": 4,
+    "split": "val",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian",
+      "truck"
+    ]
+  },
+  "b8b2be1e": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b8b2be1e.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "motorcycle"
+    ]
+  },
+  "c0e24bac": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c0e24bac.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "car",
+      "motorcycle",
+      "bicycle"
+    ]
+  },
+  "b79c1f8d": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b79c1f8d.mp4",
+    "frame_count": 5,
+    "split": "val",
+    "classes_present": [
+      "pedestrian",
+      "motorcycle",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c8a7a62d": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c8a7a62d.mp4",
+    "frame_count": 4,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bicycle"
+    ]
+  },
+  "c98258a4": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c98258a4.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle"
+    ]
+  },
+  "c32dbcaf": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c32dbcaf.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "motorcycle"
+    ]
+  },
+  "b4ca8154": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b4ca8154.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "ca3165e0": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_ca3165e0.mp4",
+    "frame_count": 5,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "car",
+      "bicycle"
+    ]
+  },
+  "c50faaad": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c50faaad.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "bd50478a": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bd50478a.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c45fbe22": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c45fbe22.mp4",
+    "frame_count": 4,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c1f39934": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c1f39934.mp4",
+    "frame_count": 9,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c91a84db": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c91a84db.mp4",
+    "frame_count": 6,
+    "split": "train",
+    "classes_present": [
+      "bicycle",
+      "car",
+      "pedestrian",
+      "bus"
+    ]
+  },
+  "ca55fb23": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_ca55fb23.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "motorcycle",
+      "car",
+      "rider"
+    ]
+  },
+  "b1ff4656": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b1ff4656.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "rider",
+      "truck",
+      "car",
+      "motorcycle"
+    ]
+  },
+  "bb8e2033": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_bb8e2033.mp4",
+    "frame_count": 3,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b27d5dcb": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b27d5dcb.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "pedestrian",
+      "motorcycle",
+      "bus",
+      "car",
+      "rider"
+    ]
+  },
+  "b2d502aa": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b2d502aa.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c427410f": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c427410f.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "c37b9726": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_c37b9726.mp4",
+    "frame_count": 6,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "pedestrian",
+      "bus",
+      "car",
+      "bicycle",
+      "rider"
+    ]
+  },
+  "b1ceb32e": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b1ceb32e.mp4",
+    "frame_count": 4,
+    "split": "test",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian"
+    ]
+  },
+  "b1d10d08": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b1d10d08.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "car",
+      "pedestrian",
+      "bus"
+    ]
+  },
+  "b1d4b62c": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b1d4b62c.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "car",
+      "pedestrian"
+    ]
+  },
+  "b1d7b3ac": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b1d7b3ac.mp4",
+    "frame_count": 8,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bus"
+    ]
+  },
+  "b1e1a7b8": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b1e1a7b8.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bus"
+    ]
+  },
+  "b1ee702d": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b1ee702d.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "car"
+    ]
+  },
+  "b1f20aa0": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b1f20aa0.mp4",
+    "frame_count": 3,
+    "split": "val",
+    "classes_present": [
+      "car",
+      "pedestrian"
+    ]
+  },
+  "b1f4491b": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b1f4491b.mp4",
+    "frame_count": 11,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bus"
+    ]
+  },
+  "b1f6c103": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b1f6c103.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "car"
+    ]
+  },
+  "b204a5c1": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b204a5c1.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bus"
+    ]
+  },
+  "b20eae11": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b20eae11.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car"
+    ]
+  },
+  "b21c86ac": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b21c86ac.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "car",
+      "bus"
+    ]
+  },
+  "b23b2649": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b23b2649.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bus"
+    ]
+  },
+  "b242f6b2": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b242f6b2.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "car",
+      "pedestrian",
+      "bus"
+    ]
+  },
+  "b24380ab": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b24380ab.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car"
+    ]
+  },
+  "b24702e3": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b24702e3.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "bus"
+    ]
+  },
+  "b2505382": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b2505382.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "car"
+    ]
+  },
+  "b251064f": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b251064f.mp4",
+    "frame_count": 5,
+    "split": "train",
+    "classes_present": [
+      "car",
+      "pedestrian",
+      "bus"
+    ]
+  },
+  "b255cd6c": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b255cd6c.mp4",
+    "frame_count": 9,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bus"
+    ]
+  },
+  "b26ba07a": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b26ba07a.mp4",
+    "frame_count": 8,
+    "split": "test",
+    "classes_present": [
+      "car",
+      "bus"
+    ]
+  },
+  "b26cfcdc": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b26cfcdc.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian"
+    ]
+  },
+  "b277a772": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b277a772.mp4",
+    "frame_count": 4,
+    "split": "test",
+    "classes_present": [
+      "car"
+    ]
+  },
+  "b279bc06": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b279bc06.mp4",
+    "frame_count": 3,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian"
+    ]
+  },
+  "b2828509": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b2828509.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car"
+    ]
+  },
+  "b28cb5d3": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b28cb5d3.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bus"
+    ]
+  },
+  "b28ec521": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b28ec521.mp4",
+    "frame_count": 4,
+    "split": "val",
+    "classes_present": [
+      "car",
+      "pedestrian"
+    ]
+  },
+  "b29806ee": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b29806ee.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car"
+    ]
+  },
+  "b3a6f586": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b3a6f586.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bus"
+    ]
+  },
+  "b3c4e98b": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b3c4e98b.mp4",
+    "frame_count": 4,
+    "split": "test",
+    "classes_present": [
+      "car",
+      "pedestrian",
+      "bus"
+    ]
+  },
+  "b3d6c39a": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b3d6c39a.mp4",
+    "frame_count": 5,
+    "split": "val",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bus"
+    ]
+  },
+  "b3e08585": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b3e08585.mp4",
+    "frame_count": 4,
+    "split": "train",
+    "classes_present": [
+      "car",
+      "pedestrian"
+    ]
+  },
+  "b4259d0f": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b4259d0f.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian",
+      "bus"
+    ]
+  },
+  "b4542860": {
+    "video_file": "ml/traffic/dataset_v2\\sequences\\seq_b4542860.mp4",
+    "frame_count": 3,
+    "split": "train",
+    "classes_present": [
+      "truck",
+      "car",
+      "pedestrian"
+    ]
+  }
+}

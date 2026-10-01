@@ -1,0 +1,143 @@
+{
+  "evaluation_timestamp": "2026-09-30 20:01:00",
+  "test_data_yaml": "ml/traffic/configs/traffic_data_v2.yaml",
+  "regression_video": "ml/traffic/dataset/sequences/seq_b4a8ec73.mp4",
+  "v1": {
+    "detection": {
+      "precision": 0.6224,
+      "recall": 0.2751,
+      "f1": 0.3815,
+      "mAP50": 0.3092,
+      "mAP50_95": 0.1751,
+      "mean_latency_ms": 57.87,
+      "fps": 17.3,
+      "per_class": {
+        "pedestrian": {
+          "precision": 0.4079,
+          "recall": 0.475,
+          "f1": 0.4389,
+          "ap50": 0.4159,
+          "ap50_95": 0.1887
+        },
+        "rider": {
+          "precision": 1.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "ap50": 0.0223,
+          "ap50_95": 0.0115
+        },
+        "car": {
+          "precision": 0.5545,
+          "recall": 0.5879,
+          "f1": 0.5707,
+          "ap50": 0.5904,
+          "ap50_95": 0.3374
+        },
+        "truck": {
+          "precision": 0.4907,
+          "recall": 0.3313,
+          "f1": 0.3955,
+          "ap50": 0.3439,
+          "ap50_95": 0.2313
+        },
+        "bus": {
+          "precision": 0.6025,
+          "recall": 0.2915,
+          "f1": 0.3929,
+          "ap50": 0.3711,
+          "ap50_95": 0.259
+        },
+        "motorcycle": {
+          "precision": 0.5852,
+          "recall": 0.0779,
+          "f1": 0.1375,
+          "ap50": 0.1835,
+          "ap50_95": 0.0825
+        },
+        "bicycle": {
+          "precision": 0.716,
+          "recall": 0.1618,
+          "f1": 0.2639,
+          "ap50": 0.2372,
+          "ap50_95": 0.1152
+        }
+      }
+    },
+    "tracking": {
+      "total_frames": 7,
+      "total_detections": 42,
+      "unique_tracks": 28,
+      "mean_track_length": 1.5,
+      "id_switches": 7
+    }
+  },
+  "v2": {
+    "detection": {
+      "precision": 0.5443,
+      "recall": 0.4062,
+      "f1": 0.4652,
+      "mAP50": 0.4374,
+      "mAP50_95": 0.2439,
+      "mean_latency_ms": 55.44,
+      "fps": 18.0,
+      "per_class": {
+        "pedestrian": {
+          "precision": 0.5684,
+          "recall": 0.449,
+          "f1": 0.5017,
+          "ap50": 0.4727,
+          "ap50_95": 0.2248
+        },
+        "rider": {
+          "precision": 0.4439,
+          "recall": 0.2933,
+          "f1": 0.3532,
+          "ap50": 0.2895,
+          "ap50_95": 0.141
+        },
+        "car": {
+          "precision": 0.6316,
+          "recall": 0.6486,
+          "f1": 0.64,
+          "ap50": 0.6681,
+          "ap50_95": 0.4114
+        },
+        "truck": {
+          "precision": 0.4846,
+          "recall": 0.4217,
+          "f1": 0.451,
+          "ap50": 0.4526,
+          "ap50_95": 0.3013
+        },
+        "bus": {
+          "precision": 0.5458,
+          "recall": 0.4487,
+          "f1": 0.4925,
+          "ap50": 0.4897,
+          "ap50_95": 0.3443
+        },
+        "motorcycle": {
+          "precision": 0.7038,
+          "recall": 0.3247,
+          "f1": 0.4444,
+          "ap50": 0.409,
+          "ap50_95": 0.1545
+        },
+        "bicycle": {
+          "precision": 0.4322,
+          "recall": 0.2575,
+          "f1": 0.3227,
+          "ap50": 0.2803,
+          "ap50_95": 0.1301
+        }
+      }
+    },
+    "tracking": {
+      "total_frames": 7,
+      "total_detections": 27,
+      "unique_tracks": 22,
+      "mean_track_length": 1.23,
+      "id_switches": 3
+    }
+  }
+}

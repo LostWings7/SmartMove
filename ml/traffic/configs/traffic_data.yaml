@@ -1,0 +1,18 @@
+# SafeCity Loop V2 — Custom Traffic Scene Object Detector Dataset Configuration
+# Primary Data: Berkeley DeepDrive (BDD100K) — BSD 3-Clause License
+# Split by Video Sequence (Zero Temporal Leakage)
+
+path: c:/Users/dvasa/Projects/SmartMove/ml/traffic/dataset/processed
+train: images/train
+val: images/val
+test: images/test
+
+# SafeCity Urban Road-User Classes
+names:
+  0: pedestrian
+  1: rider
+  2: car
+  3: truck
+  4: bus
+  5: motorcycle
+  6: bicycle

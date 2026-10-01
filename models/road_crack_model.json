@@ -1,0 +1,42 @@
+{
+  "model_name": "SafeCity YOLO26s Road Crack Detector",
+  "model_version": "1.0.0",
+  "architecture": "Ultralytics YOLO26s",
+  "task": "detect",
+  "date_trained": "2026-09-30 18:17:39 UTC",
+  "training_time_sec": 1412.89,
+  "classes": [
+    "longitudinal_crack",
+    "transverse_crack",
+    "alligator_crack"
+  ],
+  "class_mapping": {
+    "0": "longitudinal_crack",
+    "1": "transverse_crack",
+    "2": "alligator_crack"
+  },
+  "base_model": "yolo26s.pt",
+  "dataset_config": "C:\\Users\\dvasa\\Projects\\SmartMove\\ml\\cracks\\configs\\crack_data.yaml",
+  "epochs_requested": 3,
+  "batch_size": 16,
+  "image_size": 384,
+  "patience": 5,
+  "freeze": 10,
+  "seed": 42,
+  "device": "cpu",
+  "software_versions": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.0",
+    "torch_version": "2.14.0+cpu",
+    "ultralytics_version": "8.4.166",
+    "git_commit": "334beaaf7f27eec8c8dc05dc7a83e709b8100334"
+  },
+  "metrics_summary": {
+    "metrics/precision(B)": 0.45005,
+    "metrics/recall(B)": 0.40207,
+    "metrics/mAP50(B)": 0.37262,
+    "metrics/mAP50-95(B)": 0.15941,
+    "fitness": 0.15941
+  },
+  "weights_path": "C:\\Users\\dvasa\\Projects\\SmartMove\\models\\road_crack_yolo26s_v1.pt"
+}

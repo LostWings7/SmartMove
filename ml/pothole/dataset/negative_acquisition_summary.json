@@ -1,0 +1,6 @@
+{
+  "selected_train_negatives": 700,
+  "selected_val_negatives": 100,
+  "selected_stress_test": 120,
+  "mined_hard_negatives": 224
+}

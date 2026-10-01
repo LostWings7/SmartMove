@@ -1,0 +1,30 @@
+{
+  "dataset_name": "SafeCity Pothole Dataset V2 (Balanced & Hard-Negative Augmented)",
+  "date_created": "2026-09-30",
+  "splits": {
+    "train": {
+      "total": 1753,
+      "pos": 1027,
+      "neg": 726,
+      "instances": 1584
+    },
+    "val": {
+      "total": 361,
+      "pos": 258,
+      "neg": 103,
+      "instances": 394
+    },
+    "test": {
+      "total": 215,
+      "pos": 193,
+      "neg": 22,
+      "instances": 315
+    }
+  },
+  "added_negatives": {
+    "train": 540,
+    "val": 74,
+    "test": 0
+  },
+  "data_yaml": "C:/Users/dvasa/Projects/SmartMove/ml/pothole/configs/data_v2.yaml"
+}

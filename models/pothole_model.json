@@ -1,0 +1,320 @@
+{
+  "model_name": "SafeCity YOLO26s Pothole Detector",
+  "version": "1.0.0",
+  "architecture": "Ultralytics YOLO26s",
+  "date_created": "2026-09-30",
+  "task": "detect",
+  "classes": [
+    "pothole"
+  ],
+  "class_mapping": {
+    "0": "pothole"
+  },
+  "primary_dataset": {
+    "name": "Road Damage Dataset 2022 (RDD2022) - India Subset",
+    "source": "Seki Lab / CRDDC2022 (dronefreak/RDD2022 on Hugging Face)",
+    "license": "CC BY-SA 4.0",
+    "class_extracted": "D40 (Pothole)"
+  },
+  "secondary_dataset": {
+    "name": "Pothole Detection Dataset",
+    "source": "rupesh002/pothole-detection-dataset on Hugging Face",
+    "license": "MIT"
+  },
+  "dataset_split": {
+    "total_images": 1715,
+    "train_images": 1213,
+    "val_images": 287,
+    "test_images": 215,
+    "total_pothole_instances": 2332,
+    "train_instances": 1612,
+    "val_instances": 398,
+    "test_instances": 322,
+    "negative_background_images": 201,
+    "split_strategy": "Corridor sequence-leakage-free block grouping"
+  },
+  "test_metrics": {
+    "precision": 0.4747,
+    "recall": 0.4294,
+    "f1_score": 0.4509,
+    "map50": 0.3774,
+    "map50_95": 0.1678,
+    "eval_image_size": 512,
+    "test_split_size": 215,
+    "latency_pytorch_cpu_ms": 150.58,
+    "fps_pytorch_cpu": 6.6
+  },
+  "operating_thresholds": {
+    "empirically_optimal_f1": 0.4,
+    "balanced_production_default": 0.35,
+    "high_recall_patrol": 0.25,
+    "high_precision_dispatch": 0.5
+  },
+  "threshold_sweep": {
+    "0.20": {
+      "precision": 0.2302,
+      "recall": 0.6242,
+      "f1": 0.3364,
+      "tp": 201,
+      "fp": 672,
+      "fn": 121
+    },
+    "0.30": {
+      "precision": 0.3702,
+      "recall": 0.5093,
+      "f1": 0.4288,
+      "tp": 164,
+      "fp": 279,
+      "fn": 158
+    },
+    "0.40": {
+      "precision": 0.5226,
+      "recall": 0.3944,
+      "f1": 0.4496,
+      "tp": 127,
+      "fp": 116,
+      "fn": 195
+    },
+    "0.50": {
+      "precision": 0.719,
+      "recall": 0.2702,
+      "f1": 0.3928,
+      "tp": 87,
+      "fp": 34,
+      "fn": 235
+    },
+    "0.60": {
+      "precision": 0.7377,
+      "recall": 0.1398,
+      "f1": 0.235,
+      "tp": 45,
+      "fp": 16,
+      "fn": 277
+    },
+    "0.70": {
+      "precision": 0.72,
+      "recall": 0.0559,
+      "f1": 0.1037,
+      "tp": 18,
+      "fp": 7,
+      "fn": 304
+    },
+    "0.80": {
+      "precision": 1.0,
+      "recall": 0.0031,
+      "f1": 0.0062,
+      "tp": 1,
+      "fp": 0,
+      "fn": 321
+    }
+  },
+  "hardware_benchmarks": {
+    "host_cpu": {
+      "name": "Intel(R) Core(TM) Ultra 5 225H (14 cores, 18 threads)",
+      "openvino_latency_ms": 61.14,
+      "openvino_fps": 16.4,
+      "pytorch_cpu_latency_ms": 150.58,
+      "pytorch_cpu_fps": 6.6
+    },
+    "integrated_gpu": {
+      "name": "Intel(R) Graphics (iGPU) - Driver 32.0.101.8991",
+      "openvino_latency_ms": 12.43,
+      "openvino_fps": 80.5,
+      "speedup_vs_cpu": "4.92x"
+    },
+    "npu": {
+      "name": "Intel(R) AI Boost (NPU)",
+      "openvino_latency_ms": 18.07,
+      "openvino_fps": 55.4,
+      "speedup_vs_cpu": "3.38x",
+      "energy_efficiency": "Ultra-low TDP continuous road patrol mode"
+    }
+  },
+  "accuracy_parity": {
+    "tested_samples": 50,
+    "pytorch_detections": 20,
+    "openvino_detections": 20,
+    "mean_bounding_box_iou": 0.9933,
+    "mean_confidence_diff": 0.0009,
+    "status": "PASSED"
+  },
+  "model_paths": {
+    "pytorch_checkpoint": "models/pothole_yolo26s.pt",
+    "openvino_ir_dir": "models/pothole_yolo26s_openvino_model",
+    "legacy_symlink": "models/pothole_yolov8.pt"
+  },
+  "environment": {
+    "python": "3.14.0",
+    "torch": "2.14.0+cpu",
+    "ultralytics": "8.4.166",
+    "openvino": "2026.4.0",
+    "opencv": "5.0.0-dev"
+  },
+  "active_model_version": "2.0.0",
+  "last_updated": "2026-09-30",
+  "deployed_checkpoint": "models/pothole_yolo26s.pt",
+  "openvino_ir_dir": "models/pothole_yolo26s_openvino_model",
+  "selected_confidence_threshold": 0.2,
+  "nms_iou_threshold": 0.45,
+  "input_resolution": 512,
+  "v2_metrics": {
+    "precision": 0.6463,
+    "recall": 0.615,
+    "f1_score": 0.6303,
+    "map50": 0.5808,
+    "map50_95": 0.3177,
+    "stress_test_fpr": 16.67,
+    "clean_road_specificity": 83.33,
+    "latency_ms": 59.86,
+    "fps": 16.7
+  },
+  "v1_vs_v2_comparison": {
+    "precision": {
+      "v1": 0.4747,
+      "v2": 0.6463,
+      "improvement": "+17.2%"
+    },
+    "recall": {
+      "v1": 0.4294,
+      "v2": 0.615,
+      "improvement": "+18.6%"
+    },
+    "f1_score": {
+      "v1": 0.4509,
+      "v2": 0.6303,
+      "improvement": "+17.9%"
+    },
+    "map50": {
+      "v1": 0.3774,
+      "v2": 0.5808,
+      "improvement": "+20.3%"
+    },
+    "map50_95": {
+      "v1": 0.1678,
+      "v2": 0.3177,
+      "improvement": "+15.0%"
+    },
+    "stress_test_fpr": {
+      "v1": "46.7%",
+      "v2": "16.7%",
+      "reduction": "30.0% reduction"
+    },
+    "problem_image_detections": {
+      "v1": 17,
+      "v2": 7,
+      "reduction": "-10 false detections"
+    }
+  },
+  "threshold_sweep_v2": {
+    "0.20": {
+      "threshold": 0.2,
+      "precision": 0.6307,
+      "recall": 0.6127,
+      "f1": 0.6216,
+      "fdr": 0.3693,
+      "tp": 193,
+      "fp": 113,
+      "fn": 122
+    },
+    "0.25": {
+      "threshold": 0.25,
+      "precision": 0.6679,
+      "recall": 0.5683,
+      "f1": 0.6141,
+      "fdr": 0.3321,
+      "tp": 179,
+      "fp": 89,
+      "fn": 136
+    },
+    "0.30": {
+      "threshold": 0.3,
+      "precision": 0.6935,
+      "recall": 0.546,
+      "f1": 0.611,
+      "fdr": 0.3065,
+      "tp": 172,
+      "fp": 76,
+      "fn": 143
+    },
+    "0.35": {
+      "threshold": 0.35,
+      "precision": 0.7124,
+      "recall": 0.5111,
+      "f1": 0.5952,
+      "fdr": 0.2876,
+      "tp": 161,
+      "fp": 65,
+      "fn": 154
+    },
+    "0.40": {
+      "threshold": 0.4,
+      "precision": 0.7512,
+      "recall": 0.4889,
+      "f1": 0.5923,
+      "fdr": 0.2488,
+      "tp": 154,
+      "fp": 51,
+      "fn": 161
+    },
+    "0.45": {
+      "threshold": 0.45,
+      "precision": 0.7647,
+      "recall": 0.454,
+      "f1": 0.5697,
+      "fdr": 0.2353,
+      "tp": 143,
+      "fp": 44,
+      "fn": 172
+    },
+    "0.50": {
+      "threshold": 0.5,
+      "precision": 0.7683,
+      "recall": 0.4,
+      "f1": 0.5261,
+      "fdr": 0.2317,
+      "tp": 126,
+      "fp": 38,
+      "fn": 189
+    },
+    "0.55": {
+      "threshold": 0.55,
+      "precision": 0.7986,
+      "recall": 0.3524,
+      "f1": 0.489,
+      "fdr": 0.2014,
+      "tp": 111,
+      "fp": 28,
+      "fn": 204
+    },
+    "0.60": {
+      "threshold": 0.6,
+      "precision": 0.8151,
+      "recall": 0.3079,
+      "f1": 0.447,
+      "fdr": 0.1849,
+      "tp": 97,
+      "fp": 22,
+      "fn": 218
+    },
+    "0.70": {
+      "threshold": 0.7,
+      "precision": 0.8,
+      "recall": 0.1651,
+      "f1": 0.2737,
+      "fdr": 0.2,
+      "tp": 52,
+      "fp": 13,
+      "fn": 263
+    },
+    "0.80": {
+      "threshold": 0.8,
+      "precision": 0.875,
+      "recall": 0.0222,
+      "f1": 0.0433,
+      "fdr": 0.125,
+      "tp": 7,
+      "fp": 1,
+      "fn": 308
+    }
+  }
+}

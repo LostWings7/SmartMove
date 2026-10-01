@@ -1,0 +1,2890 @@
+{
+  "option_a_det_train_sec": 525.72,
+  "option_b_seg_train_sec": 455.88,
+  "v1_baseline_eval": {
+    "mean_latency_ms": 59.22,
+    "sweep": {
+      "0.05": {
+        "threshold": 0.05,
+        "precision": 0.4537,
+        "recall": 0.7815,
+        "f1": 0.5741,
+        "large_crack_recall": 0.9474,
+        "small_crack_recall": 0.7097,
+        "tp": 186,
+        "fp": 224,
+        "fn": 52,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.4712,
+            "recall": 0.7778,
+            "f1": 0.5868
+          },
+          "transverse_crack": {
+            "precision": 0.4286,
+            "recall": 0.8214,
+            "f1": 0.5633
+          },
+          "alligator_crack": {
+            "precision": 0.4634,
+            "recall": 0.6786,
+            "f1": 0.5507
+          }
+        }
+      },
+      "0.10": {
+        "threshold": 0.1,
+        "precision": 0.5652,
+        "recall": 0.6555,
+        "f1": 0.607,
+        "large_crack_recall": 0.9474,
+        "small_crack_recall": 0.5161,
+        "tp": 156,
+        "fp": 120,
+        "fn": 82,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.5646,
+            "recall": 0.6587,
+            "f1": 0.6081
+          },
+          "transverse_crack": {
+            "precision": 0.5481,
+            "recall": 0.6786,
+            "f1": 0.6064
+          },
+          "alligator_crack": {
+            "precision": 0.64,
+            "recall": 0.5714,
+            "f1": 0.6038
+          }
+        }
+      },
+      "0.15": {
+        "threshold": 0.15,
+        "precision": 0.6502,
+        "recall": 0.5546,
+        "f1": 0.5986,
+        "large_crack_recall": 0.8684,
+        "small_crack_recall": 0.3763,
+        "tp": 132,
+        "fp": 71,
+        "fn": 106,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.6404,
+            "recall": 0.5794,
+            "f1": 0.6083
+          },
+          "transverse_crack": {
+            "precision": 0.6571,
+            "recall": 0.5476,
+            "f1": 0.5974
+          },
+          "alligator_crack": {
+            "precision": 0.6842,
+            "recall": 0.4643,
+            "f1": 0.5532
+          }
+        }
+      },
+      "0.20": {
+        "threshold": 0.2,
+        "precision": 0.7203,
+        "recall": 0.4328,
+        "f1": 0.5407,
+        "large_crack_recall": 0.6053,
+        "small_crack_recall": 0.3226,
+        "tp": 103,
+        "fp": 40,
+        "fn": 135,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.6932,
+            "recall": 0.4841,
+            "f1": 0.5701
+          },
+          "transverse_crack": {
+            "precision": 0.7609,
+            "recall": 0.4167,
+            "f1": 0.5385
+          },
+          "alligator_crack": {
+            "precision": 0.7778,
+            "recall": 0.25,
+            "f1": 0.3784
+          }
+        }
+      },
+      "0.25": {
+        "threshold": 0.25,
+        "precision": 0.7742,
+        "recall": 0.3025,
+        "f1": 0.435,
+        "large_crack_recall": 0.4737,
+        "small_crack_recall": 0.2688,
+        "tp": 72,
+        "fp": 21,
+        "fn": 166,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.746,
+            "recall": 0.373,
+            "f1": 0.4974
+          },
+          "transverse_crack": {
+            "precision": 0.7917,
+            "recall": 0.2262,
+            "f1": 0.3519
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.2143,
+            "f1": 0.3529
+          }
+        }
+      },
+      "0.30": {
+        "threshold": 0.3,
+        "precision": 0.8182,
+        "recall": 0.2269,
+        "f1": 0.3553,
+        "large_crack_recall": 0.3421,
+        "small_crack_recall": 0.2366,
+        "tp": 54,
+        "fp": 12,
+        "fn": 184,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.8409,
+            "recall": 0.2937,
+            "f1": 0.4353
+          },
+          "transverse_crack": {
+            "precision": 0.7368,
+            "recall": 0.1667,
+            "f1": 0.2718
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.1071,
+            "f1": 0.1935
+          }
+        }
+      },
+      "0.40": {
+        "threshold": 0.4,
+        "precision": 0.8966,
+        "recall": 0.1092,
+        "f1": 0.1948,
+        "large_crack_recall": 0.2895,
+        "small_crack_recall": 0.1075,
+        "tp": 26,
+        "fp": 3,
+        "fn": 212,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.9091,
+            "recall": 0.1587,
+            "f1": 0.2703
+          },
+          "transverse_crack": {
+            "precision": 0.8333,
+            "recall": 0.0595,
+            "f1": 0.1111
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.0357,
+            "f1": 0.069
+          }
+        }
+      },
+      "0.50": {
+        "threshold": 0.5,
+        "precision": 0.8,
+        "recall": 0.0168,
+        "f1": 0.0329,
+        "large_crack_recall": 0.0526,
+        "small_crack_recall": 0.0108,
+        "tp": 4,
+        "fp": 1,
+        "fn": 234,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 1.0,
+            "recall": 0.0238,
+            "f1": 0.0465
+          },
+          "transverse_crack": {
+            "precision": 0.5,
+            "recall": 0.0119,
+            "f1": 0.0233
+          },
+          "alligator_crack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        }
+      }
+    }
+  },
+  "option_a_det_v2_single_scale": {
+    "mean_latency_ms": 59.13,
+    "sweep": {
+      "0.05": {
+        "threshold": 0.05,
+        "precision": 0.3438,
+        "recall": 0.7353,
+        "f1": 0.4685,
+        "large_crack_recall": 0.9737,
+        "small_crack_recall": 0.6129,
+        "tp": 175,
+        "fp": 334,
+        "fn": 63,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.2946,
+            "recall": 0.7857,
+            "f1": 0.4286
+          },
+          "transverse_crack": {
+            "precision": 0.3766,
+            "recall": 0.6905,
+            "f1": 0.4874
+          },
+          "alligator_crack": {
+            "precision": 0.9474,
+            "recall": 0.6429,
+            "f1": 0.766
+          }
+        }
+      },
+      "0.10": {
+        "threshold": 0.1,
+        "precision": 0.4543,
+        "recall": 0.605,
+        "f1": 0.5189,
+        "large_crack_recall": 0.8421,
+        "small_crack_recall": 0.4409,
+        "tp": 144,
+        "fp": 173,
+        "fn": 94,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.3934,
+            "recall": 0.6587,
+            "f1": 0.4926
+          },
+          "transverse_crack": {
+            "precision": 0.5263,
+            "recall": 0.5952,
+            "f1": 0.5587
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.3929,
+            "f1": 0.5641
+          }
+        }
+      },
+      "0.15": {
+        "threshold": 0.15,
+        "precision": 0.4978,
+        "recall": 0.4748,
+        "f1": 0.486,
+        "large_crack_recall": 0.7368,
+        "small_crack_recall": 0.2796,
+        "tp": 113,
+        "fp": 114,
+        "fn": 125,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.4356,
+            "recall": 0.5635,
+            "f1": 0.4913
+          },
+          "transverse_crack": {
+            "precision": 0.5926,
+            "recall": 0.381,
+            "f1": 0.4638
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.3571,
+            "f1": 0.5263
+          }
+        }
+      },
+      "0.20": {
+        "threshold": 0.2,
+        "precision": 0.5584,
+        "recall": 0.3613,
+        "f1": 0.4388,
+        "large_crack_recall": 0.6053,
+        "small_crack_recall": 0.1828,
+        "tp": 86,
+        "fp": 68,
+        "fn": 152,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.4874,
+            "recall": 0.4603,
+            "f1": 0.4735
+          },
+          "transverse_crack": {
+            "precision": 0.75,
+            "recall": 0.25,
+            "f1": 0.375
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.25,
+            "f1": 0.4
+          }
+        }
+      },
+      "0.25": {
+        "threshold": 0.25,
+        "precision": 0.6,
+        "recall": 0.2899,
+        "f1": 0.3909,
+        "large_crack_recall": 0.5526,
+        "small_crack_recall": 0.129,
+        "tp": 69,
+        "fp": 46,
+        "fn": 169,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.5361,
+            "recall": 0.4127,
+            "f1": 0.4664
+          },
+          "transverse_crack": {
+            "precision": 0.9167,
+            "recall": 0.131,
+            "f1": 0.2292
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.2143,
+            "f1": 0.3529
+          }
+        }
+      },
+      "0.30": {
+        "threshold": 0.3,
+        "precision": 0.6341,
+        "recall": 0.2185,
+        "f1": 0.325,
+        "large_crack_recall": 0.3947,
+        "small_crack_recall": 0.086,
+        "tp": 52,
+        "fp": 30,
+        "fn": 186,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.5714,
+            "recall": 0.3175,
+            "f1": 0.4082
+          },
+          "transverse_crack": {
+            "precision": 1.0,
+            "recall": 0.0952,
+            "f1": 0.1739
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.1429,
+            "f1": 0.25
+          }
+        }
+      },
+      "0.40": {
+        "threshold": 0.4,
+        "precision": 0.6512,
+        "recall": 0.1176,
+        "f1": 0.1993,
+        "large_crack_recall": 0.1842,
+        "small_crack_recall": 0.0323,
+        "tp": 28,
+        "fp": 15,
+        "fn": 210,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.625,
+            "recall": 0.1984,
+            "f1": 0.3012
+          },
+          "transverse_crack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.1071,
+            "f1": 0.1935
+          }
+        }
+      },
+      "0.50": {
+        "threshold": 0.5,
+        "precision": 0.6364,
+        "recall": 0.0588,
+        "f1": 0.1077,
+        "large_crack_recall": 0.0789,
+        "small_crack_recall": 0.0108,
+        "tp": 14,
+        "fp": 8,
+        "fn": 224,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.619,
+            "recall": 0.1032,
+            "f1": 0.1769
+          },
+          "transverse_crack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.0357,
+            "f1": 0.069
+          }
+        }
+      }
+    }
+  },
+  "option_a_det_v2_tiled_multiscale": {
+    "mean_latency_ms": 139.5,
+    "sweep": {
+      "0.05": {
+        "threshold": 0.05,
+        "precision": 0.2538,
+        "recall": 0.8133,
+        "f1": 0.3868,
+        "large_crack_recall": 0.9655,
+        "small_crack_recall": 0.7778,
+        "tp": 135,
+        "fp": 397,
+        "fn": 31,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.2123,
+            "recall": 0.8636,
+            "f1": 0.3408
+          },
+          "transverse_crack": {
+            "precision": 0.2848,
+            "recall": 0.7627,
+            "f1": 0.4147
+          },
+          "alligator_crack": {
+            "precision": 0.875,
+            "recall": 0.7368,
+            "f1": 0.8
+          }
+        }
+      },
+      "0.10": {
+        "threshold": 0.1,
+        "precision": 0.3688,
+        "recall": 0.7108,
+        "f1": 0.4856,
+        "large_crack_recall": 0.931,
+        "small_crack_recall": 0.5873,
+        "tp": 118,
+        "fp": 202,
+        "fn": 48,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.3269,
+            "recall": 0.7727,
+            "f1": 0.4595
+          },
+          "transverse_crack": {
+            "precision": 0.3922,
+            "recall": 0.678,
+            "f1": 0.4969
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.5263,
+            "f1": 0.6897
+          }
+        }
+      },
+      "0.15": {
+        "threshold": 0.15,
+        "precision": 0.4398,
+        "recall": 0.5723,
+        "f1": 0.4974,
+        "large_crack_recall": 0.7931,
+        "small_crack_recall": 0.381,
+        "tp": 95,
+        "fp": 121,
+        "fn": 71,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.3816,
+            "recall": 0.6591,
+            "f1": 0.4833
+          },
+          "transverse_crack": {
+            "precision": 0.5263,
+            "recall": 0.5085,
+            "f1": 0.5172
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.3684,
+            "f1": 0.5385
+          }
+        }
+      },
+      "0.20": {
+        "threshold": 0.2,
+        "precision": 0.5101,
+        "recall": 0.4578,
+        "f1": 0.4825,
+        "large_crack_recall": 0.7241,
+        "small_crack_recall": 0.2381,
+        "tp": 76,
+        "fp": 73,
+        "fn": 90,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.4182,
+            "recall": 0.5227,
+            "f1": 0.4646
+          },
+          "transverse_crack": {
+            "precision": 0.7273,
+            "recall": 0.4068,
+            "f1": 0.5217
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.3158,
+            "f1": 0.48
+          }
+        }
+      },
+      "0.25": {
+        "threshold": 0.25,
+        "precision": 0.5556,
+        "recall": 0.3614,
+        "f1": 0.438,
+        "large_crack_recall": 0.6207,
+        "small_crack_recall": 0.1905,
+        "tp": 60,
+        "fp": 48,
+        "fn": 106,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.4773,
+            "recall": 0.4773,
+            "f1": 0.4773
+          },
+          "transverse_crack": {
+            "precision": 0.8571,
+            "recall": 0.2034,
+            "f1": 0.3288
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.3158,
+            "f1": 0.48
+          }
+        }
+      },
+      "0.30": {
+        "threshold": 0.3,
+        "precision": 0.6125,
+        "recall": 0.2952,
+        "f1": 0.3984,
+        "large_crack_recall": 0.5172,
+        "small_crack_recall": 0.1429,
+        "tp": 49,
+        "fp": 31,
+        "fn": 117,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.5312,
+            "recall": 0.3864,
+            "f1": 0.4474
+          },
+          "transverse_crack": {
+            "precision": 0.9167,
+            "recall": 0.1864,
+            "f1": 0.3099
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.2105,
+            "f1": 0.3478
+          }
+        }
+      },
+      "0.40": {
+        "threshold": 0.4,
+        "precision": 0.7105,
+        "recall": 0.1627,
+        "f1": 0.2647,
+        "large_crack_recall": 0.2759,
+        "small_crack_recall": 0.0476,
+        "tp": 27,
+        "fp": 11,
+        "fn": 139,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.6452,
+            "recall": 0.2273,
+            "f1": 0.3361
+          },
+          "transverse_crack": {
+            "precision": 1.0,
+            "recall": 0.0678,
+            "f1": 0.127
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.1579,
+            "f1": 0.2727
+          }
+        }
+      },
+      "0.50": {
+        "threshold": 0.5,
+        "precision": 0.75,
+        "recall": 0.0904,
+        "f1": 0.1613,
+        "large_crack_recall": 0.1724,
+        "small_crack_recall": 0.0159,
+        "tp": 15,
+        "fp": 5,
+        "fn": 151,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.7222,
+            "recall": 0.1477,
+            "f1": 0.2453
+          },
+          "transverse_crack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.1053,
+            "f1": 0.1905
+          }
+        }
+      }
+    }
+  },
+  "option_b_seg_v2_eval": {
+    "mean_latency_ms": 86.49,
+    "sweep": {
+      "0.05": {
+        "threshold": 0.05,
+        "precision": 0.2747,
+        "recall": 0.5787,
+        "f1": 0.3725,
+        "large_crack_recall": 0.8235,
+        "small_crack_recall": 0.4684,
+        "tp": 114,
+        "fp": 301,
+        "fn": 83,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.2101,
+            "recall": 0.6944,
+            "f1": 0.3226
+          },
+          "transverse_crack": {
+            "precision": 0.587,
+            "recall": 0.3971,
+            "f1": 0.4737
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.5714,
+            "f1": 0.7273
+          }
+        }
+      },
+      "0.10": {
+        "threshold": 0.1,
+        "precision": 0.3689,
+        "recall": 0.3858,
+        "f1": 0.3772,
+        "large_crack_recall": 0.7941,
+        "small_crack_recall": 0.2405,
+        "tp": 76,
+        "fp": 130,
+        "fn": 121,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.3065,
+            "recall": 0.5278,
+            "f1": 0.3878
+          },
+          "transverse_crack": {
+            "precision": 0.9091,
+            "recall": 0.1471,
+            "f1": 0.2532
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.4286,
+            "f1": 0.6
+          }
+        }
+      },
+      "0.15": {
+        "threshold": 0.15,
+        "precision": 0.4634,
+        "recall": 0.2893,
+        "f1": 0.3562,
+        "large_crack_recall": 0.6471,
+        "small_crack_recall": 0.1392,
+        "tp": 57,
+        "fp": 66,
+        "fn": 140,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.4359,
+            "recall": 0.4722,
+            "f1": 0.4533
+          },
+          "transverse_crack": {
+            "precision": 1.0,
+            "recall": 0.0441,
+            "f1": 0.0845
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.1429,
+            "f1": 0.25
+          }
+        }
+      },
+      "0.20": {
+        "threshold": 0.2,
+        "precision": 0.5733,
+        "recall": 0.2183,
+        "f1": 0.3162,
+        "large_crack_recall": 0.5,
+        "small_crack_recall": 0.0886,
+        "tp": 43,
+        "fp": 32,
+        "fn": 154,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.5556,
+            "recall": 0.3704,
+            "f1": 0.4444
+          },
+          "transverse_crack": {
+            "precision": 1.0,
+            "recall": 0.0294,
+            "f1": 0.0571
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.0476,
+            "f1": 0.0909
+          }
+        }
+      },
+      "0.25": {
+        "threshold": 0.25,
+        "precision": 0.6,
+        "recall": 0.1371,
+        "f1": 0.2231,
+        "large_crack_recall": 0.2353,
+        "small_crack_recall": 0.0506,
+        "tp": 27,
+        "fp": 18,
+        "fn": 170,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.5909,
+            "recall": 0.2407,
+            "f1": 0.3421
+          },
+          "transverse_crack": {
+            "precision": 1.0,
+            "recall": 0.0147,
+            "f1": 0.029
+          },
+          "alligator_crack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        }
+      },
+      "0.30": {
+        "threshold": 0.3,
+        "precision": 0.6667,
+        "recall": 0.0711,
+        "f1": 0.1284,
+        "large_crack_recall": 0.1471,
+        "small_crack_recall": 0.0127,
+        "tp": 14,
+        "fp": 7,
+        "fn": 183,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.6667,
+            "recall": 0.1296,
+            "f1": 0.2171
+          },
+          "transverse_crack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "alligator_crack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        }
+      },
+      "0.40": {
+        "threshold": 0.4,
+        "precision": 0.6,
+        "recall": 0.0152,
+        "f1": 0.0297,
+        "large_crack_recall": 0.0,
+        "small_crack_recall": 0.0,
+        "tp": 3,
+        "fp": 2,
+        "fn": 194,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.6,
+            "recall": 0.0278,
+            "f1": 0.0531
+          },
+          "transverse_crack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "alligator_crack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        }
+      },
+      "0.50": {
+        "threshold": 0.5,
+        "precision": 1.0,
+        "recall": 0.0051,
+        "f1": 0.0101,
+        "large_crack_recall": 0.0,
+        "small_crack_recall": 0.0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 196,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 1.0,
+            "recall": 0.0093,
+            "f1": 0.0183
+          },
+          "transverse_crack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          },
+          "alligator_crack": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0
+          }
+        }
+      }
+    }
+  },
+  "resolution_comparison_512_640_768": {
+    "512": {
+      "latency_ms": 58.29,
+      "metrics_at_0_15": {
+        "threshold": 0.15,
+        "precision": 0.4393,
+        "recall": 0.4947,
+        "f1": 0.4653,
+        "large_crack_recall": 0.8,
+        "small_crack_recall": 0.3611,
+        "tp": 47,
+        "fp": 60,
+        "fn": 48,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.4103,
+            "recall": 0.6531,
+            "f1": 0.5039
+          },
+          "transverse_crack": {
+            "precision": 0.44,
+            "recall": 0.3333,
+            "f1": 0.3793
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.3077,
+            "f1": 0.4706
+          }
+        }
+      },
+      "metrics_at_0_20": {
+        "threshold": 0.2,
+        "precision": 0.5,
+        "recall": 0.3789,
+        "f1": 0.4311,
+        "large_crack_recall": 0.6,
+        "small_crack_recall": 0.2222,
+        "tp": 36,
+        "fp": 36,
+        "fn": 59,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.431,
+            "recall": 0.5102,
+            "f1": 0.4673
+          },
+          "transverse_crack": {
+            "precision": 0.7,
+            "recall": 0.2121,
+            "f1": 0.3256
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.3077,
+            "f1": 0.4706
+          }
+        }
+      }
+    },
+    "640": {
+      "latency_ms": 83.32,
+      "metrics_at_0_15": {
+        "threshold": 0.15,
+        "precision": 0.4107,
+        "recall": 0.4842,
+        "f1": 0.4444,
+        "large_crack_recall": 0.6,
+        "small_crack_recall": 0.3889,
+        "tp": 46,
+        "fp": 66,
+        "fn": 49,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.3647,
+            "recall": 0.6327,
+            "f1": 0.4627
+          },
+          "transverse_crack": {
+            "precision": 0.52,
+            "recall": 0.3939,
+            "f1": 0.4483
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.1538,
+            "f1": 0.2667
+          }
+        }
+      },
+      "metrics_at_0_20": {
+        "threshold": 0.2,
+        "precision": 0.443,
+        "recall": 0.3684,
+        "f1": 0.4023,
+        "large_crack_recall": 0.4667,
+        "small_crack_recall": 0.25,
+        "tp": 35,
+        "fp": 44,
+        "fn": 60,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.3968,
+            "recall": 0.5102,
+            "f1": 0.4464
+          },
+          "transverse_crack": {
+            "precision": 0.5714,
+            "recall": 0.2424,
+            "f1": 0.3404
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.1538,
+            "f1": 0.2667
+          }
+        }
+      }
+    },
+    "768": {
+      "latency_ms": 112.03,
+      "metrics_at_0_15": {
+        "threshold": 0.15,
+        "precision": 0.3759,
+        "recall": 0.5263,
+        "f1": 0.4386,
+        "large_crack_recall": 0.8,
+        "small_crack_recall": 0.4167,
+        "tp": 50,
+        "fp": 83,
+        "fn": 45,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.3061,
+            "recall": 0.6122,
+            "f1": 0.4082
+          },
+          "transverse_crack": {
+            "precision": 0.5,
+            "recall": 0.4545,
+            "f1": 0.4762
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.3846,
+            "f1": 0.5556
+          }
+        }
+      },
+      "metrics_at_0_20": {
+        "threshold": 0.2,
+        "precision": 0.4231,
+        "recall": 0.3474,
+        "f1": 0.3815,
+        "large_crack_recall": 0.6,
+        "small_crack_recall": 0.1944,
+        "tp": 33,
+        "fp": 45,
+        "fn": 62,
+        "per_class": {
+          "longitudinal_crack": {
+            "precision": 0.3651,
+            "recall": 0.4694,
+            "f1": 0.4107
+          },
+          "transverse_crack": {
+            "precision": 0.5455,
+            "recall": 0.1818,
+            "f1": 0.2727
+          },
+          "alligator_crack": {
+            "precision": 1.0,
+            "recall": 0.3077,
+            "f1": 0.4706
+          }
+        }
+      }
+    }
+  },
+  "regression_001_test": {
+    "option_a_det_v2_tiled_count": 0,
+    "option_a_det_v2_detections": [],
+    "option_b_seg_v2_tiled_count": 1,
+    "option_b_seg_v2_detections": [
+      {
+        "bbox": [
+          19.393068313598633,
+          74.08898544311523,
+          97.67385864257812,
+          148.0
+        ],
+        "cls": 0,
+        "conf": 0.17689304053783417,
+        "polygon": [
+          [
+            31.6,
+            108.1
+          ],
+          [
+            31.3,
+            108.3
+          ],
+          [
+            31.1,
+            108.3
+          ],
+          [
+            31.1,
+            109.1
+          ],
+          [
+            31.6,
+            109.6
+          ],
+          [
+            31.8,
+            109.6
+          ],
+          [
+            31.8,
+            108.3
+          ],
+          [
+            31.6,
+            108.1
+          ],
+          [
+            30.8,
+            127.6
+          ],
+          [
+            30.3,
+            127.6
+          ],
+          [
+            30.0,
+            127.4
+          ],
+          [
+            29.7,
+            127.4
+          ],
+          [
+            29.5,
+            127.1
+          ],
+          [
+            29.0,
+            127.1
+          ],
+          [
+            28.7,
+            126.8
+          ],
+          [
+            28.2,
+            126.8
+          ],
+          [
+            27.9,
+            126.6
+          ],
+          [
+            27.7,
+            126.6
+          ],
+          [
+            27.4,
+            126.3
+          ],
+          [
+            27.1,
+            126.3
+          ],
+          [
+            27.1,
+            126.1
+          ],
+          [
+            27.4,
+            126.1
+          ],
+          [
+            27.9,
+            125.5
+          ],
+          [
+            27.9,
+            124.5
+          ],
+          [
+            27.7,
+            124.2
+          ],
+          [
+            27.7,
+            123.5
+          ],
+          [
+            27.4,
+            123.2
+          ],
+          [
+            27.4,
+            122.9
+          ],
+          [
+            26.6,
+            122.2
+          ],
+          [
+            26.9,
+            121.9
+          ],
+          [
+            27.1,
+            121.9
+          ],
+          [
+            28.7,
+            120.3
+          ],
+          [
+            29.0,
+            120.3
+          ],
+          [
+            29.2,
+            120.1
+          ],
+          [
+            29.5,
+            120.1
+          ],
+          [
+            30.8,
+            118.8
+          ],
+          [
+            31.3,
+            118.8
+          ],
+          [
+            31.6,
+            118.5
+          ],
+          [
+            32.6,
+            118.5
+          ],
+          [
+            32.9,
+            118.2
+          ],
+          [
+            33.7,
+            118.2
+          ],
+          [
+            33.9,
+            118.0
+          ],
+          [
+            35.0,
+            118.0
+          ],
+          [
+            35.5,
+            117.5
+          ],
+          [
+            35.7,
+            117.5
+          ],
+          [
+            36.0,
+            117.2
+          ],
+          [
+            36.3,
+            117.2
+          ],
+          [
+            36.8,
+            116.7
+          ],
+          [
+            39.1,
+            116.7
+          ],
+          [
+            39.4,
+            116.9
+          ],
+          [
+            20.1,
+            82.2
+          ],
+          [
+            20.4,
+            82.0
+          ],
+          [
+            20.6,
+            82.0
+          ],
+          [
+            21.1,
+            81.4
+          ],
+          [
+            21.4,
+            81.4
+          ],
+          [
+            21.7,
+            81.2
+          ],
+          [
+            21.9,
+            81.2
+          ],
+          [
+            23.5,
+            79.6
+          ],
+          [
+            23.5,
+            79.4
+          ],
+          [
+            23.7,
+            79.1
+          ],
+          [
+            23.7,
+            78.6
+          ],
+          [
+            24.0,
+            78.3
+          ],
+          [
+            24.0,
+            77.8
+          ],
+          [
+            24.3,
+            77.5
+          ],
+          [
+            24.3,
+            76.7
+          ],
+          [
+            24.0,
+            76.5
+          ],
+          [
+            24.0,
+            75.7
+          ],
+          [
+            24.3,
+            75.4
+          ],
+          [
+            24.3,
+            74.7
+          ],
+          [
+            24.0,
+            74.4
+          ],
+          [
+            24.0,
+            74.1
+          ],
+          [
+            19.6,
+            74.1
+          ],
+          [
+            19.6,
+            82.2
+          ],
+          [
+            20.1,
+            82.2
+          ],
+          [
+            39.4,
+            116.9
+          ],
+          [
+            40.2,
+            116.9
+          ],
+          [
+            40.4,
+            117.2
+          ],
+          [
+            42.8,
+            117.2
+          ],
+          [
+            43.1,
+            116.9
+          ],
+          [
+            44.1,
+            116.9
+          ],
+          [
+            44.4,
+            116.7
+          ],
+          [
+            44.6,
+            116.7
+          ],
+          [
+            45.1,
+            116.2
+          ],
+          [
+            45.4,
+            116.2
+          ],
+          [
+            45.9,
+            115.6
+          ],
+          [
+            45.7,
+            115.4
+          ],
+          [
+            45.4,
+            115.4
+          ],
+          [
+            45.4,
+            115.1
+          ],
+          [
+            45.1,
+            114.8
+          ],
+          [
+            45.1,
+            114.6
+          ],
+          [
+            44.9,
+            114.3
+          ],
+          [
+            44.9,
+            113.8
+          ],
+          [
+            44.6,
+            113.5
+          ],
+          [
+            44.4,
+            113.5
+          ],
+          [
+            44.1,
+            113.3
+          ],
+          [
+            43.3,
+            113.3
+          ],
+          [
+            43.1,
+            113.0
+          ],
+          [
+            42.8,
+            113.0
+          ],
+          [
+            42.5,
+            112.8
+          ],
+          [
+            42.3,
+            112.8
+          ],
+          [
+            42.0,
+            112.5
+          ],
+          [
+            41.0,
+            112.5
+          ],
+          [
+            40.7,
+            112.2
+          ],
+          [
+            40.4,
+            112.2
+          ],
+          [
+            40.2,
+            112.0
+          ],
+          [
+            39.4,
+            112.0
+          ],
+          [
+            39.1,
+            111.7
+          ],
+          [
+            38.6,
+            111.7
+          ],
+          [
+            37.8,
+            110.9
+          ],
+          [
+            37.3,
+            110.9
+          ],
+          [
+            37.1,
+            110.7
+          ],
+          [
+            36.8,
+            110.7
+          ],
+          [
+            36.8,
+            109.9
+          ],
+          [
+            37.1,
+            109.6
+          ],
+          [
+            37.1,
+            108.3
+          ],
+          [
+            37.3,
+            108.3
+          ],
+          [
+            38.4,
+            107.3
+          ],
+          [
+            38.1,
+            107.0
+          ],
+          [
+            38.1,
+            106.2
+          ],
+          [
+            38.4,
+            106.0
+          ],
+          [
+            38.4,
+            105.7
+          ],
+          [
+            38.6,
+            105.5
+          ],
+          [
+            38.6,
+            105.2
+          ],
+          [
+            38.4,
+            104.9
+          ],
+          [
+            38.4,
+            104.4
+          ],
+          [
+            38.1,
+            104.1
+          ],
+          [
+            38.1,
+            103.4
+          ],
+          [
+            37.8,
+            103.1
+          ],
+          [
+            37.6,
+            103.1
+          ],
+          [
+            37.3,
+            102.8
+          ],
+          [
+            36.8,
+            102.8
+          ],
+          [
+            36.5,
+            102.6
+          ],
+          [
+            36.0,
+            102.6
+          ],
+          [
+            35.7,
+            102.3
+          ],
+          [
+            35.2,
+            102.3
+          ],
+          [
+            35.0,
+            102.6
+          ],
+          [
+            33.9,
+            102.6
+          ],
+          [
+            33.7,
+            102.8
+          ],
+          [
+            32.9,
+            102.8
+          ],
+          [
+            32.6,
+            103.1
+          ],
+          [
+            32.4,
+            103.1
+          ],
+          [
+            32.1,
+            103.4
+          ],
+          [
+            32.1,
+            103.6
+          ],
+          [
+            31.8,
+            103.9
+          ],
+          [
+            31.8,
+            104.1
+          ],
+          [
+            31.6,
+            104.4
+          ],
+          [
+            31.3,
+            104.4
+          ],
+          [
+            31.1,
+            104.7
+          ],
+          [
+            29.2,
+            104.7
+          ],
+          [
+            29.0,
+            104.9
+          ],
+          [
+            28.2,
+            104.9
+          ],
+          [
+            27.9,
+            104.7
+          ],
+          [
+            27.1,
+            104.7
+          ],
+          [
+            26.9,
+            104.9
+          ],
+          [
+            26.1,
+            104.9
+          ],
+          [
+            25.8,
+            104.7
+          ],
+          [
+            25.3,
+            104.7
+          ],
+          [
+            25.1,
+            104.9
+          ],
+          [
+            24.8,
+            104.9
+          ],
+          [
+            24.0,
+            105.7
+          ],
+          [
+            24.0,
+            106.5
+          ],
+          [
+            23.7,
+            106.8
+          ],
+          [
+            23.7,
+            107.0
+          ],
+          [
+            23.5,
+            107.3
+          ],
+          [
+            23.7,
+            107.5
+          ],
+          [
+            23.7,
+            107.8
+          ],
+          [
+            24.3,
+            108.3
+          ],
+          [
+            24.3,
+            110.1
+          ],
+          [
+            24.5,
+            110.4
+          ],
+          [
+            24.5,
+            110.7
+          ],
+          [
+            24.3,
+            110.9
+          ],
+          [
+            24.3,
+            111.2
+          ],
+          [
+            23.5,
+            112.0
+          ],
+          [
+            23.2,
+            112.0
+          ],
+          [
+            23.0,
+            112.2
+          ],
+          [
+            22.7,
+            112.2
+          ],
+          [
+            22.2,
+            112.8
+          ],
+          [
+            21.7,
+            112.8
+          ],
+          [
+            21.4,
+            113.0
+          ],
+          [
+            21.1,
+            113.0
+          ],
+          [
+            20.9,
+            113.3
+          ],
+          [
+            20.4,
+            113.3
+          ],
+          [
+            19.6,
+            114.1
+          ],
+          [
+            19.6,
+            95.0
+          ],
+          [
+            19.8,
+            94.8
+          ],
+          [
+            20.1,
+            94.8
+          ],
+          [
+            20.4,
+            94.5
+          ],
+          [
+            21.1,
+            94.5
+          ],
+          [
+            21.4,
+            94.2
+          ],
+          [
+            25.1,
+            94.2
+          ],
+          [
+            25.3,
+            94.5
+          ],
+          [
+            25.6,
+            94.2
+          ],
+          [
+            30.0,
+            94.2
+          ],
+          [
+            30.3,
+            94.5
+          ],
+          [
+            30.8,
+            94.5
+          ],
+          [
+            31.1,
+            94.8
+          ],
+          [
+            31.3,
+            94.8
+          ],
+          [
+            31.6,
+            95.0
+          ],
+          [
+            31.8,
+            95.0
+          ],
+          [
+            32.6,
+            95.8
+          ],
+          [
+            32.9,
+            95.8
+          ],
+          [
+            33.1,
+            96.1
+          ],
+          [
+            33.7,
+            96.1
+          ],
+          [
+            34.2,
+            96.6
+          ],
+          [
+            34.7,
+            96.6
+          ],
+          [
+            35.0,
+            96.8
+          ],
+          [
+            36.5,
+            96.8
+          ],
+          [
+            36.8,
+            96.6
+          ],
+          [
+            38.1,
+            96.6
+          ],
+          [
+            38.9,
+            95.8
+          ],
+          [
+            39.4,
+            95.8
+          ],
+          [
+            39.7,
+            95.5
+          ],
+          [
+            39.9,
+            95.5
+          ],
+          [
+            41.0,
+            94.5
+          ],
+          [
+            41.0,
+            94.0
+          ],
+          [
+            41.8,
+            93.2
+          ],
+          [
+            42.0,
+            93.2
+          ],
+          [
+            42.3,
+            92.9
+          ],
+          [
+            42.3,
+            92.4
+          ],
+          [
+            42.5,
+            92.1
+          ],
+          [
+            42.5,
+            91.6
+          ],
+          [
+            43.1,
+            91.1
+          ],
+          [
+            43.1,
+            90.8
+          ],
+          [
+            43.3,
+            90.6
+          ],
+          [
+            43.3,
+            89.8
+          ],
+          [
+            43.6,
+            89.8
+          ],
+          [
+            43.8,
+            89.5
+          ],
+          [
+            44.4,
+            89.5
+          ],
+          [
+            44.9,
+            89.0
+          ],
+          [
+            44.9,
+            88.8
+          ],
+          [
+            45.1,
+            88.5
+          ],
+          [
+            45.1,
+            87.7
+          ],
+          [
+            45.4,
+            87.4
+          ],
+          [
+            45.9,
+            87.4
+          ],
+          [
+            46.2,
+            87.2
+          ],
+          [
+            46.4,
+            87.2
+          ],
+          [
+            47.2,
+            86.4
+          ],
+          [
+            47.2,
+            85.9
+          ],
+          [
+            47.8,
+            85.4
+          ],
+          [
+            48.5,
+            85.4
+          ],
+          [
+            48.8,
+            85.1
+          ],
+          [
+            49.1,
+            85.1
+          ],
+          [
+            49.3,
+            84.8
+          ],
+          [
+            49.6,
+            84.8
+          ],
+          [
+            49.8,
+            84.6
+          ],
+          [
+            50.1,
+            84.6
+          ],
+          [
+            50.4,
+            84.3
+          ],
+          [
+            50.4,
+            84.1
+          ],
+          [
+            50.6,
+            83.8
+          ],
+          [
+            50.6,
+            83.5
+          ],
+          [
+            50.9,
+            83.5
+          ],
+          [
+            51.1,
+            83.3
+          ],
+          [
+            51.4,
+            83.3
+          ],
+          [
+            51.7,
+            83.0
+          ],
+          [
+            53.0,
+            83.0
+          ],
+          [
+            53.2,
+            82.8
+          ],
+          [
+            54.3,
+            82.8
+          ],
+          [
+            54.5,
+            82.5
+          ],
+          [
+            55.3,
+            82.5
+          ],
+          [
+            55.6,
+            82.2
+          ],
+          [
+            55.8,
+            82.2
+          ],
+          [
+            56.1,
+            82.0
+          ],
+          [
+            56.4,
+            82.0
+          ],
+          [
+            56.9,
+            81.4
+          ],
+          [
+            58.2,
+            81.4
+          ],
+          [
+            58.5,
+            81.2
+          ],
+          [
+            59.0,
+            81.2
+          ],
+          [
+            59.2,
+            81.4
+          ],
+          [
+            59.2,
+            81.7
+          ],
+          [
+            59.5,
+            82.0
+          ],
+          [
+            59.5,
+            82.2
+          ],
+          [
+            59.8,
+            82.5
+          ],
+          [
+            61.3,
+            82.5
+          ],
+          [
+            61.6,
+            82.8
+          ],
+          [
+            63.4,
+            82.8
+          ],
+          [
+            63.7,
+            83.0
+          ],
+          [
+            66.0,
+            83.0
+          ],
+          [
+            66.3,
+            83.3
+          ],
+          [
+            67.1,
+            83.3
+          ],
+          [
+            67.3,
+            83.0
+          ],
+          [
+            68.1,
+            83.0
+          ],
+          [
+            68.4,
+            82.8
+          ],
+          [
+            69.1,
+            82.8
+          ],
+          [
+            69.7,
+            82.2
+          ],
+          [
+            68.4,
+            80.9
+          ],
+          [
+            68.4,
+            80.7
+          ],
+          [
+            67.6,
+            79.9
+          ],
+          [
+            62.9,
+            79.9
+          ],
+          [
+            62.6,
+            79.6
+          ],
+          [
+            61.8,
+            79.6
+          ],
+          [
+            61.6,
+            79.4
+          ],
+          [
+            61.3,
+            79.4
+          ],
+          [
+            61.6,
+            79.1
+          ],
+          [
+            62.1,
+            79.1
+          ],
+          [
+            62.4,
+            78.8
+          ],
+          [
+            63.1,
+            78.8
+          ],
+          [
+            63.4,
+            78.6
+          ],
+          [
+            64.2,
+            78.6
+          ],
+          [
+            64.5,
+            78.3
+          ],
+          [
+            65.0,
+            78.3
+          ],
+          [
+            65.8,
+            77.5
+          ],
+          [
+            65.8,
+            77.3
+          ],
+          [
+            66.5,
+            77.3
+          ],
+          [
+            66.8,
+            77.0
+          ],
+          [
+            67.6,
+            77.0
+          ],
+          [
+            67.8,
+            76.7
+          ],
+          [
+            69.1,
+            76.7
+          ],
+          [
+            69.4,
+            76.5
+          ],
+          [
+            69.7,
+            76.5
+          ],
+          [
+            70.5,
+            75.7
+          ],
+          [
+            70.5,
+            75.2
+          ],
+          [
+            70.7,
+            74.9
+          ],
+          [
+            71.0,
+            74.9
+          ],
+          [
+            71.8,
+            74.1
+          ],
+          [
+            97.6,
+            74.1
+          ],
+          [
+            97.6,
+            140.7
+          ],
+          [
+            97.3,
+            140.9
+          ],
+          [
+            97.1,
+            140.9
+          ],
+          [
+            96.8,
+            141.2
+          ],
+          [
+            96.3,
+            141.2
+          ],
+          [
+            96.0,
+            141.5
+          ],
+          [
+            94.7,
+            141.5
+          ],
+          [
+            94.5,
+            141.7
+          ],
+          [
+            93.7,
+            141.7
+          ],
+          [
+            93.4,
+            141.5
+          ],
+          [
+            93.2,
+            141.5
+          ],
+          [
+            92.9,
+            141.7
+          ],
+          [
+            89.2,
+            141.7
+          ],
+          [
+            89.0,
+            141.5
+          ],
+          [
+            88.7,
+            141.7
+          ],
+          [
+            86.6,
+            141.7
+          ],
+          [
+            86.4,
+            141.5
+          ],
+          [
+            85.6,
+            141.5
+          ],
+          [
+            85.3,
+            141.7
+          ],
+          [
+            82.2,
+            141.7
+          ],
+          [
+            81.9,
+            142.0
+          ],
+          [
+            80.9,
+            142.0
+          ],
+          [
+            80.6,
+            142.2
+          ],
+          [
+            79.8,
+            142.2
+          ],
+          [
+            79.6,
+            142.5
+          ],
+          [
+            79.3,
+            142.2
+          ],
+          [
+            78.3,
+            142.2
+          ],
+          [
+            78.0,
+            142.5
+          ],
+          [
+            77.5,
+            142.5
+          ],
+          [
+            77.2,
+            142.2
+          ],
+          [
+            70.7,
+            142.2
+          ],
+          [
+            70.5,
+            142.0
+          ],
+          [
+            70.2,
+            142.0
+          ],
+          [
+            69.9,
+            142.2
+          ],
+          [
+            68.6,
+            142.2
+          ],
+          [
+            68.4,
+            142.0
+          ],
+          [
+            65.0,
+            142.0
+          ],
+          [
+            64.7,
+            141.7
+          ],
+          [
+            63.9,
+            141.7
+          ],
+          [
+            63.7,
+            141.5
+          ],
+          [
+            63.1,
+            141.5
+          ],
+          [
+            62.9,
+            141.2
+          ],
+          [
+            62.1,
+            141.2
+          ],
+          [
+            61.8,
+            140.9
+          ],
+          [
+            61.1,
+            140.9
+          ],
+          [
+            60.8,
+            140.7
+          ],
+          [
+            58.7,
+            140.7
+          ],
+          [
+            58.5,
+            140.9
+          ],
+          [
+            57.7,
+            140.9
+          ],
+          [
+            57.1,
+            141.5
+          ],
+          [
+            56.9,
+            141.5
+          ],
+          [
+            56.6,
+            141.7
+          ],
+          [
+            56.1,
+            141.7
+          ],
+          [
+            55.8,
+            142.0
+          ],
+          [
+            54.3,
+            142.0
+          ],
+          [
+            54.0,
+            142.2
+          ],
+          [
+            52.7,
+            142.2
+          ],
+          [
+            52.4,
+            142.5
+          ],
+          [
+            51.1,
+            142.5
+          ],
+          [
+            50.9,
+            142.8
+          ],
+          [
+            48.8,
+            142.8
+          ],
+          [
+            48.5,
+            143.0
+          ],
+          [
+            45.9,
+            143.0
+          ],
+          [
+            45.7,
+            143.3
+          ],
+          [
+            42.8,
+            143.3
+          ],
+          [
+            42.5,
+            143.5
+          ],
+          [
+            41.0,
+            143.5
+          ],
+          [
+            40.7,
+            143.8
+          ],
+          [
+            39.7,
+            143.8
+          ],
+          [
+            39.4,
+            144.1
+          ],
+          [
+            33.4,
+            144.1
+          ],
+          [
+            33.1,
+            143.8
+          ],
+          [
+            31.6,
+            143.8
+          ],
+          [
+            31.3,
+            143.5
+          ],
+          [
+            30.8,
+            143.5
+          ],
+          [
+            30.5,
+            143.3
+          ],
+          [
+            29.7,
+            143.3
+          ],
+          [
+            29.5,
+            143.0
+          ],
+          [
+            27.9,
+            143.0
+          ],
+          [
+            27.7,
+            142.8
+          ],
+          [
+            24.3,
+            142.8
+          ],
+          [
+            24.0,
+            142.5
+          ],
+          [
+            23.0,
+            142.5
+          ],
+          [
+            22.7,
+            142.2
+          ],
+          [
+            21.9,
+            142.2
+          ],
+          [
+            21.7,
+            142.0
+          ],
+          [
+            20.4,
+            142.0
+          ],
+          [
+            20.1,
+            141.7
+          ],
+          [
+            19.6,
+            141.7
+          ],
+          [
+            19.6,
+            127.4
+          ],
+          [
+            25.1,
+            127.4
+          ],
+          [
+            25.3,
+            127.6
+          ],
+          [
+            25.6,
+            127.6
+          ],
+          [
+            25.6,
+            127.9
+          ],
+          [
+            25.8,
+            128.2
+          ],
+          [
+            25.8,
+            128.4
+          ],
+          [
+            26.1,
+            128.7
+          ],
+          [
+            26.1,
+            129.2
+          ],
+          [
+            26.4,
+            129.5
+          ],
+          [
+            26.4,
+            129.7
+          ],
+          [
+            27.1,
+            130.5
+          ],
+          [
+            27.7,
+            130.5
+          ],
+          [
+            27.9,
+            130.8
+          ],
+          [
+            29.7,
+            130.8
+          ],
+          [
+            30.0,
+            131.0
+          ],
+          [
+            32.6,
+            131.0
+          ],
+          [
+            32.9,
+            131.3
+          ],
+          [
+            33.1,
+            131.3
+          ],
+          [
+            33.4,
+            131.0
+          ],
+          [
+            35.2,
+            131.0
+          ],
+          [
+            36.3,
+            130.0
+          ],
+          [
+            36.3,
+            128.2
+          ],
+          [
+            36.0,
+            127.9
+          ],
+          [
+            36.0,
+            127.6
+          ],
+          [
+            35.2,
+            126.8
+          ],
+          [
+            34.7,
+            126.8
+          ],
+          [
+            34.4,
+            126.6
+          ],
+          [
+            32.9,
+            126.6
+          ],
+          [
+            32.6,
+            126.8
+          ],
+          [
+            32.4,
+            126.8
+          ],
+          [
+            32.1,
+            127.1
+          ],
+          [
+            31.8,
+            127.1
+          ],
+          [
+            31.6,
+            127.4
+          ],
+          [
+            31.1,
+            127.4
+          ],
+          [
+            30.8,
+            127.6
+          ]
+        ],
+        "scale": "tile",
+        "road_context": {
+          "raw_model_confidence": 0.1769,
+          "road_overlap_ratio": 1.0,
+          "vegetation_overlap_ratio": 0.0,
+          "sky_bg_overlap_ratio": 0.0,
+          "structure_overlap_ratio": 0.0,
+          "center_on_road": true,
+          "road_context_score": 1.0,
+          "is_valid_road_candidate": true,
+          "rejection_reason": null
+        }
+      }
+    ]
+  }
+}

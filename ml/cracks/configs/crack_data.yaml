@@ -1,0 +1,17 @@
+# SafeCity Road Crack Detection Dataset Config
+path: C:/Users/dvasa/Projects/SmartMove/ml/cracks/dataset/processed
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: longitudinal_crack
+  1: transverse_crack
+  2: alligator_crack
+
+# Metadata
+dataset_name: "SafeCity RDD2022 Road Crack Dataset"
+source: "RDD2022 (Seki Lab / CRDDC2022)"
+license: "CC BY-SA 4.0"
+classes_count: 3
+created_at: "2026-09-30 17:34:14 UTC"

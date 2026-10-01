@@ -1,6 +1,15 @@
-import { MapContainer, TileLayer, CircleMarker, Polyline, Popup, Tooltip } from 'react-leaflet'
+import { useEffect } from 'react'
+import { MapContainer, TileLayer, CircleMarker, Polyline, Popup, Tooltip, useMap } from 'react-leaflet'
 import type { MapProviderProps } from './MapProvider'
 import type { Hazard, Road } from '@/types'
+
+function ChangeView({ center, zoom }: { center: [number, number]; zoom: number }) {
+  const map = useMap()
+  useEffect(() => {
+    map.setView(center, zoom)
+  }, [center, zoom, map])
+  return null
+}
 
 const TILE_URL = import.meta.env.VITE_TILE_URL ?? 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
 const TILE_ATTRIBUTION =
@@ -55,6 +64,7 @@ export default function LeafletMap({
           attribution={TILE_ATTRIBUTION}
           className="map-tiles"
         />
+        <ChangeView center={center} zoom={zoom} />
 
         {/* 1. Road Segments Polyline Layer */}
         {showRoads &&

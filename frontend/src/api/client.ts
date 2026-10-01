@@ -11,13 +11,24 @@ export const api = axios.create({
   },
 })
 
-// Request interceptor (auth headers etc. can be added here in Parts 2–4)
-api.interceptors.request.use((config) => config)
+// Request interceptor attaches Bearer token if present
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('safecity_token')
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`
+  }
+  return config
+})
 
 // Response interceptor for global error handling
 api.interceptors.response.use(
   (response) => response,
   (error) => {
+    if (error.response?.status === 401 && !window.location.pathname.startsWith('/login') && !window.location.pathname.startsWith('/register')) {
+      // Clear expired token
+      localStorage.removeItem('safecity_token')
+      localStorage.removeItem('safecity_user')
+    }
     if (error.response?.status === 500) {
       console.error('[SafeCity API] Server error:', error.response.data)
     }

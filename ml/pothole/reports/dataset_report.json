@@ -1,0 +1,88 @@
+{
+  "total_images": 1715,
+  "splits": {
+    "train": {
+      "images": 1213,
+      "positive_images": 1053,
+      "negative_images": 160,
+      "instances": 1612,
+      "area_stats": {
+        "min": 0.0005,
+        "max": 0.8424,
+        "mean": 0.0878,
+        "median": 0.028,
+        "std": 0.1354
+      }
+    },
+    "val": {
+      "images": 287,
+      "positive_images": 261,
+      "negative_images": 26,
+      "instances": 398,
+      "area_stats": {
+        "min": 0.0004,
+        "max": 0.7585,
+        "mean": 0.0753,
+        "median": 0.0243,
+        "std": 0.1152
+      }
+    },
+    "test": {
+      "images": 215,
+      "positive_images": 200,
+      "negative_images": 15,
+      "instances": 322,
+      "area_stats": {
+        "min": 0.0013,
+        "max": 0.8023,
+        "mean": 0.0839,
+        "median": 0.0267,
+        "std": 0.1328
+      }
+    }
+  },
+  "positive_images": 1514,
+  "negative_images": 201,
+  "total_instances": 2332,
+  "sources": {
+    "RDD2022 (India Subset)": 1000,
+    "Secondary Pothole Dataset (Roboflow/rupesh002)": 715
+  },
+  "image_resolutions": {
+    "720x720": 820,
+    "640x640": 715,
+    "600x600": 179,
+    "1024x1024": 1
+  },
+  "duplicates_detected": 101,
+  "bbox_statistics": {
+    "width": {
+      "min": 0.0234,
+      "max": 0.9967,
+      "mean": 0.282,
+      "median": 0.197,
+      "std": 0.228
+    },
+    "height": {
+      "min": 0.01,
+      "max": 0.9906,
+      "mean": 0.2052,
+      "median": 0.15,
+      "std": 0.1752
+    },
+    "area": {
+      "min": 0.0004,
+      "max": 0.8424,
+      "mean": 0.0851,
+      "median": 0.0269,
+      "std": 0.1319
+    },
+    "aspect_ratio": {
+      "min": 0.1605,
+      "max": 25.8498,
+      "mean": 1.7431,
+      "median": 1.308,
+      "std": 1.4316
+    }
+  }
+}

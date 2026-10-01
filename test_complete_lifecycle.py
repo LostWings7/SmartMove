@@ -36,7 +36,11 @@ client = TestClient(app)
 
 
 def create_test_road_image(width=640, height=480):
-    """Creates a synthetic asphalt image with a distinct crater."""
+    """Returns sample pothole image or synthetic asphalt image with a distinct crater."""
+    from pathlib import Path
+    sample_p = Path(__file__).resolve().parent / "frontend" / "public" / "samples" / "sample_pothole_road.jpg"
+    if sample_p.exists():
+        return sample_p.read_bytes()
     img = np.full((height, width, 3), 75, dtype=np.uint8)
     cv2.line(img, (width // 2, 0), (width // 2, height), (240, 240, 240), 3)
     cv2.circle(img, (width // 3, height // 2), 48, (20, 20, 20), -1)

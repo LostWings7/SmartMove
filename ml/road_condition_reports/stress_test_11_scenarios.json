@@ -1,0 +1,248 @@
+{
+  "01_large_cracks_only": {
+    "source_image": "ml\\road_condition_reports\\regression_001\\ROAD_CONDITION_REGRESSION_001.jpg",
+    "pothole_count": 0,
+    "crack_count": 1,
+    "water_regions_count": 0,
+    "water_coverage_percent": 0.0,
+    "water_filled_pothole_count": 0,
+    "overall_risk_score": 70.7,
+    "highest_severity": "CRITICAL",
+    "road_context_summary": {
+      "camera_mode": "forward_facing",
+      "horizon_y_ratio": 0.236,
+      "visible_road_pixels": 24248,
+      "visible_road_ratio": 0.607
+    },
+    "disambiguation_audit": []
+  },
+  "02_small_cracks_only": {
+    "source_image": "ml\\cracks\\dataset\\processed_v2\\images\\test\\Japan_000001.jpg",
+    "pothole_count": 1,
+    "crack_count": 3,
+    "water_regions_count": 1,
+    "water_coverage_percent": 1.13,
+    "water_filled_pothole_count": 0,
+    "overall_risk_score": 100.0,
+    "highest_severity": "CRITICAL",
+    "road_context_summary": {
+      "camera_mode": "forward_facing",
+      "horizon_y_ratio": 0.24,
+      "visible_road_pixels": 224323,
+      "visible_road_ratio": 0.623
+    },
+    "disambiguation_audit": [
+      {
+        "candidate_type": "pothole",
+        "bbox": {
+          "x1": 7.1,
+          "y1": 351.2,
+          "x2": 212.6,
+          "y2": 594.1,
+          "width": 205.5,
+          "height": 242.8
+        },
+        "raw_model_confidence": 0.6076973676681519,
+        "decision": "CASE_B_CONFIRMED_POTHOLE_DEPRESSION",
+        "depression_drop": -17.0
+      }
+    ]
+  },
+  "03_potholes_only": {
+    "source_image": "frontend\\public\\samples\\sample_pothole_road.jpg",
+    "pothole_count": 1,
+    "crack_count": 0,
+    "water_regions_count": 0,
+    "water_coverage_percent": 0.0,
+    "water_filled_pothole_count": 0,
+    "overall_risk_score": 92.9,
+    "highest_severity": "HIGH",
+    "road_context_summary": {
+      "camera_mode": "forward_facing",
+      "horizon_y_ratio": 0.239,
+      "visible_road_pixels": 290658,
+      "visible_road_ratio": 0.561
+    },
+    "disambiguation_audit": [
+      {
+        "candidate_type": "pothole",
+        "bbox": {
+          "x1": 475.9,
+          "y1": 563.2,
+          "x2": 601.1,
+          "y2": 692.1,
+          "width": 125.3,
+          "height": 128.9
+        },
+        "raw_model_confidence": 0.7353676557540894,
+        "decision": "CASE_B_CONFIRMED_POTHOLE_DEPRESSION",
+        "depression_drop": 1.4
+      }
+    ]
+  },
+  "04_cracks_plus_potholes": {
+    "source_image": "ml\\pothole\\dataset\\processed_v3\\images\\test\\RDD2022_India_India_002341.jpg",
+    "pothole_count": 0,
+    "crack_count": 3,
+    "water_regions_count": 0,
+    "water_coverage_percent": 0.0,
+    "water_filled_pothole_count": 0,
+    "overall_risk_score": 51.4,
+    "highest_severity": "MEDIUM",
+    "road_context_summary": {
+      "camera_mode": "forward_facing",
+      "horizon_y_ratio": 0.239,
+      "visible_road_pixels": 360575,
+      "visible_road_ratio": 0.696
+    },
+    "disambiguation_audit": []
+  },
+  "05_puddle_only": {
+    "source_image": "frontend\\public\\samples\\sample_water_puddle.jpg",
+    "pothole_count": 0,
+    "crack_count": 1,
+    "water_regions_count": 1,
+    "water_coverage_percent": 0.27,
+    "water_filled_pothole_count": 0,
+    "overall_risk_score": 43.5,
+    "highest_severity": "MEDIUM",
+    "road_context_summary": {
+      "camera_mode": "forward_facing",
+      "horizon_y_ratio": 0.24,
+      "visible_road_pixels": 1017436,
+      "visible_road_ratio": 0.621
+    },
+    "disambiguation_audit": []
+  },
+  "06_water_filled_pothole": {
+    "source_image": "ml\\road_condition_reports\\regression_001\\ROAD_CONDITION_REGRESSION_005_water_pothole.jpg",
+    "pothole_count": 2,
+    "crack_count": 0,
+    "water_regions_count": 1,
+    "water_coverage_percent": 3.52,
+    "water_filled_pothole_count": 1,
+    "overall_risk_score": 100.0,
+    "highest_severity": "CRITICAL",
+    "road_context_summary": {
+      "camera_mode": "forward_facing",
+      "horizon_y_ratio": 0.358,
+      "visible_road_pixels": 18529,
+      "visible_road_ratio": 0.593
+    },
+    "disambiguation_audit": [
+      {
+        "candidate_type": "pothole",
+        "bbox": {
+          "x1": 96.0,
+          "y1": 66.8,
+          "x2": 134.3,
+          "y2": 82.8,
+          "width": 38.3,
+          "height": 16.0
+        },
+        "raw_model_confidence": 0.5867872834205627,
+        "decision": "CASE_B_CONFIRMED_POTHOLE_DEPRESSION",
+        "depression_drop": -56.4
+      },
+      {
+        "candidate_type": "pothole",
+        "bbox": {
+          "x1": 88.0,
+          "y1": 101.9,
+          "x2": 175.0,
+          "y2": 134.9,
+          "width": 87.1,
+          "height": 33.0
+        },
+        "raw_model_confidence": 0.483826220035553,
+        "decision": "CASE_D_WATER_FILLED_POTHOLE",
+        "water_overlap_ratio": 0.225
+      }
+    ]
+  },
+  "07_road_with_trees_plants_sky": {
+    "source_image": "ml\\road_condition_reports\\regression_001\\ROAD_CONDITION_REGRESSION_002_forest_cracks.jpg",
+    "pothole_count": 0,
+    "crack_count": 2,
+    "water_regions_count": 0,
+    "water_coverage_percent": 0.0,
+    "water_filled_pothole_count": 0,
+    "overall_risk_score": 74.9,
+    "highest_severity": "CRITICAL",
+    "road_context_summary": {
+      "camera_mode": "forward_facing",
+      "horizon_y_ratio": 0.358,
+      "visible_road_pixels": 15465,
+      "visible_road_ratio": 0.608
+    },
+    "disambiguation_audit": []
+  },
+  "08_road_with_shadows": {
+    "source_image": "ml\\pothole\\dataset\\stress_test\\shadows\\rdd_India_001876.jpg",
+    "pothole_count": 0,
+    "crack_count": 1,
+    "water_regions_count": 0,
+    "water_coverage_percent": 0.0,
+    "water_filled_pothole_count": 0,
+    "overall_risk_score": 71.0,
+    "highest_severity": "CRITICAL",
+    "road_context_summary": {
+      "camera_mode": "forward_facing",
+      "horizon_y_ratio": 0.239,
+      "visible_road_pixels": 294188,
+      "visible_road_ratio": 0.567
+    },
+    "disambiguation_audit": []
+  },
+  "09_road_with_manholes_drains": {
+    "source_image": "ml\\pothole\\dataset\\stress_test\\manholes\\rdd_India_002057.jpg",
+    "pothole_count": 0,
+    "crack_count": 1,
+    "water_regions_count": 5,
+    "water_coverage_percent": 0.28,
+    "water_filled_pothole_count": 0,
+    "overall_risk_score": 60.4,
+    "highest_severity": "HIGH",
+    "road_context_summary": {
+      "camera_mode": "forward_facing",
+      "horizon_y_ratio": 0.239,
+      "visible_road_pixels": 343448,
+      "visible_road_ratio": 0.663
+    },
+    "disambiguation_audit": []
+  },
+  "10_normal_clean_road": {
+    "source_image": "frontend\\public\\samples\\sample_clean_road.jpg",
+    "pothole_count": 0,
+    "crack_count": 0,
+    "water_regions_count": 0,
+    "water_coverage_percent": 0.0,
+    "water_filled_pothole_count": 0,
+    "overall_risk_score": 0.0,
+    "highest_severity": "NONE",
+    "road_context_summary": {
+      "camera_mode": "forward_facing",
+      "horizon_y_ratio": 0.239,
+      "visible_road_pixels": 230683,
+      "visible_road_ratio": 0.445
+    },
+    "disambiguation_audit": []
+  },
+  "11_non_road_image": {
+    "source_image": "ml\\pothole\\dataset\\stress_test\\non_road\\nonroad_upper_stress_India_002340.jpg",
+    "pothole_count": 0,
+    "crack_count": 0,
+    "water_regions_count": 0,
+    "water_coverage_percent": 0.0,
+    "water_filled_pothole_count": 0,
+    "overall_risk_score": 0.0,
+    "highest_severity": "NONE",
+    "road_context_summary": {
+      "camera_mode": "forward_facing",
+      "horizon_y_ratio": 0.238,
+      "visible_road_pixels": 112091,
+      "visible_road_ratio": 0.516
+    },
+    "disambiguation_audit": []
+  }
+}

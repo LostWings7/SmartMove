@@ -66,6 +66,44 @@ def review_conflict_event(
     return conflict
 
 
+@router.get("/{event_id}/evidence")
+def get_conflict_evidence(
+    event_id: int,
+    db: Session = Depends(get_db)
+):
+    """
+    Retrieve event-specific visual evidence keyframe artifact for a conflict event.
+    Returns participant bounding boxes, trajectory trails, and keyframe snapshot URL.
+    """
+    conflict = db.query(NearMiss).filter(NearMiss.id == event_id).first()
+    if not conflict:
+        raise HTTPException(status_code=404, detail=f"Conflict event #{event_id} not found.")
+
+    from backend.models import EvidenceFile
+    ev_file = db.query(EvidenceFile).filter(EvidenceFile.conflict_id == event_id).first()
+
+    return {
+        "event_id": conflict.id,
+        "conflict_id": conflict.id,
+        "evidence_clip": conflict.evidence_clip,
+        "snapshot_url": conflict.evidence_clip,
+        "thumbnail_url": ev_file.thumbnail_url if ev_file else conflict.evidence_clip,
+        "object_type_a": conflict.object_type_a,
+        "object_type_b": conflict.object_type_b,
+        "object_types": conflict.object_types,
+        "ttc": conflict.ttc,
+        "pet": conflict.pet,
+        "minimum_distance": conflict.minimum_distance,
+        "risk_level": conflict.risk_level,
+        "event_severity": conflict.event_severity,
+        "conflict_zone": conflict.conflict_zone,
+        "direction": conflict.direction,
+        "confidence": conflict.confidence,
+        "review_status": conflict.review_status,
+        "timestamp": conflict.timestamp.isoformat() if conflict.timestamp else None,
+    }
+
+
 @router.get("/hotspots", response_model=List[dict])
 def get_recurring_conflict_hotspots(db: Session = Depends(get_db)):
     """

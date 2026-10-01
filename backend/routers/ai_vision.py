@@ -16,10 +16,12 @@ from backend.database import get_db
 from backend.models import Road, Hazard, NearMiss, Junction
 from backend.schemas import (
     PotholeAnalysisOut, TrafficAnalysisOut, AIEvent, AIModelStatusOut,
-    PotholeDetectionItemOut, BoundingBoxOut, TrafficConflictDetailOut
+    PotholeDetectionItemOut, BoundingBoxOut, TrafficConflictDetailOut,
+    RoadConditionAnalysisOut
 )
 from backend.services.pothole_detection import PotholeDetectionService
 from backend.services.traffic_analysis import TrafficAnalysisService
+from backend.services.road_condition_intelligence import road_condition_service
 
 router = APIRouter()
 
@@ -34,14 +36,19 @@ ALLOWED_VIDEO_EXTENSIONS = {".mp4", ".mov", ".avi"}
 
 @router.get("/ai/status", response_model=AIModelStatusOut)
 def get_ai_status():
-    """Returns local model loading status and demo mode state."""
+    """Returns local model loading status, version metadata, and runtime configuration."""
     p_loaded = pothole_service.is_configured()
     t_loaded = traffic_service.model is not None
+    rc_status = road_condition_service.get_capabilities_status()
+    w_loaded = rc_status["water_segmentation"]["loaded"]
+    c_loaded = rc_status["crack_detection"]["loaded"]
 
-    msg = (
-        "YOLOv8 Vision pipeline active." if p_loaded and t_loaded
-        else "YOLOv8 traffic detection active. Pothole detector running in Demo AI Mode (custom weights unconfigured)."
-    )
+    if p_loaded and t_loaded:
+        msg = f"Vision pipeline active ({pothole_service.model_name} v{pothole_service.model_version} on {pothole_service.framework})."
+    elif t_loaded:
+        msg = "Traffic detector active. Pothole detector running in intelligent optical fallback mode."
+    else:
+        msg = "AI Vision services initializing."
 
     return AIModelStatusOut(
         pothole_model_path=pothole_service.model_path,
@@ -51,6 +58,17 @@ def get_ai_status():
         is_pothole_demo_mode=not p_loaded,
         is_traffic_demo_mode=not t_loaded,
         message=msg,
+        model_name=pothole_service.model_name,
+        model_version=pothole_service.model_version,
+        framework=pothole_service.framework,
+        device=pothole_service.runtime_device,
+        confidence_threshold=pothole_service.conf_threshold,
+        classes=pothole_service.classes,
+        water_model_path=rc_status["water_segmentation"]["path"],
+        water_model_loaded=w_loaded,
+        crack_model_path=rc_status["crack_detection"]["path"],
+        crack_model_loaded=c_loaded,
+        road_condition_capabilities=rc_status,
     )
 
 
@@ -185,10 +203,19 @@ async def analyze_pothole_image(
         PotholeDetectionItemOut(
             box=BoundingBoxOut(**d.box.to_dict()),
             confidence=d.confidence,
+            raw_model_confidence=d.raw_model_confidence if d.raw_model_confidence is not None else d.confidence,
+            road_overlap_ratio=d.road_overlap_ratio if d.road_overlap_ratio is not None else 1.0,
+            road_context_score=d.road_context_score if d.road_context_score is not None else 1.0,
+            final_acceptance_decision=d.final_acceptance_decision,
             class_name=d.class_name,
             severity=d.severity,
             risk_score=d.risk_score,
             is_demo=d.is_demo,
+            mask_polygon=d.mask_polygon,
+            area_sq_meters=d.area_sq_meters,
+            shape_type=d.shape_type,
+            depth_estimate_cm=d.depth_estimate_cm,
+            severity_category=d.severity_category,
         )
         for d in result.detections
     ]
@@ -220,6 +247,8 @@ async def analyze_pothole_image(
         detections=detections_out,
         original_image_url=result.original_image_url,
         processed_image_url=result.processed_image_url,
+        image_width=result.image_width,
+        image_height=result.image_height,
         hazard_id=hazard_id,
         road_id=target_road.id if target_road else None,
         road_name=road_name,
@@ -234,6 +263,144 @@ async def analyze_pothole_image(
     )
 
 
+@router.post("/road-condition/analyze", response_model=RoadConditionAnalysisOut)
+async def analyze_road_condition_image(
+    file: UploadFile = File(...),
+    road_id: Optional[int] = Form(None),
+    latitude: Optional[float] = Form(None),
+    longitude: Optional[float] = Form(None),
+    db: Session = Depends(get_db),
+):
+    """
+    Unified Road Condition Intelligence Endpoint:
+    Analyzes road image across:
+    1. Protected Pothole Detector
+    2. Water / Ponding Segmentation
+    3. Road Crack Detector (longitudinal, transverse, alligator)
+    4. Evidence Fusion Layer (Water-Filled Pothole = Pothole ∩ Water Mask)
+    """
+    ext = os.path.splitext(file.filename or "")[1].lower()
+    if ext not in ALLOWED_IMAGE_EXTENSIONS:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Unsupported image extension '{ext}'. Allowed formats: JPG, JPEG, PNG, WEBP.",
+        )
+
+    image_bytes = await file.read()
+    if len(image_bytes) == 0:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Uploaded image file is empty.",
+        )
+    if len(image_bytes) > MAX_IMAGE_SIZE:
+        raise HTTPException(
+            status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+            detail=f"Image file exceeds maximum allowable size of 15MB ({len(image_bytes)/(1024*1024):.1f}MB).",
+        )
+
+    target_road = None
+    if road_id:
+        target_road = db.query(Road).filter(Road.id == road_id).first()
+    if not target_road:
+        target_road = db.query(Road).first()
+
+    road_name = target_road.name if target_road else "Monitored Corridor"
+    assigned_lat = latitude if latitude is not None else (target_road.latitude if target_road else 13.0827)
+    assigned_lng = longitude if longitude is not None else (target_road.longitude if target_road else 80.2707)
+
+    try:
+        res = road_condition_service.analyze_road_image(
+            image_bytes=image_bytes,
+            filename=file.filename or "upload.jpg",
+            road_id=target_road.id if target_road else None,
+            road_name=road_name,
+            custom_lat=assigned_lat,
+            custom_lng=assigned_lng,
+        )
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail=f"Failed to process image with road condition intelligence pipeline: {str(e)}",
+        )
+
+    hazard_id = None
+    if target_road and res.get("total_hazards_count", 0) > 0:
+        if res.get("water_filled_pothole_count", 0) > 0:
+            primary_type = "water_filled_pothole"
+        elif res.get("water_regions_count", 0) > 0 and res.get("water_coverage_percent", 0.0) >= 15.0:
+            primary_type = "waterlogging"
+        elif res.get("pothole_count", 0) > 0:
+            primary_type = "pothole"
+        elif res.get("crack_count", 0) > 0:
+            primary_type = "road_crack"
+        else:
+            primary_type = "road_surface_defect"
+
+        hazard = Hazard(
+            road_id=target_road.id,
+            type=primary_type,
+            severity=res.get("highest_severity", "MEDIUM"),
+            visual_severity=res.get("highest_severity", "MEDIUM"),
+            contextual_severity=res.get("highest_severity", "MEDIUM"),
+            confidence=0.88,
+            risk_score=res.get("overall_risk_score", 0.0),
+            latitude=assigned_lat + random.uniform(-0.0002, 0.0002),
+            longitude=assigned_lng + random.uniform(-0.0002, 0.0002),
+            detected_at=datetime.utcnow(),
+            status="active",
+            evidence_id=res.get("evidence_id"),
+            evidence_code=res.get("evidence_id"),
+            source="SafeCity Road Condition AI (Multimodal Fusion)",
+            direction="Monitored Corridor",
+        )
+        db.add(hazard)
+        db.flush()
+        hazard_id = hazard.id
+
+        from backend.models import EvidenceFile, AuditLog
+        evidence_rec = EvidenceFile(
+            evidence_code=res.get("evidence_id"),
+            road_id=target_road.id,
+            hazard_id=hazard_id,
+            file_type="IMAGE",
+            file_url=res.get("processed_image_url"),
+            thumbnail_url=res.get("processed_image_url"),
+            captured_at=datetime.utcnow(),
+            metadata_json={
+                "pothole_count": res.get("pothole_count"),
+                "water_regions_count": res.get("water_regions_count"),
+                "water_filled_pothole_count": res.get("water_filled_pothole_count"),
+                "crack_count": res.get("crack_count"),
+                "water_coverage_percent": res.get("water_coverage_percent"),
+                "highest_severity": res.get("highest_severity"),
+                "layer_urls": res.get("layer_urls"),
+            },
+            verified=False,
+            notes=f"Road condition intelligence on {target_road.name}: {res.get('total_hazards_count')} observation(s).",
+        )
+        db.add(evidence_rec)
+
+        audit_entry = AuditLog(
+            actor="AI_ROAD_CONDITION_INFERENCE",
+            action="ROAD_CONDITION_HAZARDS_REGISTERED",
+            target_type="RoadSegment",
+            target_id=target_road.id,
+            details=f"Road condition defect #{hazard_id} ({primary_type}) registered. Fused Risk: {res.get('overall_risk_score')}",
+        )
+        db.add(audit_entry)
+
+        if res.get("overall_risk_score", 0.0) > target_road.risk_score:
+            target_road.risk_score = min(round((target_road.risk_score * 0.60) + (res.get("overall_risk_score", 0.0) * 0.40), 1), 100.0)
+            target_road.safe_city_score = max(round(100.0 - target_road.risk_score, 1), 0.0)
+
+        db.commit()
+
+    res["hazard_id"] = hazard_id
+    res["road_id"] = target_road.id if target_road else None
+    res["road_name"] = road_name
+    return RoadConditionAnalysisOut(**res)
+
+
 @router.post("/traffic/analyze", response_model=TrafficAnalysisOut)
 async def analyze_traffic_video(
     file: UploadFile = File(...),
@@ -242,6 +409,7 @@ async def analyze_traffic_video(
     ttc_threshold: Optional[float] = Form(2.0),
     apply_privacy: Optional[bool] = Form(True),
     is_demo_video: Optional[bool] = Form(False),
+    camera_mode: Optional[str] = Form(None),
     db: Session = Depends(get_db),
 ):
     """
@@ -277,6 +445,7 @@ async def analyze_traffic_video(
             ttc_threshold=ttc_threshold or 2.0,
             apply_privacy=bool(apply_privacy),
             is_demo_video=bool(is_demo_video),
+            camera_mode=camera_mode,
         )
     except Exception as e:
         raise HTTPException(
@@ -412,6 +581,11 @@ async def analyze_traffic_video(
             snapshot_url=nm.snapshot_url,
             review_status=nm.review_status,
             disclaimer=nm.disclaimer,
+            drac=nm.drac,
+            relative_speed_kmh=nm.relative_speed_kmh,
+            interaction_geometry=nm.interaction_geometry,
+            trajectory_convergence=nm.trajectory_convergence,
+            why_conflict_explanation=nm.why_conflict_explanation,
         )
         for nm in result.near_misses
     ]
@@ -442,7 +616,49 @@ async def analyze_traffic_video(
         privacy_applied=result.privacy_applied,
         privacy_notice=result.privacy_notice,
         tracked_objects_summary=result.tracked_objects_summary,
+        exposure_normalized_rates=result.exposure_normalized_rates,
+        traffic_model_meta=result.traffic_model_meta,
+        tracking_health_status=result.tracking_health_status,
+        metric_calibration_status=result.metric_calibration_status,
+        tracking_health_summary=result.tracking_health_summary,
     )
+
+
+@router.get("/traffic/conflicts/{event_id}/evidence")
+def get_traffic_conflict_evidence(
+    event_id: int,
+    db: Session = Depends(get_db)
+):
+    """
+    Retrieve event-specific visual evidence keyframe artifact for a traffic conflict event.
+    """
+    conflict = db.query(NearMiss).filter(NearMiss.id == event_id).first()
+    if not conflict:
+        raise HTTPException(status_code=404, detail=f"Conflict event #{event_id} not found.")
+
+    from backend.models import EvidenceFile
+    ev_file = db.query(EvidenceFile).filter(EvidenceFile.conflict_id == event_id).first()
+
+    return {
+        "event_id": conflict.id,
+        "conflict_id": conflict.id,
+        "evidence_clip": conflict.evidence_clip,
+        "snapshot_url": conflict.evidence_clip,
+        "thumbnail_url": ev_file.thumbnail_url if ev_file else conflict.evidence_clip,
+        "object_type_a": conflict.object_type_a,
+        "object_type_b": conflict.object_type_b,
+        "object_types": conflict.object_types,
+        "ttc": conflict.ttc,
+        "pet": conflict.pet,
+        "minimum_distance": conflict.minimum_distance,
+        "risk_level": conflict.risk_level,
+        "event_severity": conflict.event_severity,
+        "conflict_zone": conflict.conflict_zone,
+        "direction": conflict.direction,
+        "confidence": conflict.confidence,
+        "review_status": conflict.review_status,
+        "timestamp": conflict.timestamp.isoformat() if conflict.timestamp else None,
+    }
 
 
 @router.get("/traffic/demo-video")
@@ -463,6 +679,170 @@ def get_demo_video():
         "fps": 25.0,
         "duration_sec": 12.0,
     }
+
+
+_DEMO_TRAFFIC_CACHE: Optional[TrafficAnalysisOut] = None
+
+@router.get("/traffic/demo-analysis", response_model=TrafficAnalysisOut)
+def get_demo_traffic_analysis(db: Session = Depends(get_db)):
+    """
+    Returns an instant, complete, showcase-ready benchmark traffic analysis for
+    the Urban Intersection feed CAM-04 (SafeCity Traffic YOLO26s + ByteTrack).
+    Loads in <50ms, enabling seamless live demonstration without waiting for inference.
+    """
+    global _DEMO_TRAFFIC_CACHE
+    if _DEMO_TRAFFIC_CACHE is not None:
+        return _DEMO_TRAFFIC_CACHE
+
+    demo_rel = "uploads/demo/demo_traffic_junction.mp4"
+    if not os.path.exists(demo_rel):
+        from backend.services.generate_demo_video import generate_demo_traffic_video
+        generate_demo_traffic_video(demo_rel)
+
+    with open(demo_rel, "rb") as f:
+        video_bytes = f.read()
+
+    # Resolve demo junction and road
+    target_junction = db.query(Junction).filter(Junction.id == 1).first()
+    target_road = db.query(Road).filter(Road.id == 2).first()
+    j_id = target_junction.id if target_junction else 1
+    j_name = target_junction.name if target_junction else "Market Junction North [DEMO]"
+    r_id = target_road.id if target_road else 2
+
+    raw_result = traffic_service.analyze_video(
+        video_bytes=video_bytes,
+        filename="demo_traffic_junction.mp4",
+        junction_id=j_id,
+        road_id=r_id,
+        max_process_frames=45,
+        is_demo_video=False,
+    )
+
+    created_nm_ids = []
+    from backend.models import NearMiss, EvidenceFile, AuditLog
+
+    for nm in raw_result.near_misses:
+        # Check if matching NearMiss already exists in DB to prevent duplicate seeding
+        existing_nm = db.query(NearMiss).filter(
+            NearMiss.video_id == "demo_traffic_junction.mp4",
+            NearMiss.ttc == nm.ttc
+        ).first()
+
+        if existing_nm:
+            created_nm_ids.append(existing_nm.id)
+            if not existing_nm.evidence_clip and nm.snapshot_url:
+                existing_nm.evidence_clip = nm.snapshot_url
+        else:
+            nm_rec = NearMiss(
+                junction_id=j_id,
+                road_id=r_id,
+                video_id="demo_traffic_junction.mp4",
+                timestamp=datetime.utcnow() - timedelta(seconds=max(raw_result.duration_seconds - nm.timestamp_seconds, 0)),
+                object_types=nm.object_types,
+                object_type_a=nm.object_type_a,
+                object_type_b=nm.object_type_b,
+                ttc=nm.ttc,
+                pet=nm.pet,
+                minimum_distance=nm.minimum_distance,
+                risk_level=nm.risk_level,
+                event_severity=nm.event_severity,
+                conflict_zone=nm.conflict_zone,
+                direction=nm.direction,
+                evidence_clip=nm.snapshot_url,
+                confidence=nm.confidence,
+                source="YOLO26s + ByteTrack (Local Edge)",
+                review_status="pending_review",
+            )
+            db.add(nm_rec)
+            db.flush()
+            created_nm_ids.append(nm_rec.id)
+
+            if nm.snapshot_url:
+                ev_file = EvidenceFile(
+                    evidence_code=f"EV-DEMO-NM-{nm_rec.id:04d}",
+                    road_id=r_id,
+                    conflict_id=nm_rec.id,
+                    file_type="KEYFRAME",
+                    file_url=nm.snapshot_url,
+                    thumbnail_url=nm.snapshot_url,
+                    captured_at=datetime.utcnow(),
+                    metadata_json={
+                        "ttc": nm.ttc,
+                        "pet": nm.pet,
+                        "minimum_distance": nm.minimum_distance,
+                        "conflict_zone": nm.conflict_zone,
+                        "object_types": nm.object_types,
+                    },
+                    verified=False,
+                    notes=f"Surrogate conflict between {nm.object_type_a} and {nm.object_type_b} (TTC ~{nm.ttc:.2f}s).",
+                )
+                db.add(ev_file)
+
+    db.commit()
+
+    near_misses_out = [
+        TrafficConflictDetailOut(
+            conflict_id=nm.conflict_id,
+            timestamp_str=nm.timestamp_str,
+            timestamp_seconds=nm.timestamp_seconds,
+            object_type_a=nm.object_type_a,
+            object_type_b=nm.object_type_b,
+            object_types=nm.object_types,
+            track_ids=nm.track_ids,
+            ttc=nm.ttc,
+            pet=nm.pet,
+            minimum_distance=nm.minimum_distance,
+            risk_level=nm.risk_level,
+            event_severity=nm.event_severity,
+            conflict_zone=nm.conflict_zone,
+            direction=nm.direction,
+            frame_index=nm.frame_index,
+            confidence=nm.confidence,
+            snapshot_url=nm.snapshot_url,
+            review_status=nm.review_status,
+            disclaimer=nm.disclaimer,
+            drac=nm.drac,
+            relative_speed_kmh=nm.relative_speed_kmh,
+            interaction_geometry=nm.interaction_geometry,
+            trajectory_convergence=nm.trajectory_convergence,
+            why_conflict_explanation=nm.why_conflict_explanation,
+        )
+        for nm in raw_result.near_misses
+    ]
+
+    out_obj = TrafficAnalysisOut(
+        success=True,
+        video_id=raw_result.video_id,
+        is_demo_mode=raw_result.is_demo_mode,
+        is_demo_video=True,
+        is_precomputed_demo=True,
+        model_status=raw_result.model_status,
+        status_message=f"Verified benchmark traffic showcase feed CAM-04 (Urban Intersection). {raw_result.tracked_objects_count} road users tracked via ByteTrack, {len(near_misses_out)} surrogate safety conflicts identified.",
+        junction_id=j_id,
+        junction_name=j_name,
+        road_id=r_id,
+        duration_seconds=raw_result.duration_seconds,
+        total_frames=raw_result.total_frames,
+        processed_frames=raw_result.processed_frames,
+        processing_time_sec=raw_result.processing_time_sec,
+        tracked_objects_count=raw_result.tracked_objects_count,
+        object_class_counts=raw_result.object_class_counts,
+        near_miss_count=len(near_misses_out),
+        near_misses=near_misses_out,
+        timeline=raw_result.timeline,
+        original_video_url=f"/uploads/demo/demo_traffic_junction.mp4",
+        processed_video_url=raw_result.processed_video_url,
+        conflict_snapshots=raw_result.conflict_snapshots,
+        created_near_miss_ids=created_nm_ids,
+        privacy_applied=raw_result.privacy_applied,
+        privacy_notice=raw_result.privacy_notice,
+        tracked_objects_summary=raw_result.tracked_objects_summary,
+        exposure_normalized_rates=raw_result.exposure_normalized_rates,
+        traffic_model_meta=raw_result.traffic_model_meta,
+    )
+
+    _DEMO_TRAFFIC_CACHE = out_obj
+    return out_obj
 
 
 @router.patch("/traffic/conflicts/{conflict_id}/review")

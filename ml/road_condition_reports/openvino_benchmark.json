@@ -1,0 +1,57 @@
+{
+  "openvino_version": "2026.4.0",
+  "devices": [
+    "CPU",
+    "GPU",
+    "NPU"
+  ],
+  "device_info": {
+    "CPU": "Intel(R) Core(TM) Ultra 5 225H",
+    "GPU": "Intel(R) Graphics (iGPU)",
+    "NPU": "Intel(R) AI Boost"
+  },
+  "water_model": {
+    "pytorch_cpu": {
+      "mean_ms": 80.12,
+      "median_ms": 79.69,
+      "p95_ms": 85.82,
+      "fps": 12.5,
+      "num_runs": 50
+    },
+    "openvino_cpu": {
+      "mean_ms": 78.64,
+      "median_ms": 76.44,
+      "p95_ms": 99.7,
+      "fps": 12.7,
+      "num_runs": 50
+    }
+  },
+  "crack_model": {
+    "pytorch_cpu": {
+      "mean_ms": 73.14,
+      "median_ms": 72.05,
+      "p95_ms": 77.47,
+      "fps": 13.7,
+      "num_runs": 50
+    },
+    "openvino_cpu": {
+      "mean_ms": 69.95,
+      "median_ms": 66.12,
+      "p95_ms": 117.79,
+      "fps": 14.3,
+      "num_runs": 50
+    }
+  },
+  "parity": {
+    "water_segmentation": {
+      "mean_mask_iou": 0.9997,
+      "parity_status": "EXCELLENT",
+      "samples_tested": 15
+    },
+    "road_cracks": {
+      "box_agreement_rate": 1.0,
+      "parity_status": "EXCELLENT",
+      "samples_tested": 15
+    }
+  }
+}

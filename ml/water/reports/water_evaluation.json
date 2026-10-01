@@ -1,0 +1,65 @@
+{
+  "model_path": "C:\\Users\\dvasa\\Projects\\SmartMove\\models\\water_yolo26s_seg_v1.pt",
+  "evaluation_timestamp": "2026-09-30 18:21:58 UTC",
+  "confidence_threshold": 0.25,
+  "test_images_count": 567,
+  "primary_segmentation_metrics": {
+    "overall_pixel_iou": 0.4511,
+    "mean_per_image_iou": 0.6616,
+    "overall_pixel_dice": 0.6217,
+    "mean_per_image_dice": 0.7491,
+    "overall_pixel_precision": 0.5107,
+    "overall_pixel_recall": 0.7945,
+    "overall_pixel_f1": 0.6217
+  },
+  "ultralytics_mask_map": {
+    "mask_map50": 0.5842,
+    "mask_map50_95": 0.3409,
+    "box_map50": 0.5993,
+    "box_map50_95": 0.378
+  },
+  "subcategories": {
+    "small_puddles": {
+      "count": 229,
+      "iou": 0.201,
+      "dice": 0.3347,
+      "precision": 0.2084,
+      "recall": 0.8501,
+      "f1": 0.3347
+    },
+    "medium_waterlogging": {
+      "count": 189,
+      "iou": 0.6269,
+      "dice": 0.7706,
+      "precision": 0.7328,
+      "recall": 0.8125,
+      "f1": 0.7706
+    },
+    "extensive_ponding": {
+      "count": 147,
+      "iou": 0.656,
+      "dice": 0.7923,
+      "precision": 0.8597,
+      "recall": 0.7347,
+      "f1": 0.7923
+    },
+    "multi_region": {
+      "count": 286,
+      "iou": 0.4812,
+      "dice": 0.6498,
+      "precision": 0.5616,
+      "recall": 0.7708,
+      "f1": 0.6498
+    },
+    "negative_clean_road": {
+      "count": 2,
+      "false_positive_pixel_rate": 0.0905,
+      "clean_road_specificity": 0.9095
+    }
+  },
+  "latency_benchmarks_ms": {
+    "mean": 180.68,
+    "p95": 205.29,
+    "fps_cpu": 5.5
+  }
+}

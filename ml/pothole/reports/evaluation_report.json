@@ -1,0 +1,89 @@
+{
+  "model_path": "models/pothole_yolo26s.pt",
+  "test_dataset_size": 215,
+  "positive_test_images": 200,
+  "negative_test_images": 15,
+  "metrics_at_default": {
+    "precision": 0.4747,
+    "recall": 0.4294,
+    "f1_score": 0.4509,
+    "map50": 0.3774,
+    "map50_95": 0.1678
+  },
+  "performance_latency": {
+    "preprocess_ms": 1.74,
+    "inference_ms": 144.89,
+    "postprocess_ms": 3.96,
+    "total_latency_ms": 150.58,
+    "fps": 6.6
+  },
+  "confidence_threshold_sweep": [
+    {
+      "threshold": 0.2,
+      "precision": 0.2302,
+      "recall": 0.6242,
+      "f1": 0.3364,
+      "true_positives": 201,
+      "false_positives": 672,
+      "false_negatives": 121
+    },
+    {
+      "threshold": 0.3,
+      "precision": 0.3702,
+      "recall": 0.5093,
+      "f1": 0.4288,
+      "true_positives": 164,
+      "false_positives": 279,
+      "false_negatives": 158
+    },
+    {
+      "threshold": 0.4,
+      "precision": 0.5226,
+      "recall": 0.3944,
+      "f1": 0.4496,
+      "true_positives": 127,
+      "false_positives": 116,
+      "false_negatives": 195
+    },
+    {
+      "threshold": 0.5,
+      "precision": 0.719,
+      "recall": 0.2702,
+      "f1": 0.3928,
+      "true_positives": 87,
+      "false_positives": 34,
+      "false_negatives": 235
+    },
+    {
+      "threshold": 0.6,
+      "precision": 0.7377,
+      "recall": 0.1398,
+      "f1": 0.235,
+      "true_positives": 45,
+      "false_positives": 16,
+      "false_negatives": 277
+    },
+    {
+      "threshold": 0.7,
+      "precision": 0.72,
+      "recall": 0.0559,
+      "f1": 0.1037,
+      "true_positives": 18,
+      "false_positives": 7,
+      "false_negatives": 304
+    },
+    {
+      "threshold": 0.8,
+      "precision": 1.0,
+      "recall": 0.0031,
+      "f1": 0.0062,
+      "true_positives": 1,
+      "false_positives": 0,
+      "false_negatives": 321
+    }
+  ],
+  "recommended_deployment_threshold": 0.4,
+  "recommended_f1": 0.4496,
+  "clean_road_specificity": 0.8667,
+  "worst_cases_directory": "C:\\Users\\dvasa\\Projects\\SmartMove\\ml\\pothole\\reports\\worst_cases"
+}

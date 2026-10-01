@@ -1,0 +1,36 @@
+{
+  "dataset_name": "SafeCity Unified Pothole Dataset V1",
+  "classes": [
+    "pothole"
+  ],
+  "num_classes": 1,
+  "sources": [
+    {
+      "name": "RDD2022 (India Road Damage Dataset)",
+      "organization": "Seki Lab / University of Tokyo",
+      "license": "CC BY-SA 4.0",
+      "official_url": "https://github.com/sekilab/RoadDamageDetector",
+      "citation": "CRDDC'2022 / ArXiv:2209.08538",
+      "subset": "India D40 (Potholes) + Road Negative Backgrounds"
+    },
+    {
+      "name": "Pothole Detection Dataset",
+      "organization": "Roboflow Universe / rupesh002",
+      "license": "MIT",
+      "official_url": "https://huggingface.co/datasets/rupesh002/pothole-detection-dataset",
+      "subset": "Real-world road potholes"
+    }
+  ],
+  "split_method": "Corridor Sequence Hashing (Grouped by contiguous drive sequence to strictly avoid test leakage)",
+  "split_stats": {
+    "train": 1213,
+    "val": 287,
+    "test": 215,
+    "pothole_instances": {
+      "train": 1612,
+      "val": 398,
+      "test": 322
+    }
+  },
+  "data_yaml_path": "C:\\Users\\dvasa\\Projects\\SmartMove\\ml\\pothole\\configs\\data.yaml"
+}

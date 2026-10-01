@@ -1,0 +1,122 @@
+{
+  "scenarios": [
+    {
+      "scenario_id": "FUS-01",
+      "name": "Dry Surface Pothole (No Standing Water)",
+      "overlap_percent": 0.0,
+      "fused_type": "pothole",
+      "pothole_conf": 0.86,
+      "water_conf": 0.0,
+      "severity": "MEDIUM",
+      "risk_score": 45.0,
+      "status": "PASS"
+    },
+    {
+      "scenario_id": "FUS-02",
+      "name": "Boundary Jitter / Wet Perimeter (< 20% overlap)",
+      "overlap_percent": 6.0,
+      "fused_type": "pothole",
+      "pothole_conf": 0.84,
+      "water_conf": 0.88,
+      "severity": "MEDIUM",
+      "risk_score": 45.0,
+      "status": "PASS"
+    },
+    {
+      "scenario_id": "FUS-03",
+      "name": "Partially Water-Filled Pothole (35% overlap)",
+      "overlap_percent": 35.0,
+      "fused_type": "water_filled_pothole",
+      "pothole_conf": 0.91,
+      "water_conf": 0.88,
+      "severity": "HIGH",
+      "risk_score": 57.0,
+      "status": "PASS"
+    },
+    {
+      "scenario_id": "FUS-04",
+      "name": "Submerged Deep Pothole (85% overlap)",
+      "overlap_percent": 100.0,
+      "fused_type": "water_filled_pothole",
+      "pothole_conf": 0.89,
+      "water_conf": 0.88,
+      "severity": "CRITICAL",
+      "risk_score": 89.8,
+      "status": "PASS"
+    },
+    {
+      "scenario_id": "FUS-05",
+      "name": "Extensive Roadway Ponding (No Pothole)",
+      "overlap_percent": 0.0,
+      "fused_type": "water",
+      "pothole_conf": null,
+      "water_conf": 0.88,
+      "severity": "HIGH",
+      "risk_score": 62.0,
+      "status": "PASS"
+    }
+  ],
+  "sensitivity": [
+    {
+      "threshold": "5%",
+      "decision_rule": "Overlap >= 5%",
+      "false_fusion_risk": "HIGH",
+      "missed_fusion_risk": "LOW",
+      "recommended": false
+    },
+    {
+      "threshold": "10%",
+      "decision_rule": "Overlap >= 10%",
+      "false_fusion_risk": "HIGH",
+      "missed_fusion_risk": "LOW",
+      "recommended": false
+    },
+    {
+      "threshold": "15%",
+      "decision_rule": "Overlap >= 15%",
+      "false_fusion_risk": "MODERATE",
+      "missed_fusion_risk": "LOW",
+      "recommended": false
+    },
+    {
+      "threshold": "20%",
+      "decision_rule": "Overlap >= 20%",
+      "false_fusion_risk": "LOW",
+      "missed_fusion_risk": "LOW",
+      "recommended": true
+    },
+    {
+      "threshold": "25%",
+      "decision_rule": "Overlap >= 25%",
+      "false_fusion_risk": "LOW",
+      "missed_fusion_risk": "LOW",
+      "recommended": false
+    },
+    {
+      "threshold": "30%",
+      "decision_rule": "Overlap >= 30%",
+      "false_fusion_risk": "LOW",
+      "missed_fusion_risk": "MODERATE",
+      "recommended": false
+    },
+    {
+      "threshold": "40%",
+      "decision_rule": "Overlap >= 40%",
+      "false_fusion_risk": "LOW",
+      "missed_fusion_risk": "HIGH",
+      "recommended": false
+    },
+    {
+      "threshold": "50%",
+      "decision_rule": "Overlap >= 50%",
+      "false_fusion_risk": "LOW",
+      "missed_fusion_risk": "HIGH",
+      "recommended": false
+    }
+  ],
+  "risk_combination": {
+    "linear_sum": 150.0,
+    "safecity_fused_risk": 70.8,
+    "subadditive": true
+  }
+}

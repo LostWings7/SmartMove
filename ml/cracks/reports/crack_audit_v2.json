@@ -1,0 +1,72 @@
+{
+  "class_statistics": {
+    "longitudinal_crack": {
+      "num_images": 2106,
+      "num_instances": 3182,
+      "mean_box_area_pct": 5.147,
+      "median_box_area_pct": 2.691,
+      "min_box_area_pct": 0.06103,
+      "max_box_area_pct": 67.06,
+      "aspect_ratio_p10": 0.11,
+      "aspect_ratio_median": 0.28,
+      "aspect_ratio_p90": 1.23,
+      "thin_long_instances": 1922,
+      "thin_long_pct": 60.4,
+      "large_crack_instances_gt15pct": 244,
+      "large_crack_pct": 7.7,
+      "small_crack_instances_lt1pct": 541,
+      "small_crack_pct": 17.0
+    },
+    "transverse_crack": {
+      "num_images": 1570,
+      "num_instances": 2060,
+      "mean_box_area_pct": 4.244,
+      "median_box_area_pct": 2.098,
+      "min_box_area_pct": 0.09727,
+      "max_box_area_pct": 67.25,
+      "aspect_ratio_p10": 2.46,
+      "aspect_ratio_median": 4.82,
+      "aspect_ratio_p90": 8.66,
+      "thin_long_instances": 1720,
+      "thin_long_pct": 83.5,
+      "large_crack_instances_gt15pct": 110,
+      "large_crack_pct": 5.3,
+      "small_crack_instances_lt1pct": 506,
+      "small_crack_pct": 24.6
+    },
+    "alligator_crack": {
+      "num_images": 1014,
+      "num_instances": 1219,
+      "mean_box_area_pct": 13.391,
+      "median_box_area_pct": 9.027,
+      "min_box_area_pct": 0.21362,
+      "max_box_area_pct": 88.3,
+      "aspect_ratio_p10": 0.66,
+      "aspect_ratio_median": 1.43,
+      "aspect_ratio_p90": 3.16,
+      "thin_long_instances": 175,
+      "thin_long_pct": 14.4,
+      "large_crack_instances_gt15pct": 404,
+      "large_crack_pct": 33.1,
+      "small_crack_instances_lt1pct": 47,
+      "small_crack_pct": 3.9
+    }
+  },
+  "country_distribution": {
+    "China_Drone": 2284,
+    "China_MotorBike": 750,
+    "India": 1020,
+    "Japan": 149
+  },
+  "split_overlaps": {
+    "train_test": 985,
+    "train_val": 284
+  },
+  "flagged_counts": {
+    "too_loose_boxes": 77,
+    "tiny_fragment_boxes": 23,
+    "fragmented_long_cracks": 10,
+    "upper_background_boxes": 776
+  },
+  "visual_audit_samples_rendered": 105
+}

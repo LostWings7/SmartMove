@@ -375,10 +375,19 @@ BoundingBoxOut = PotholeDetectionBoundingBoxOut
 class PotholeDetectionItemOut(BaseModel):
     box: PotholeDetectionBoundingBoxOut
     confidence: float
+    raw_model_confidence: Optional[float] = None
+    road_overlap_ratio: Optional[float] = None
+    road_context_score: Optional[float] = None
+    final_acceptance_decision: Optional[str] = "ACCEPTED"
     class_name: str
     severity: str
     risk_score: float
     is_demo: bool = False
+    mask_polygon: Optional[List[List[float]]] = None
+    area_sq_meters: Optional[float] = None
+    shape_type: Optional[str] = "bounding_box"
+    depth_estimate_cm: Optional[float] = None
+    severity_category: Optional[str] = None
 
 
 class PotholeAnalysisOut(BaseModel):
@@ -408,6 +417,8 @@ class PotholeAnalysisOut(BaseModel):
     detections: List[PotholeDetectionItemOut]
     original_image_url: str
     processed_image_url: str
+    image_width: Optional[int] = None
+    image_height: Optional[int] = None
     hazard_id: Optional[int] = None
     road_id: Optional[int] = None
     road_name: Optional[str] = None
@@ -441,6 +452,11 @@ class TrafficConflictDetailOut(BaseModel):
     snapshot_url: Optional[str] = None
     review_status: Optional[str] = "pending_review"
     disclaimer: Optional[str] = "Approximate monocular surrogate safety estimate. Potential traffic conflict."
+    drac: Optional[float] = None
+    relative_speed_kmh: Optional[float] = None
+    interaction_geometry: Optional[str] = None
+    trajectory_convergence: Optional[bool] = None
+    why_conflict_explanation: Optional[Dict[str, Any]] = None
 
 
 class ConflictHotspotOut(BaseModel):
@@ -461,6 +477,7 @@ class TrafficAnalysisOut(BaseModel):
     video_id: Optional[str] = None
     is_demo_mode: bool
     is_demo_video: Optional[bool] = False
+    is_precomputed_demo: Optional[bool] = False
     model_status: str
     status_message: str
     junction_id: Optional[int]
@@ -482,6 +499,11 @@ class TrafficAnalysisOut(BaseModel):
     privacy_applied: Optional[bool] = True
     privacy_notice: Optional[str] = "Video processing is intended to minimize unnecessary storage of personally identifiable visual information (faces and license plates anonymized)."
     tracked_objects_summary: Optional[List[Dict[str, Any]]] = []
+    exposure_normalized_rates: Optional[Dict[str, Any]] = None
+    traffic_model_meta: Optional[Dict[str, Any]] = None
+    tracking_health_status: Optional[str] = "ANALYSIS_HEALTHY"
+    metric_calibration_status: Optional[str] = "NOMINAL_PIXEL_ESTIMATE"
+    tracking_health_summary: Optional[Dict[str, Any]] = None
 
 
 class AIModelStatusOut(BaseModel):
@@ -492,6 +514,121 @@ class AIModelStatusOut(BaseModel):
     is_pothole_demo_mode: bool
     is_traffic_demo_mode: bool
     message: str
+    model_name: Optional[str] = "SafeCity YOLO26s Pothole Detector"
+    model_version: Optional[str] = "1.0.0"
+    framework: Optional[str] = "Ultralytics YOLO / OpenVINO"
+    device: Optional[str] = "CPU"
+    confidence_threshold: Optional[float] = 0.35
+    classes: Optional[List[str]] = ["pothole"]
+    traffic_model_name: Optional[str] = "SafeCity Traffic YOLO26s v1"
+    traffic_model_version: Optional[str] = "1.0.0"
+    traffic_tracker: Optional[str] = "ByteTrack"
+    traffic_classes: Optional[List[str]] = ["pedestrian", "rider", "car", "truck", "bus", "motorcycle", "bicycle"]
+    traffic_runtime: Optional[str] = "PyTorch / OpenVINO"
+    water_model_path: Optional[str] = None
+    water_model_loaded: Optional[bool] = False
+    crack_model_path: Optional[str] = None
+    crack_model_loaded: Optional[bool] = False
+    road_condition_capabilities: Optional[Dict[str, Any]] = None
+
+
+# ── Road Condition Intelligence: Water & Crack Subsystems ────────────────────
+
+class WaterRegionOut(BaseModel):
+    region_id: int
+    area_pixels: Optional[int] = None
+    pixel_count: Optional[int] = None
+    coverage_percent: float
+    bbox: Dict[str, float]
+    severity: Optional[str] = "MODERATE"
+    confidence: Optional[float] = None
+    polygon: Optional[List[List[float]]] = None
+
+
+class WaterFilledPotholeEvidenceOut(BaseModel):
+    pothole_confidence: float
+    water_confidence: float
+    overlap_ratio: float
+    overlap_percent: float
+    water_pixels_in_pothole: int
+    total_pothole_pixels: int
+    evidence_status: str = "CONFIRMED_FUSION"
+    fusion_formula: str
+
+
+class RoadCrackDetectionItemOut(BaseModel):
+    crack_type: str
+    confidence: float
+    raw_model_confidence: Optional[float] = None
+    road_overlap_ratio: Optional[float] = None
+    road_context_score: Optional[float] = None
+    final_acceptance_decision: Optional[str] = "ACCEPTED"
+    severity: str
+    risk_score: float
+    bbox: Dict[str, float]
+    mask_polygon: Optional[List[List[float]]] = None
+    estimated_visible_area_sq_m: Optional[float] = None
+
+
+class RoadConditionObservationOut(BaseModel):
+    observation_id: str
+    hazard_type: str
+    confidence: float
+    raw_model_confidence: Optional[float] = None
+    road_overlap_ratio: Optional[float] = None
+    road_context_score: Optional[float] = None
+    final_acceptance_decision: Optional[str] = "ACCEPTED"
+    severity: str
+    risk_score: float
+    bbox: Optional[Dict[str, float]] = None
+    mask_polygon: Optional[List[List[float]]] = None
+    coverage_percent: Optional[float] = None
+    source_model: str
+    model_version: str
+    timestamp: str
+    latitude: Optional[float] = None
+    longitude: Optional[float] = None
+    evidence_reference: Optional[str] = None
+    fusion_evidence: Optional[Dict[str, Any]] = None
+
+
+class RoadConditionAnalysisOut(BaseModel):
+    success: bool = True
+    image_id: str
+    total_hazards_count: int
+    pothole_count: int
+    water_regions_count: int
+    crack_count: int
+    longitudinal_crack_count: int = 0
+    transverse_crack_count: int = 0
+    alligator_crack_count: int = 0
+    water_filled_pothole_count: int = 0
+    water_coverage_percent: float = 0.0
+    water_severity: str = "NONE"
+    highest_severity: str = "NONE"
+    overall_risk_score: float = 0.0
+    risk_confidence: str = "HIGH"
+    observations: List[RoadConditionObservationOut] = []
+    water_regions: List[WaterRegionOut] = []
+    water_filled_potholes: List[Dict[str, Any]] = []
+    cracks: List[RoadCrackDetectionItemOut] = []
+    potholes: List[Dict[str, Any]] = []
+    disambiguation_audit: Optional[List[Dict[str, Any]]] = []
+    road_context_summary: Optional[Dict[str, Any]] = None
+    original_image_url: str
+    processed_image_url: str
+    layer_urls: Dict[str, str] = {}
+    model_status: Dict[str, Any] = {}
+    processing_time_ms: int = 0
+    evidence_id: Optional[str] = None
+    hazard_id: Optional[int] = None
+    road_id: Optional[int] = None
+    road_name: Optional[str] = None
+    latitude: Optional[float] = None
+    longitude: Optional[float] = None
+    gps_source: Optional[str] = "Location unavailable"
+    timestamp: Optional[str] = None
+    disclaimer: str
 
 
 # ── Danger Zones & Repairs ────────────────────────────────────────────────────
@@ -595,6 +732,7 @@ class RouteOptionOut(BaseModel):
     hazards_count: Optional[int] = 0
     conflict_hotspots_count: Optional[int] = 0
     explanation: Optional[str] = None
+    maneuvers: Optional[List[Dict[str, Any]]] = None
 
 
 class RouteComparisonResultOut(BaseModel):
@@ -623,3 +761,314 @@ class SmartJunctionDisplayStateOut(BaseModel):
     risk_score: float
     active_near_misses_count: int
     recent_conflict: Optional[TrafficConflictDetailOut] = None
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# CITIZEN ACCOUNT, AUTH & COMPLAINT WORKFLOW SCHEMAS
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ── User & Auth ───────────────────────────────────────────────────────────────
+
+class UserRegisterRequest(BaseModel):
+    full_name: str
+    email: str
+    password: str
+    phone_number: Optional[str] = None
+    preferred_language: Optional[str] = "en"
+
+
+class UserLoginRequest(BaseModel):
+    email: str
+    password: str
+
+
+class UserOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: int
+    full_name: str
+    email: str
+    phone_number: Optional[str] = None
+    role: str
+    is_active: bool
+    is_verified: bool
+    created_at: datetime
+    last_login: Optional[datetime] = None
+    profile_photo: Optional[str] = None
+    preferred_language: Optional[str] = "en"
+    notification_preferences: Optional[Dict[str, Any]] = None
+
+
+class TokenResponse(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
+    user: UserOut
+
+
+class UserProfileUpdate(BaseModel):
+    full_name: Optional[str] = None
+    phone_number: Optional[str] = None
+    preferred_language: Optional[str] = None
+    notification_preferences: Optional[Dict[str, Any]] = None
+
+
+class ChangePasswordRequest(BaseModel):
+    current_password: str
+    new_password: str
+
+
+class UserRoleUpdateRequest(BaseModel):
+    role: str
+
+
+class UserStatusUpdateRequest(BaseModel):
+    is_active: bool
+
+
+# ── Complaint Categories ──────────────────────────────────────────────────────
+
+class ComplaintCategoryBase(BaseModel):
+    name: str
+    code: str
+    description: Optional[str] = None
+    is_ai_supported: bool = False
+    is_active: bool = True
+
+
+class ComplaintCategoryOut(ComplaintCategoryBase):
+    model_config = ConfigDict(from_attributes=True)
+    id: int
+
+
+class ComplaintCategoryCreate(ComplaintCategoryBase):
+    pass
+
+
+# ── Evidence & Status History ─────────────────────────────────────────────────
+
+class ComplaintEvidenceOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: int
+    complaint_id: int
+    uploader_id: int
+    file_type: str
+    file_url: str
+    filename: str
+    mime_type: str
+    file_size: int
+    uploaded_at: datetime
+    privacy_status: str
+    notes: Optional[str] = None
+
+
+class ComplaintStatusHistoryOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: int
+    complaint_id: int
+    old_status: Optional[str] = None
+    new_status: str
+    changed_by_name: str
+    changed_by_role: str
+    comment: Optional[str] = None
+    timestamp: datetime
+
+
+# ── Complaint Creation & Views ────────────────────────────────────────────────
+
+class ComplaintCreateRequest(BaseModel):
+    category_id: int
+    title: str
+    description: str
+    location_lat: float
+    location_lng: float
+    location_address: Optional[str] = None
+    priority: Optional[str] = "MEDIUM"
+
+
+class CitizenComplaintOut(BaseModel):
+    """Citizen-safe complaint model: internal notes and officer identities are protected."""
+    model_config = ConfigDict(from_attributes=True)
+    id: int
+    public_reference: str
+    category: ComplaintCategoryOut
+    title: str
+    description: str
+    status: str
+    priority: str
+    location_lat: float
+    location_lng: float
+    location_address: Optional[str] = None
+    assigned_department: Optional[str] = None
+    created_at: datetime
+    updated_at: Optional[datetime] = None
+    resolved_at: Optional[datetime] = None
+    closed_at: Optional[datetime] = None
+    citizen_confirmed_at: Optional[datetime] = None
+    resolution_summary: Optional[str] = None
+    public_response: Optional[str] = None
+    evidence_items: List[ComplaintEvidenceOut] = []
+    status_history: List[ComplaintStatusHistoryOut] = []
+    can_confirm_resolution: bool = False
+    can_reopen: bool = False
+
+
+class AdminComplaintOut(BaseModel):
+    """Authoritative administrative complaint view with full operational context."""
+    model_config = ConfigDict(from_attributes=True)
+    id: int
+    public_reference: str
+    citizen_id: int
+    citizen_name: str
+    citizen_email: str
+    citizen_phone: Optional[str] = None
+    category: ComplaintCategoryOut
+    title: str
+    description: str
+    status: str
+    priority: str
+    location_lat: float
+    location_lng: float
+    location_address: Optional[str] = None
+    road_segment_id: Optional[int] = None
+    road_name: Optional[str] = None
+    assigned_to: Optional[int] = None
+    assigned_to_name: Optional[str] = None
+    assigned_department: Optional[str] = None
+    source: str
+    created_at: datetime
+    updated_at: Optional[datetime] = None
+    resolved_at: Optional[datetime] = None
+    closed_at: Optional[datetime] = None
+    citizen_confirmed_at: Optional[datetime] = None
+    resolution_summary: Optional[str] = None
+    public_response: Optional[str] = None
+    internal_notes: Optional[str] = None
+    ai_linked: bool = False
+    ai_confidence: Optional[float] = None
+    hazard_id: Optional[int] = None
+    repair_id: Optional[int] = None
+    evidence_items: List[ComplaintEvidenceOut] = []
+    status_history: List[ComplaintStatusHistoryOut] = []
+    duplicate_candidates_count: int = 0
+
+
+# ── Complaint Operations ──────────────────────────────────────────────────────
+
+class ComplaintStatusUpdateRequest(BaseModel):
+    new_status: str
+    comment: Optional[str] = None
+
+
+class ComplaintAssignRequest(BaseModel):
+    assigned_to: Optional[int] = None
+    assigned_department: Optional[str] = None
+    notes: Optional[str] = None
+
+
+class ComplaintPublicResponseRequest(BaseModel):
+    public_response: str
+
+
+class ComplaintInternalNoteRequest(BaseModel):
+    internal_note: str
+
+
+class CitizenResolutionConfirmRequest(BaseModel):
+    confirmed: bool
+    comment: Optional[str] = None
+
+
+class ComplaintLinkHazardRequest(BaseModel):
+    hazard_id: int
+    notes: Optional[str] = None
+
+
+class ComplaintCreateHazardRequest(BaseModel):
+    road_id: Optional[int] = None
+    severity: Optional[str] = "HIGH"
+    notes: Optional[str] = None
+
+
+class ComplaintLinkRepairRequest(BaseModel):
+    repair_id: int
+    notes: Optional[str] = None
+
+
+class DuplicateCandidateOut(BaseModel):
+    complaint_id: int
+    public_reference: str
+    title: str
+    status: str
+    distance_meters: float
+    similarity_score: float
+    created_at: datetime
+
+
+class AIHazardCandidateOut(BaseModel):
+    hazard_id: int
+    road_id: int
+    road_name: Optional[str] = None
+    type: str
+    severity: str
+    risk_score: float
+    distance_meters: float
+    confidence: float
+    image_path: Optional[str] = None
+    detected_at: datetime
+
+
+# ── Notifications ─────────────────────────────────────────────────────────────
+
+class NotificationOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: int
+    type: str
+    title: str
+    message: str
+    related_complaint_id: Optional[int] = None
+    is_read: bool
+    created_at: datetime
+
+
+class NotificationCountOut(BaseModel):
+    unread_count: int
+
+
+# ── Dashboards & Pagination ───────────────────────────────────────────────────
+
+class CitizenDashboardOut(BaseModel):
+    welcome_name: str
+    total_complaints: int
+    active_complaints: int
+    pending_review: int
+    in_progress: int
+    resolved: int
+    closed: int
+    recent_complaints: List[CitizenComplaintOut]
+    recent_notifications: List[NotificationOut]
+
+
+class AdminDashboardOut(BaseModel):
+    total_complaints: int
+    new_today: int
+    under_review: int
+    assigned: int
+    in_progress: int
+    resolved: int
+    reopened: int
+    closed: int
+    ai_linked_count: int
+    citizen_confirmed_count: int
+    avg_resolution_hours: float
+    status_distribution: Dict[str, int]
+    category_distribution: Dict[str, int]
+    priority_distribution: Dict[str, int]
+    timeline_trend: List[Dict[str, Any]]
+    recent_complaints: List[AdminComplaintOut]
+
+
+class StaffUserOut(BaseModel):
+    id: int
+    full_name: str
+    email: str
+    role: str
+    department: Optional[str] = None

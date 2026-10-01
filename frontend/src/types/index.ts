@@ -69,6 +69,11 @@ export interface NearMiss {
   direction?: string | null
   evidence_clip?: string | null
   review_status?: string
+  drac?: number | null
+  relative_speed_kmh?: number | null
+  interaction_geometry?: string | null
+  trajectory_convergence?: boolean | null
+  why_conflict_explanation?: any
 }
 
 export type ConflictEvent = NearMiss
@@ -328,6 +333,8 @@ export interface PotholeAnalysisResult {
   detections: PotholeDetectionItem[]
   original_image_url: string
   processed_image_url: string
+  image_width?: number
+  image_height?: number
   hazard_id: number | null
   road_id: number | null
   road_name: string | null
@@ -383,6 +390,11 @@ export interface TrafficConflictDetail {
   snapshot_url: string | null
   review_status?: string
   disclaimer?: string
+  drac?: number | null
+  relative_speed_kmh?: number | null
+  interaction_geometry?: string | null
+  trajectory_convergence?: boolean | null
+  why_conflict_explanation?: any
 }
 
 export interface ConflictHotspot {
@@ -403,6 +415,7 @@ export interface TrafficAnalysisResult {
   video_id?: string
   is_demo_mode: boolean
   is_demo_video?: boolean
+  is_precomputed_demo?: boolean
   model_status: string
   status_message: string
   junction_id: number | null
@@ -424,6 +437,25 @@ export interface TrafficAnalysisResult {
   privacy_applied?: boolean
   privacy_notice?: string
   tracked_objects_summary?: any[]
+  exposure_normalized_rates?: any
+  traffic_model_meta?: any
+  tracking_health_status?: string
+  metric_calibration_status?: string
+  tracking_health_summary?: {
+    tracking_health_status: string
+    status_message: string
+    total_tracks: number
+    multi_point_tracks: number
+    tracks_gt_10_samples: number
+    single_point_tracks: number
+    pct_single_point: number
+    median_track_duration_sec: number
+    mean_samples_per_track: number
+    metric_calibration_status: string
+    camera_mode: string
+    frames_decoded: number
+    frames_analyzed: number
+  }
 }
 
 export interface AIModelStatus {
@@ -434,8 +466,120 @@ export interface AIModelStatus {
   is_pothole_demo_mode: boolean
   is_traffic_demo_mode: boolean
   message: string
+  model_name?: string
+  model_version?: string
+  framework?: string
   device?: string
+  confidence_threshold?: number
+  classes?: string[]
   engine?: string
+  water_model_path?: string
+  water_model_loaded?: boolean
+  crack_model_path?: string
+  crack_model_loaded?: boolean
+  road_condition_capabilities?: Record<string, any>
+}
+
+// ── Road Condition Intelligence Types ────────────────────────────────────────
+
+export interface WaterRegion {
+  region_id: number
+  area_pixels: number
+  coverage_percent: number
+  bbox: { x1: number; y1: number; x2: number; y2: number; width: number; height: number }
+  severity: string
+  polygon?: number[][]
+}
+
+export interface WaterFilledPotholeEvidence {
+  pothole_confidence: number
+  water_confidence: number
+  overlap_ratio: number
+  overlap_percent: number
+  water_pixels_in_pothole: number
+  total_pothole_pixels: number
+  evidence_status: string
+  fusion_formula: string
+}
+
+export interface RoadCrackDetectionItem {
+  crack_type: 'longitudinal_crack' | 'transverse_crack' | 'alligator_crack' | string
+  confidence: number
+  raw_model_confidence?: number
+  road_overlap_ratio?: number
+  road_context_score?: number
+  final_acceptance_decision?: string
+  severity: RiskLevel | string
+  risk_score: number
+  bbox: { x1: number; y1: number; x2: number; y2: number; width: number; height: number }
+  mask_polygon?: number[][]
+  estimated_visible_area_sq_m?: number
+}
+
+export interface RoadConditionObservation {
+  observation_id: string
+  hazard_type: string
+  confidence: number
+  raw_model_confidence?: number
+  road_overlap_ratio?: number
+  road_context_score?: number
+  final_acceptance_decision?: string
+  severity: string
+  risk_score: number
+  bbox?: { x1: number; y1: number; x2: number; y2: number; width: number; height: number }
+  mask_polygon?: number[][]
+  coverage_percent?: number
+  source_model: string
+  model_version: string
+  timestamp: string
+  latitude?: number | null
+  longitude?: number | null
+  evidence_reference?: string | null
+  fusion_evidence?: any
+}
+
+export interface RoadConditionAnalysisResult {
+  success: boolean
+  image_id: string
+  total_hazards_count: number
+  pothole_count: number
+  water_regions_count: number
+  crack_count: number
+  longitudinal_crack_count: number
+  transverse_crack_count: number
+  alligator_crack_count: number
+  water_filled_pothole_count: number
+  water_coverage_percent: number
+  water_severity: string
+  highest_severity: string
+  overall_risk_score: number
+  risk_confidence: string
+  observations: RoadConditionObservation[]
+  water_regions: WaterRegion[]
+  water_filled_potholes: any[]
+  cracks: RoadCrackDetectionItem[]
+  potholes: any[]
+  disambiguation_audit?: any[]
+  road_context_summary?: Record<string, any>
+  original_image_url: string
+  processed_image_url: string
+  layer_urls: {
+    fused: string
+    potholes: string
+    water: string
+    cracks: string
+  }
+  model_status: Record<string, any>
+  processing_time_ms: number
+  evidence_id?: string
+  hazard_id?: number | null
+  road_id?: number | null
+  road_name?: string | null
+  latitude?: number | null
+  longitude?: number | null
+  gps_source?: string
+  timestamp?: string
+  disclaimer: string
 }
 
 // ── Road Safety Intelligence Layer Types ─────────────────────────────────────
@@ -543,6 +687,14 @@ export interface RouteOption {
   hazards_count?: number
   conflict_hotspots_count?: number
   explanation?: string
+  maneuvers?: Array<{
+    step_index: number
+    instruction: string
+    distance_meters: number
+    maneuver_type: string
+    hazard_warning?: string | null
+    corridor_risk?: number
+  }>
 }
 
 export interface RouteComparisonResult {
@@ -576,4 +728,200 @@ export interface SmartJunctionDisplayState {
   risk_score: number
   active_near_misses_count: number
   recent_conflict: TrafficConflictDetail | null
+}
+
+
+// ══════════════════════════════════════════════════════════════════════════════
+// CITIZEN ACCOUNT & COMPLAINT MANAGEMENT TYPES
+// ══════════════════════════════════════════════════════════════════════════════
+
+export type UserRole = 'CITIZEN' | 'INSPECTOR' | 'ENGINEER' | 'ADMIN' | 'SUPERUSER'
+
+export interface User {
+  id: number
+  full_name: string
+  email: string
+  phone_number?: string | null
+  role: UserRole
+  is_active: boolean
+  is_verified: boolean
+  created_at: string
+  last_login?: string | null
+  profile_photo?: string | null
+  preferred_language?: string
+  notification_preferences?: {
+    email?: boolean
+    in_app?: boolean
+  }
+}
+
+export interface AuthResponse {
+  access_token: string
+  token_type: string
+  user: User
+}
+
+export type ComplaintStatus =
+  | 'SUBMITTED'
+  | 'ACKNOWLEDGED'
+  | 'UNDER_REVIEW'
+  | 'VERIFIED'
+  | 'ASSIGNED'
+  | 'IN_PROGRESS'
+  | 'RESOLVED'
+  | 'CITIZEN_CONFIRMATION'
+  | 'CLOSED'
+  | 'REJECTED'
+  | 'DUPLICATE'
+  | 'REOPENED'
+
+export type ComplaintPriorityType = 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL'
+
+export interface ComplaintCategory {
+  id: number
+  name: string
+  code: string
+  description?: string | null
+  is_ai_supported: boolean
+  is_active: boolean
+}
+
+export interface ComplaintEvidence {
+  id: number
+  complaint_id: number
+  uploader_id: number
+  file_type: string
+  file_url: string
+  filename: string
+  mime_type: string
+  file_size: number
+  uploaded_at: string
+  privacy_status: string
+  notes?: string | null
+}
+
+export interface ComplaintStatusHistory {
+  id: number
+  complaint_id: number
+  old_status?: string | null
+  new_status: string
+  changed_by_name: string
+  changed_by_role: string
+  comment?: string | null
+  timestamp: string
+}
+
+export interface CitizenComplaint {
+  id: number
+  public_reference: string
+  category: ComplaintCategory
+  title: string
+  description: string
+  status: ComplaintStatus
+  priority: ComplaintPriorityType
+  location_lat: number
+  location_lng: number
+  location_address?: string | null
+  assigned_department?: string | null
+  created_at: string
+  updated_at?: string | null
+  resolved_at?: string | null
+  closed_at?: string | null
+  citizen_confirmed_at?: string | null
+  resolution_summary?: string | null
+  public_response?: string | null
+  evidence_items: ComplaintEvidence[]
+  status_history: ComplaintStatusHistory[]
+  can_confirm_resolution: boolean
+  can_reopen: boolean
+}
+
+export interface AdminComplaint extends CitizenComplaint {
+  citizen_id: number
+  citizen_name: string
+  citizen_email: string
+  citizen_phone?: string | null
+  road_segment_id?: number | null
+  road_name?: string | null
+  assigned_to?: number | null
+  assigned_to_name?: string | null
+  source: string
+  internal_notes?: string | null
+  ai_linked: boolean
+  ai_confidence?: number | null
+  hazard_id?: number | null
+  repair_id?: number | null
+  duplicate_candidates_count: number
+}
+
+export interface AppNotification {
+  id: number
+  type: string
+  title: string
+  message: string
+  related_complaint_id?: number | null
+  is_read: boolean
+  created_at: string
+}
+
+export interface CitizenDashboardData {
+  welcome_name: string
+  total_complaints: number
+  active_complaints: number
+  pending_review: number
+  in_progress: number
+  resolved: number
+  closed: number
+  recent_complaints: CitizenComplaint[]
+  recent_notifications: AppNotification[]
+}
+
+export interface AdminDashboardData {
+  total_complaints: number
+  new_today: number
+  under_review: number
+  assigned: number
+  in_progress: number
+  resolved: number
+  reopened: number
+  closed: number
+  ai_linked_count: number
+  citizen_confirmed_count: number
+  avg_resolution_hours: number
+  status_distribution: Record<string, number>
+  category_distribution: Record<string, number>
+  priority_distribution: Record<string, number>
+  timeline_trend: Array<{ date: string; submitted: number; resolved: number }>
+  recent_complaints: AdminComplaint[]
+}
+
+export interface AIHazardCandidate {
+  hazard_id: number
+  road_id: number
+  road_name?: string | null
+  type: string
+  severity: string
+  risk_score: number
+  distance_meters: number
+  confidence: number
+  image_path?: string | null
+  detected_at: string
+}
+
+export interface DuplicateCandidate {
+  complaint_id: number
+  public_reference: string
+  title: string
+  status: string
+  distance_meters: number
+  similarity_score: number
+  created_at: string
+}
+
+export interface StaffUser {
+  id: number
+  full_name: string
+  email: string
+  role: string
+  department?: string | null
 }

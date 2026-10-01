@@ -1,0 +1,7 @@
+names:
+  0: pothole
+nc: 1
+path: C:/Users/dvasa/Projects/SmartMove/ml/pothole/dataset/processed
+test: images/test
+train: images/train
+val: images/val

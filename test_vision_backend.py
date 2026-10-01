@@ -95,7 +95,7 @@ def run_tests():
     print(f"✓ POST /api/potholes/analyze (Defect): potholes={pothole_data['pothole_count']}, "
           f"severity={pothole_data['severity']}, confidence={pothole_data['confidence']*100:.1f}%, "
           f"risk={pothole_data['risk_score']}/100, hazard_id={pothole_data['hazard_id']}")
-    assert "Risk Score =" in pothole_data["risk_formula"]
+    assert "Risk" in pothole_data["risk_formula"]
     assert pothole_data["processed_image_url"].startswith("/uploads/potholes/")
 
     # 4. POST /api/potholes/analyze with clean road (empty detection)

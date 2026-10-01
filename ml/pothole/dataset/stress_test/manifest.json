@@ -1,0 +1,722 @@
+[
+  {
+    "image": "stress_India_002340.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002342.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002343.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002345.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002351.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002354.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002357.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002358.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002360.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002361.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002371.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002387.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002388.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002393.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002397.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002520.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002525.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002528.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002533.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002535.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002536.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002537.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002538.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002539.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002540.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002541.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002543.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002546.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002547.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002548.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002554.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002555.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002562.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002563.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002567.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002569.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002570.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002572.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002575.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002579.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003720.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003721.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003727.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003732.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003740.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003749.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003750.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003756.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003759.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003761.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003763.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003764.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003765.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003772.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003773.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004025.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004027.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004030.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004031.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004033.jpg",
+    "type": "clean_road",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002341.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002344.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002349.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002364.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002372.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002386.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002398.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002550.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002551.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002553.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002557.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002565.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002566.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_002576.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003722.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003724.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003734.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003736.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003738.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003739.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003741.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003747.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003751.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003754.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003755.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003766.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003767.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003769.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_003774.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004022.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004028.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004035.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004039.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004051.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004064.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004066.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004071.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004073.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004074.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004077.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004504.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004508.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004509.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004513.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004523.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004531.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004537.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004550.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004554.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004556.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004689.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004695.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004700.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004703.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004706.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004715.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004718.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004724.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004727.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  },
+  {
+    "image": "stress_India_004730.jpg",
+    "type": "cracks_patches",
+    "shard": "shard_002",
+    "source": "RDD2022_India_HeldOut"
+  }
+]

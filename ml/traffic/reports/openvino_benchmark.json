@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-09-30 20:01:22",
+  "pytorch_source": "models/traffic_yolo26s_v2.pt",
+  "openvino_exported": "models\\traffic_yolo26s_v2_openvino_model\\",
+  "image_size": 512,
+  "hardware_benchmarks": {
+    "CPU": {
+      "device": "CPU",
+      "status": "SUCCESS",
+      "mean_latency_ms": 8.92,
+      "p50_latency_ms": 8.82,
+      "p95_latency_ms": 10.82,
+      "fps": 112.1,
+      "iterations": 40
+    },
+    "GPU": {
+      "device": "GPU",
+      "status": "UNSUPPORTED_OR_FAILED",
+      "error": "Invalid CUDA 'device=gpu' requested. Use 'device=cpu' or pass valid CUDA device(s) if available, i.e. 'device=0' or 'device=0,1,2,3' for Multi-GPU.\n\ntorch.cuda.is_available(): False\ntorch.cuda.device_count(): 0\nos.environ['CUDA_VISIBLE_DEVICES']: None\nSee https://pytorch.org/get-started/locally/ for up-to-date torch install instructions if no CUDA devices are seen by torch.\n"
+    },
+    "NPU": {
+      "device": "NPU",
+      "status": "UNSUPPORTED_OR_FAILED",
+      "error": "Invalid NPU 'device=npu'. Install 'torch_npu' at https://github.com/Ascend/pytorch"
+    }
+  },
+  "parity_analysis": {
+    "frames_evaluated": 7,
+    "pytorch_total_detections": 115,
+    "openvino_total_detections": 113,
+    "count_discrepancy_percent": 1.74,
+    "mean_confidence_delta": 0.0228,
+    "parity_verified": true
+  }
+}

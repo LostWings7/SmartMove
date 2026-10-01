@@ -1,0 +1,16 @@
+# SafeCity Loop V2 — Traffic Detector Configuration V2
+# Dataset: BDD100K Expanded Rare-Class Driving Sequences
+path: C:/Users/dvasa/Projects/SmartMove/ml/traffic/dataset_v2/processed
+train: images/train
+val: images/val
+test: images/test
+
+# 7-Class SafeCity Urban Traffic Scene Schema
+names:
+  0: pedestrian
+  1: rider
+  2: car
+  3: truck
+  4: bus
+  5: motorcycle
+  6: bicycle
